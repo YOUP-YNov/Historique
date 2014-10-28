@@ -1,16 +1,16 @@
-﻿
-using Historique.DAL.DAO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Historique.DAL.DAO;
 
-namespace Historique.DAL.DAL {
-    
-    
+namespace Historique.DAL.DAL
+{
     public partial class Historique
     {
         #region Properties
+
         private HistoriqueTableAdapters.UT_UtilisateurTableAdapter _UserService;
+
         public HistoriqueTableAdapters.UT_UtilisateurTableAdapter UserService
         {
             get
@@ -25,17 +25,74 @@ namespace Historique.DAL.DAL {
             }
         }
 
-        #endregion
+        private HistoriqueTableAdapters.ps_GetAllEvenementTableAdapter _EvenementService;
+
+        public HistoriqueTableAdapters.ps_GetAllEvenementTableAdapter EvenementService
+        {
+            get
+            {
+                if (_EvenementService == null)
+                    _EvenementService = new HistoriqueTableAdapters.ps_GetAllEvenementTableAdapter();
+                return _EvenementService;
+            }
+            set
+            {
+                _EvenementService = value;
+            }
+        }
+
+        private HistoriqueTableAdapters.UT_CategorieTableAdapter _CategorieService;
+
+        public HistoriqueTableAdapters.UT_CategorieTableAdapter CategorieService
+        {
+            get
+            {
+                if (_CategorieService == null)
+                    _CategorieService = new HistoriqueTableAdapters.UT_CategorieTableAdapter();
+                return _CategorieService;
+            }
+            set
+            {
+                _CategorieService = value;
+            }
+        }
+
+        #endregion Properties
 
         #region Methods
+
+        public IEnumerable<CategorieDao> GetAllCategorie()
+        {
+            var cat = CategorieService.GetData();
+            List<CategorieDao> catDaoList = (List<CategorieDao>)cat.ToDaoCategories();
+            return catDaoList;
+        }
+
+        public IEnumerable<UtilisateurDao> GetAllUser()
+        {
+            var users = UserService.GetData();
+            List<UtilisateurDao> userDaoList = (List<UtilisateurDao>)users.ToDaoUtilisateurs();
+
+            foreach (var user in userDaoList)
+            {
+                var nbAmis = UserService.NbAmisByPseudo(user.Pseudo);
+                var nbEventPropose = UserService.NbEvenementProposeByPseudo(user.Pseudo);
+                var nbEventParticipe = UserService.NbEvenementParticipeByPseudo(user.Pseudo);
+                user.NbAmis = nbAmis.Value;
+                user.NbEvenementParticipe = nbEventParticipe.Value;
+                user.NbEvenmentPropose = nbEventPropose.Value;
+            }
+            return userDaoList;
+        }
+
         public UtilisateurDao GetUserById(int id)
         {
-            var nbAmis= UserService.NbAmis(id);
+            var nbAmis = UserService.NbAmis(id);
             var nbEventPropose = Convert.ToInt32(UserService.NbEvenementPropose(id));
             var nbEventParticipe = Convert.ToInt32(UserService.NbEvenementParticipe(id));
 
             var result = UserService.GetDataById(id);
-            List<UtilisateurDao> userDaoList =(List<UtilisateurDao>)result.ToDaoUtilisateurs();
+            List<UtilisateurDao> userDaoList = (List<UtilisateurDao>)result.ToDaoUtilisateurs();
             var userDao = userDaoList.First();
 
             userDao.NbAmis = nbAmis.Value;
@@ -59,9 +116,28 @@ namespace Historique.DAL.DAL {
             userDao.NbEvenmentPropose = nbEventPropose.Value;
             return userDao;
         }
-        #endregion
+
+        public IEnumerable<EvenementDao> GetAllEvenement()
+        {
+            var evenement = EvenementService.GetData();
+            List<EvenementDao> eventDaoList = (List<EvenementDao>)evenement.ToDaoEvenements();
+            return eventDaoList;
+        }
+
+        public IEnumerable<EvenementDao> GetEvenementByCateByCp(int codePostale, string categorie)
+        {
+            var evenement = EvenementService.GetDataByCateByCp(codePostale, categorie);
+            List<EvenementDao> eventDaoList = (List<EvenementDao>)evenement.ToDaoEvenements();
+            return eventDaoList;
+        }
+
+        public IEnumerable<EvenementDao> GetEvenementByCp(int codePostale)
+        {
+            var evenement = EvenementService.GetDataByCp(codePostale);
+            List<EvenementDao> eventDaoList = (List<EvenementDao>)evenement.ToDaoEvenements();
+            return eventDaoList;
+        }
+
+        #endregion Methods
     }
 }
-
-
-
