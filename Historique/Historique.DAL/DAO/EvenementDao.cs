@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Historique.DAL.DAO
 {
@@ -134,6 +135,38 @@ namespace Historique.DAL.DAO
             set
             {
                 _Lieu = value;
+            }
+        }
+
+        private IEnumerable<UtilisateurDao> _Participants;
+
+        public IEnumerable<UtilisateurDao> Participants
+        {
+            get
+            {
+                if (_Participants == null)
+                    _Participants = new List<UtilisateurDao>();
+                return _Participants;
+            }
+            set
+            {
+                _Participants = value;
+            }
+        }
+
+        private UtilisateurDao _Createur;
+
+        public UtilisateurDao Createur
+        {
+            get
+            {
+                if (_Createur == null)
+                    _Createur = new UtilisateurDao();
+                return _Createur;
+            }
+            set
+            {
+                _Createur = value;
             }
         }
     }

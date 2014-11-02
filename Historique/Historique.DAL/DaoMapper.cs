@@ -9,22 +9,27 @@ namespace Historique.DAL
         public static UtilisateurDao ToDaoUtilisateur(this Historique.DAL.DAL.Historique.UT_UtilisateurRow userRow)
         {
             var userDao = new UtilisateurDao();
-            userDao.Id = Convert.ToInt32(userRow.Utilisateur_id);
-            userDao.Pseudo = userRow.Pseudo;
-            userDao.DateInscription = userRow.DateInscription;
-            userDao.CodePostale = userRow.CodePostal;
-            userDao.Ville = userRow.Ville;
-            userDao.CheminPhoto = userRow.PhotoChemin;
-            userDao.Age = (DateTime.Now - userRow.DateNaissance).Days;
+            if( userRow!=null)
+            {
+                userDao.Id = Convert.ToInt32(userRow.Utilisateur_id);
+                userDao.Pseudo = userRow.Pseudo;
+                userDao.IsHomme = userRow.Sexe;
+                userDao.Metier = userRow.Metier;
+                userDao.DateInscription = userRow.DateInscription;
+                userDao.CodePostale = userRow.CodePostal;
+                userDao.Ville = userRow.Ville;
+                userDao.CheminPhoto = userRow.PhotoChemin;
+                userDao.Age = (DateTime.Now - userRow.DateNaissance).Days;
+            }
             return userDao;
         }
 
         public static IEnumerable<UtilisateurDao> ToDaoUtilisateurs(this Historique.DAL.DAL.Historique.UT_UtilisateurDataTable userTable)
         {
-            if (userTable == null && userTable.Rows == null)
-                return null;
+            var result = new List<UtilisateurDao>();
 
-            List<UtilisateurDao> result = new List<UtilisateurDao>();
+            if (userTable == null && userTable.Rows == null)
+                return result;
 
             foreach (Historique.DAL.DAL.Historique.UT_UtilisateurRow userRow in userTable)
             {
@@ -36,9 +41,92 @@ namespace Historique.DAL
             return result;
         }
 
+        public static UtilisateurDao ToDaoUtilisateur(this Historique.DAL.DAL.Historique.UtilisateurEvenementParticipeRow userRow)
+        {
+            var userDao = new UtilisateurDao();
+            if (userRow != null)
+            {
+                userDao.Id = Convert.ToInt32(userRow.Utilisateur_id);
+                userDao.Pseudo = userRow.Pseudo;
+                userDao.IsHomme = userRow.Sexe;
+                userDao.Metier = userRow.Metier;
+                userDao.DateInscription = userRow.DateInscription;
+                userDao.CodePostale = userRow.CodePostal;
+                userDao.Ville = userRow.Ville;
+                userDao.CheminPhoto = userRow.PhotoChemin;
+                userDao.Age = (DateTime.Now - userRow.DateNaissance).Days;
+            }
+            return userDao;
+        }
+
+        public static IEnumerable<UtilisateurDao> ToDaoUtilisateurs(this Historique.DAL.DAL.Historique.UtilisateurEvenementParticipeDataTable userTable)
+        {
+            var result = new List<UtilisateurDao>();
+
+            if (userTable == null && userTable.Rows == null)
+                return result;
+
+            foreach (Historique.DAL.DAL.Historique.UtilisateurEvenementParticipeRow userRow in userTable)
+            {
+                UtilisateurDao daoResult = userRow.ToDaoUtilisateur();
+                if (daoResult != null)
+                    result.Add(daoResult);
+            }
+
+            return result;
+        }
+        public static EvenementDao ToDaoEvenement(this Historique.DAL.DAL.Historique.UtilisateurEvenementParticipeRow eventRow)
+        {
+            var eventDao = new EvenementDao();
+            if (eventRow == null)
+                return eventDao;
+
+            eventDao.Id = Convert.ToInt32(eventRow.Evenement_id);
+            eventDao.IdUser = Convert.ToInt32(eventRow.Utilisateur_id);
+            eventDao.Titre = eventRow.TitreEvenement;
+            eventDao.Categorie.Libelle = eventRow.Libelle;
+            eventDao.Categorie.Id = Convert.ToInt32(eventRow.Categorie_id);
+            eventDao.DateEvenement = eventRow.DateEvenement;
+            eventDao.DateFinIncription = eventRow.DateFinInscription;
+            eventDao.DateModification = eventRow.DateModification;
+            eventDao.Description = eventRow.DescriptionEvenement;
+            eventDao.Etat = eventRow.StateName;
+            eventDao.NbMaxParticipant = eventRow.MaximumParticipant;
+            eventDao.NbMinParticipant = eventRow.MinimumParticipant;
+            eventDao.Premium = eventRow.Premium;
+            eventDao.Prix = Convert.ToDouble(eventRow.Prix);
+            eventDao.Statut = eventRow.Statut;
+            eventDao.Lieu.Id = Convert.ToInt32(eventRow.LieuEvenement_id);
+            eventDao.Lieu.Latitute = Convert.ToDouble(eventRow.Latitude);
+            eventDao.Lieu.Longitude = Convert.ToDouble(eventRow.Longitude);
+            eventDao.Lieu.Pays = eventRow.Pays;
+            eventDao.Lieu.Ville = eventRow.Ville;
+            return eventDao;
+        }
+
+        public static IEnumerable<EvenementDao> ToDaoEvenements(this Historique.DAL.DAL.Historique.UtilisateurEvenementParticipeDataTable eventTable)
+        {
+            var result = new List<EvenementDao>();
+            if (eventTable == null && eventTable.Rows == null)
+                return result;
+
+
+            foreach (Historique.DAL.DAL.Historique.UtilisateurEvenementParticipeRow eventRow in eventTable)
+            {
+                EvenementDao daoResult = eventRow.ToDaoEvenement();
+                if (daoResult != null)
+                    result.Add(daoResult);
+            }
+
+            return result;
+        }
+
         public static EvenementDao ToDaoEvenement(this Historique.DAL.DAL.Historique.ps_GetAllEvenementRow eventRow)
         {
             var eventDao = new EvenementDao();
+            if (eventRow == null)
+                return eventDao;
+
             eventDao.Id = Convert.ToInt32(eventRow.Evenement_id);
             eventDao.IdUser = Convert.ToInt32(eventRow.Utilisateur_id);
             eventDao.Titre = eventRow.TitreEvenement;
@@ -64,10 +152,10 @@ namespace Historique.DAL
 
         public static IEnumerable<EvenementDao> ToDaoEvenements(this Historique.DAL.DAL.Historique.ps_GetAllEvenementDataTable eventTable)
         {
+            var result = new List<EvenementDao>();
             if (eventTable == null && eventTable.Rows == null)
-                return null;
+                return result;
 
-            List<EvenementDao> result = new List<EvenementDao>();
 
             foreach (Historique.DAL.DAL.Historique.ps_GetAllEvenementRow eventRow in eventTable)
             {
@@ -82,6 +170,9 @@ namespace Historique.DAL
         public static CategorieDao ToDaoCategorie(this Historique.DAL.DAL.Historique.UT_CategorieRow catRow)
         {
             var catDao = new CategorieDao();
+            if (catRow == null)
+                return catDao;
+
             catDao.Id = Convert.ToInt32(catRow.Categorie_id);
             catDao.Libelle = catRow.Libelle;
             return catDao;
@@ -89,10 +180,9 @@ namespace Historique.DAL
 
         public static IEnumerable<CategorieDao> ToDaoCategories(this Historique.DAL.DAL.Historique.UT_CategorieDataTable catTable)
         {
+            var result = new List<CategorieDao>();
             if (catTable == null && catTable.Rows == null)
-                return null;
-
-            List<CategorieDao> result = new List<CategorieDao>();
+                return result;
 
             foreach (Historique.DAL.DAL.Historique.UT_CategorieRow catRow in catTable)
             {

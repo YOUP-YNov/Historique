@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Historique.DAL.DAO
 {
@@ -12,12 +13,28 @@ namespace Historique.DAL.DAO
             set { _Id = value; }
         }
 
+        private bool _IsHomme;
+
+        public bool IsHomme
+        {
+            get { return _IsHomme; }
+            set { _IsHomme = value; }
+        }
+
         private string _Pseudo;
 
         public string Pseudo
         {
             get { return _Pseudo; }
             set { _Pseudo = value; }
+        }
+
+        private string _Metier;
+
+        public string Metier
+        {
+            get { return _Metier; }
+            set { _Metier = value; }
         }
 
         private DateTime _DateInscription;
@@ -83,5 +100,32 @@ namespace Historique.DAL.DAO
             get { return _CodePostale; }
             set { _CodePostale = value; }
         }
+
+        private IEnumerable<EvenementDao> _EvenementsParticipes;
+
+        public IEnumerable<EvenementDao> EvenementsParticipes
+        {
+            get 
+            {
+                if (_EvenementsParticipes == null)
+                    _EvenementsParticipes = new List<EvenementDao>();
+                return _EvenementsParticipes; 
+            }
+            set { _EvenementsParticipes = value; }
+        }
+
+        private IEnumerable<EvenementDao> _EvenementsCrees;
+
+        public IEnumerable<EvenementDao> EvenementsCrees
+        {
+            get 
+            {
+                if (_EvenementsCrees == null)
+                    _EvenementsCrees = new List<EvenementDao>();
+                return _EvenementsCrees; 
+            }
+            set { _EvenementsCrees = value; }
+        }
     }
+
 }
