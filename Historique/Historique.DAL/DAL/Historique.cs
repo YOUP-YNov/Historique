@@ -138,6 +138,15 @@ namespace Historique.DAL.DAL
             return eventDaoList;
         }
 
+        public IEnumerable<EvenementDao> GetEvenementByCat (string categorie, DateTime dateDebut, DateTime dateFin)
+        {
+            var evenement = EvenementService.GetDataByCateByCp(categorie, dateDebut, dateFin);
+            List<EvenementDao> eventDaoList = (List<EvenementDao>)evenement.ToDaoEvenements();
+            return eventDaoList;
+        }
+
         #endregion Methods
     }
 }
+
+
