@@ -36,6 +36,42 @@ namespace Historique.DAL
             return result;
         }
 
+        public static EvenDao ToDaoEven (this Historique.DAL.DAL.Historique.EVE_EvenementRow evenRow)
+        {
+            var evenDao = new EvenDao();
+            evenDao.Id = Convert.ToInt32(evenRow.Evenement_id);
+            evenDao.IdUser = Convert.ToInt32(evenRow.Utilisateur_id);
+            evenDao.EveTitre = evenRow.TitreEvenement;
+            evenDao.Categorie.Id = Convert.ToInt32(evenRow.Categorie_id);
+            evenDao.EveDateDebut = evenRow.DateEvenement;
+            evenDao.EveDateFinIsncription = evenRow.DateFinInscription;
+            evenDao.EveDateModification = evenRow.DateModification;
+            evenDao.EveDescription = evenRow.DescriptionEvenement;
+            evenDao.EveMaxParticipants = evenRow.MaximumParticipant;
+            evenDao.EveMinParticipants = evenRow.MinimumParticipant;
+            evenDao.EvePrix = Convert.ToDouble(evenRow.Prix);
+            evenDao.EveStatut = evenRow.Statut;
+            evenDao.Lieu.Id = Convert.ToInt32(evenRow.LieuEvenement_id);
+            return evenDao;
+        }
+
+        public static IEnumerable<EvenDao> ToDaoEven(this Historique.DAL.DAL.Historique.EVE_EvenementDataTable evenTable)
+        {
+            if (evenTable == null && evenTable.Rows == null)
+                return null;
+
+            List<EvenDao> result = new List<EvenDao>();
+
+            foreach (Historique.DAL.DAL.Historique.EVE_EvenementRow evenRow in evenTable)
+            {
+                EvenDao daoResult = evenRow.ToDaoEven();
+                if (daoResult != null)
+                    result.Add(daoResult);
+            }
+
+            return result;
+        }
+
         public static EvenementDao ToDaoEvenement(this Historique.DAL.DAL.Historique.ps_GetAllEvenementRow eventRow)
         {
             var eventDao = new EvenementDao();

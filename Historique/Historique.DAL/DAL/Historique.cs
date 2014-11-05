@@ -57,6 +57,21 @@ namespace Historique.DAL.DAL
             }
         }
 
+        private HistoriqueTableAdapters.EVE_EvenementTableAdapter _EveCat;
+        public HistoriqueTableAdapters.EVE_EvenementTableAdapter EveCat
+        {
+            get
+            {
+                if (_EveCat == null)
+                    _EveCat = new HistoriqueTableAdapters.EVE_EvenementTableAdapter();
+                return _EveCat;
+            }
+            set
+            {
+                _EveCat = value;
+            }
+        }
+
         #endregion Properties
 
         #region Methods
@@ -138,13 +153,13 @@ namespace Historique.DAL.DAL
             return eventDaoList;
         }
 
-        public IEnumerable<EvenementDao> GetEvenementByCat (string categorie, DateTime dateDebut, DateTime dateFin)
+        public IEnumerable<EvenDao> GetEvenementByCat (string categorie, DateTime dateDebut, DateTime dateFin)
         {
-            var evenement = EvenementService.GetDataByCateByCp(categorie, dateDebut, dateFin);
-            List<EvenementDao> eventDaoList = (List<EvenementDao>)evenement.ToDaoEvenements();
+            var evenement = EveCat.GetDataByCat(categorie, dateDebut, dateFin);
+            List<EvenDao> eventDaoList = (List<EvenDao>)evenement.ToDaoEven();
             return eventDaoList;
         }
-
+       
         #endregion Methods
     }
 }
