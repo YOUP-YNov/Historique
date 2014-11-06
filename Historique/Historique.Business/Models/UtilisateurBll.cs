@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Historique.DAL.DAO
+namespace Historique.Business.Models
 {
-    public class UtilisateurDao
+    public class UtilisateurBll
     {
         private int _Id;
 
@@ -99,24 +102,24 @@ namespace Historique.DAL.DAO
             set { _CodePostale = value; }
         }
 
-        private IEnumerable<EvenementDao> _EvenementsParticipes;
-        public IEnumerable<EvenementDao> EvenementsParticipes
+        private IEnumerable<EvenementBll> _EvenementsParticipes;
+        public IEnumerable<EvenementBll> EvenementsParticipes
         {
             get
             {
                 if (_EvenementsParticipes == null)
-                    _EvenementsParticipes = new List<EvenementDao>();
+                    _EvenementsParticipes = new List<EvenementBll>();
                 return _EvenementsParticipes;
             }
             set { _EvenementsParticipes = value; }
         }
-        private IEnumerable<EvenementDao> _EvenementsCrees;
-        public IEnumerable<EvenementDao> EvenementsCrees
+        private IEnumerable<EvenementBll> _EvenementsCrees;
+        public IEnumerable<EvenementBll> EvenementsCrees
         {
             get
             {
                 if (_EvenementsCrees == null)
-                    _EvenementsCrees = new List<EvenementDao>();
+                    _EvenementsCrees = new List<EvenementBll>();
                 return _EvenementsCrees;
             }
             set { _EvenementsCrees = value; }

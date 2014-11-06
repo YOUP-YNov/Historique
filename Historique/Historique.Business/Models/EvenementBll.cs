@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Historique.DAL.DAO
+namespace Historique.Business.Models
 {
-    public class EvenementDao
+    public class EvenementBll
     {
         private int _Id;
 
@@ -109,27 +112,27 @@ namespace Historique.DAL.DAO
             set { _Statut = value; }
         }
 
-        private CategorieDao _Categorie;
+        private CategorieBll _Categorie;
 
-        public CategorieDao Categorie
+        public CategorieBll Categorie
         {
             get
             {
                 if (_Categorie == null)
-                    _Categorie = new CategorieDao();
+                    _Categorie = new CategorieBll();
                 return _Categorie;
             }
             set { _Categorie = value; }
         }
 
-        private EvenementLieuDao _Lieu;
+        private EvenementLieuBll _Lieu;
 
-        public EvenementLieuDao Lieu
+        public EvenementLieuBll Lieu
         {
             get
             {
                 if (_Lieu == null)
-                    _Lieu = new EvenementLieuDao();
+                    _Lieu = new EvenementLieuBll();
                 return _Lieu;
             }
             set
@@ -138,13 +141,13 @@ namespace Historique.DAL.DAO
             }
         }
 
-        private IEnumerable<UtilisateurDao> _Participants;
-        public IEnumerable<UtilisateurDao> Participants
+        private IEnumerable<UtilisateurBll> _Participants;
+        public IEnumerable<UtilisateurBll> Participants
         {
             get
             {
                 if (_Participants == null)
-                    _Participants = new List<UtilisateurDao>();
+                    _Participants = new List<UtilisateurBll>();
                 return _Participants;
             }
             set
@@ -152,13 +155,13 @@ namespace Historique.DAL.DAO
                 _Participants = value;
             }
         }
-        private UtilisateurDao _Createur;
-        public UtilisateurDao Createur
+        private UtilisateurBll _Createur;
+        public UtilisateurBll Createur
         {
             get
             {
                 if (_Createur == null)
-                    _Createur = new UtilisateurDao();
+                    _Createur = new UtilisateurBll();
                 return _Createur;
             }
             set

@@ -8,6 +8,35 @@ namespace Historique.DAL.DAL
     public partial class Historique
     {
         #region Properties
+        private HistoriqueTableAdapters.UtilisateurEvenementParticipeTableAdapter _UtilisateurEvenementParticipeService;
+        public HistoriqueTableAdapters.UtilisateurEvenementParticipeTableAdapter UtilisateurEvenementParticipeService
+        {
+            get
+            {
+                if (_UtilisateurEvenementParticipeService == null)
+                    _UtilisateurEvenementParticipeService = new HistoriqueTableAdapters.UtilisateurEvenementParticipeTableAdapter();
+                return _UtilisateurEvenementParticipeService;
+            }
+            set
+            {
+                _UtilisateurEvenementParticipeService = value;
+            }
+        }
+
+        private HistoriqueTableAdapters.UtilisateurEvenementProposeTableAdapter _UtilisateurEvenementProposeService;
+        public HistoriqueTableAdapters.UtilisateurEvenementProposeTableAdapter UtilisateurEvenementProposeService
+        {
+            get
+            {
+                if (_UtilisateurEvenementProposeService == null)
+                    _UtilisateurEvenementProposeService = new HistoriqueTableAdapters.UtilisateurEvenementProposeTableAdapter();
+                return _UtilisateurEvenementProposeService;
+            }
+            set
+            {
+                _UtilisateurEvenementProposeService = value;
+            }
+        }
 
         private HistoriqueTableAdapters.UT_UtilisateurTableAdapter _UserService;
 
@@ -159,9 +188,109 @@ namespace Historique.DAL.DAL
             List<EvenementDao> eventDaoList = (List<EvenementDao>)evenement.ToDaoEvenements();
             return eventDaoList;
         }
-       
+        public IEnumerable<EvenementDao> GetEvenementParticipeByUserId(int userId)
+        {
+            var eventDaoList = new List<EvenementDao>();
+            try
+            {
+                if (UtilisateurEvenementParticipeService != null)
+                {
+                    var evenement = UtilisateurEvenementParticipeService.GetEvenementParticipeByUserId(userId);
+                    eventDaoList = (List<EvenementDao>)evenement.ToDaoEvenements();
+                    foreach (var eventDao in eventDaoList)
+                    {
+                        eventDao.Participants = GetUtilisateurParticipeByEvenementId(eventDao.Id);
+                        eventDao.Createur = GetUtilisateurProposeByEvenementId(eventDao.Id);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            return eventDaoList;
+        }
+        public IEnumerable<UtilisateurDao> GetUtilisateurParticipeByEvenementId(int eventId)
+        {
+            var userDaoList = new List<UtilisateurDao>();
+            try
+            {
+                if (UtilisateurEvenementParticipeService != null)
+                {
+                    var user = UtilisateurEvenementParticipeService.GetUtilisateurByEvenementId(eventId);
+                    userDaoList = (List<UtilisateurDao>)user.ToDaoUtilisateurs();
+                    foreach (var userDao in userDaoList)
+                    {
+                        if (!string.IsNullOrEmpty(userDao.Pseudo))
+                        {
+                            var nbAmis = UserService.NbAmisByPseudo(userDao.Pseudo);
+                            var nbEventPropose = UserService.NbEvenementProposeByPseudo(userDao.Pseudo);
+                            var nbEventParticipe = UserService.NbEvenementParticipeByPseudo(userDao.Pseudo);
+                            userDao.NbAmis = nbAmis.Value;
+                            userDao.NbEvenementParticipe = nbEventParticipe.Value;
+                            userDao.NbEvenmentPropose = nbEventPropose.Value;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            return userDaoList;
+        }
+
+        public IEnumerable<EvenementDao> GetEvenementProposeByUserId(int userId)
+        {
+            var eventDaoList = new List<EvenementDao>();
+            try
+            {
+                if (UtilisateurEvenementParticipeService != null)
+                {
+                    var evenement = UtilisateurEvenementProposeService.GetEvenementProposeByUserId(userId);
+                    eventDaoList = (List<EvenementDao>)evenement.ToDaoEvenements();
+                    foreach (var eventDao in eventDaoList)
+                    {
+                        eventDao.Participants = GetUtilisateurParticipeByEvenementId(eventDao.Id);
+                        eventDao.Createur = GetUtilisateurProposeByEvenementId(eventDao.Id);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            return eventDaoList;
+        }
+        public UtilisateurDao GetUtilisateurProposeByEvenementId(int eventId)
+        {
+            var userDao = new UtilisateurDao();
+            try
+            {
+                if (UtilisateurEvenementParticipeService != null)
+                {
+                   var user = UtilisateurEvenementProposeService.GetUtilisateurProposeByEvenementId(eventId);
+                   var userDaoList = (List<UtilisateurDao>)user.ToDaoUtilisateurs();
+                   userDao = userDaoList.First();
+
+                   if (!string.IsNullOrEmpty(userDao.Pseudo))
+                   {
+                        var nbAmis = UserService.NbAmisByPseudo(userDao.Pseudo);
+                        var nbEventPropose = UserService.NbEvenementProposeByPseudo(userDao.Pseudo);
+                        var nbEventParticipe = UserService.NbEvenementParticipeByPseudo(userDao.Pseudo);
+                        userDao.NbAmis = nbAmis.Value;
+                        userDao.NbEvenementParticipe = nbEventParticipe.Value;
+                        userDao.NbEvenmentPropose = nbEventPropose.Value;
+                   }
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            return userDao;
+        }
         #endregion Methods
     }
 }
+
+
 
 

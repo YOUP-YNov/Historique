@@ -46,6 +46,10 @@ namespace Historique.DAL.DAL {
         
         private ps_GetAllEvenementDataTable tableps_GetAllEvenement;
         
+        private UtilisateurEvenementParticipeDataTable tableUtilisateurEvenementParticipe;
+        
+        private UtilisateurEvenementProposeDataTable tableUtilisateurEvenementPropose;
+        
         private global::System.Data.DataRelation relationFK__UT_Utilis__Evene__282DF8C2;
         
         private global::System.Data.DataRelation relationFK__UT_Utilis__Utili__29221CFB;
@@ -67,6 +71,10 @@ namespace Historique.DAL.DAL {
         private global::System.Data.DataRelation relationFK__UT_Utilis__Utili__25518C17;
         
         private global::System.Data.DataRelation relationFK__EVE_Evene__Categ__0C85DE4D;
+        
+        private global::System.Data.DataRelation relationFK__EVE_Evene__Categ__0C85DE4D1;
+        
+        private global::System.Data.DataRelation relationFK__EVE_Evene__Categ__0C85DE4D2;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -128,6 +136,12 @@ namespace Historique.DAL.DAL {
                 }
                 if ((ds.Tables["ps_GetAllEvenement"] != null)) {
                     base.Tables.Add(new ps_GetAllEvenementDataTable(ds.Tables["ps_GetAllEvenement"]));
+                }
+                if ((ds.Tables["UtilisateurEvenementParticipe"] != null)) {
+                    base.Tables.Add(new UtilisateurEvenementParticipeDataTable(ds.Tables["UtilisateurEvenementParticipe"]));
+                }
+                if ((ds.Tables["UtilisateurEvenementPropose"] != null)) {
+                    base.Tables.Add(new UtilisateurEvenementProposeDataTable(ds.Tables["UtilisateurEvenementPropose"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -259,6 +273,26 @@ namespace Historique.DAL.DAL {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public UtilisateurEvenementParticipeDataTable UtilisateurEvenementParticipe {
+            get {
+                return this.tableUtilisateurEvenementParticipe;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public UtilisateurEvenementProposeDataTable UtilisateurEvenementPropose {
+            get {
+                return this.tableUtilisateurEvenementPropose;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -356,6 +390,12 @@ namespace Historique.DAL.DAL {
                 }
                 if ((ds.Tables["ps_GetAllEvenement"] != null)) {
                     base.Tables.Add(new ps_GetAllEvenementDataTable(ds.Tables["ps_GetAllEvenement"]));
+                }
+                if ((ds.Tables["UtilisateurEvenementParticipe"] != null)) {
+                    base.Tables.Add(new UtilisateurEvenementParticipeDataTable(ds.Tables["UtilisateurEvenementParticipe"]));
+                }
+                if ((ds.Tables["UtilisateurEvenementPropose"] != null)) {
+                    base.Tables.Add(new UtilisateurEvenementProposeDataTable(ds.Tables["UtilisateurEvenementPropose"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -456,6 +496,18 @@ namespace Historique.DAL.DAL {
                     this.tableps_GetAllEvenement.InitVars();
                 }
             }
+            this.tableUtilisateurEvenementParticipe = ((UtilisateurEvenementParticipeDataTable)(base.Tables["UtilisateurEvenementParticipe"]));
+            if ((initTable == true)) {
+                if ((this.tableUtilisateurEvenementParticipe != null)) {
+                    this.tableUtilisateurEvenementParticipe.InitVars();
+                }
+            }
+            this.tableUtilisateurEvenementPropose = ((UtilisateurEvenementProposeDataTable)(base.Tables["UtilisateurEvenementPropose"]));
+            if ((initTable == true)) {
+                if ((this.tableUtilisateurEvenementPropose != null)) {
+                    this.tableUtilisateurEvenementPropose.InitVars();
+                }
+            }
             this.relationFK__UT_Utilis__Evene__282DF8C2 = this.Relations["FK__UT_Utilis__Evene__282DF8C2"];
             this.relationFK__UT_Utilis__Utili__29221CFB = this.Relations["FK__UT_Utilis__Utili__29221CFB"];
             this.relationFK__EVE_Evene__LieuE__0E6E26BF = this.Relations["FK__EVE_Evene__LieuE__0E6E26BF"];
@@ -467,6 +519,8 @@ namespace Historique.DAL.DAL {
             this.relationFK__UT_Utilis__Utili__245D67DE = this.Relations["FK__UT_Utilis__Utili__245D67DE"];
             this.relationFK__UT_Utilis__Utili__25518C17 = this.Relations["FK__UT_Utilis__Utili__25518C17"];
             this.relationFK__EVE_Evene__Categ__0C85DE4D = this.Relations["FK__EVE_Evene__Categ__0C85DE4D"];
+            this.relationFK__EVE_Evene__Categ__0C85DE4D1 = this.Relations["FK__EVE_Evene__Categ__0C85DE4D1"];
+            this.relationFK__EVE_Evene__Categ__0C85DE4D2 = this.Relations["FK__EVE_Evene__Categ__0C85DE4D2"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -499,6 +553,10 @@ namespace Historique.DAL.DAL {
             base.Tables.Add(this.tableUT_Categorie);
             this.tableps_GetAllEvenement = new ps_GetAllEvenementDataTable();
             base.Tables.Add(this.tableps_GetAllEvenement);
+            this.tableUtilisateurEvenementParticipe = new UtilisateurEvenementParticipeDataTable();
+            base.Tables.Add(this.tableUtilisateurEvenementParticipe);
+            this.tableUtilisateurEvenementPropose = new UtilisateurEvenementProposeDataTable();
+            base.Tables.Add(this.tableUtilisateurEvenementPropose);
             this.relationFK__UT_Utilis__Evene__282DF8C2 = new global::System.Data.DataRelation("FK__UT_Utilis__Evene__282DF8C2", new global::System.Data.DataColumn[] {
                         this.tableEVE_Evenement.Evenement_idColumn}, new global::System.Data.DataColumn[] {
                         this.tableUT_Utilisateur_Participe_Evenement.Evenement_idColumn}, false);
@@ -543,6 +601,14 @@ namespace Historique.DAL.DAL {
                         this.tableUT_Categorie.Categorie_idColumn}, new global::System.Data.DataColumn[] {
                         this.tableEVE_Evenement.Categorie_idColumn}, false);
             this.Relations.Add(this.relationFK__EVE_Evene__Categ__0C85DE4D);
+            this.relationFK__EVE_Evene__Categ__0C85DE4D1 = new global::System.Data.DataRelation("FK__EVE_Evene__Categ__0C85DE4D1", new global::System.Data.DataColumn[] {
+                        this.tableUtilisateurEvenementParticipe.Categorie_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableEVE_Evenement.Categorie_idColumn}, false);
+            this.Relations.Add(this.relationFK__EVE_Evene__Categ__0C85DE4D1);
+            this.relationFK__EVE_Evene__Categ__0C85DE4D2 = new global::System.Data.DataRelation("FK__EVE_Evene__Categ__0C85DE4D2", new global::System.Data.DataColumn[] {
+                        this.tableUtilisateurEvenementPropose.Categorie_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableEVE_Evenement.Categorie_idColumn}, false);
+            this.Relations.Add(this.relationFK__EVE_Evene__Categ__0C85DE4D2);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -608,6 +674,18 @@ namespace Historique.DAL.DAL {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeps_GetAllEvenement() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeUtilisateurEvenementParticipe() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeUtilisateurEvenementPropose() {
             return false;
         }
         
@@ -698,6 +776,12 @@ namespace Historique.DAL.DAL {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void ps_GetAllEvenementRowChangeEventHandler(object sender, ps_GetAllEvenementRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void UtilisateurEvenementParticipeRowChangeEventHandler(object sender, UtilisateurEvenementParticipeRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void UtilisateurEvenementProposeRowChangeEventHandler(object sender, UtilisateurEvenementProposeRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -4913,6 +4997,1870 @@ namespace Historique.DAL.DAL {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class UtilisateurEvenementParticipeDataTable : global::System.Data.TypedTableBase<UtilisateurEvenementParticipeRow> {
+            
+            private global::System.Data.DataColumn columnEvenement_id;
+            
+            private global::System.Data.DataColumn columnUtilisateur_id;
+            
+            private global::System.Data.DataColumn columnLieuEvenement_id;
+            
+            private global::System.Data.DataColumn columnCategorie_id;
+            
+            private global::System.Data.DataColumn columnDateEvenement;
+            
+            private global::System.Data.DataColumn columnDateCreation;
+            
+            private global::System.Data.DataColumn columnDateModification;
+            
+            private global::System.Data.DataColumn columnDateFinInscription;
+            
+            private global::System.Data.DataColumn columnTitreEvenement;
+            
+            private global::System.Data.DataColumn columnDescriptionEvenement;
+            
+            private global::System.Data.DataColumn columnMinimumParticipant;
+            
+            private global::System.Data.DataColumn columnMaximumParticipant;
+            
+            private global::System.Data.DataColumn columnStatut;
+            
+            private global::System.Data.DataColumn columnPrix;
+            
+            private global::System.Data.DataColumn columnPremium;
+            
+            private global::System.Data.DataColumn columnDateMiseEnAvant;
+            
+            private global::System.Data.DataColumn columnEtat_id;
+            
+            private global::System.Data.DataColumn columnVille;
+            
+            private global::System.Data.DataColumn columnCodePostale;
+            
+            private global::System.Data.DataColumn columnAdresse;
+            
+            private global::System.Data.DataColumn columnLongitude;
+            
+            private global::System.Data.DataColumn columnPays;
+            
+            private global::System.Data.DataColumn columnNom;
+            
+            private global::System.Data.DataColumn columnLatitude;
+            
+            private global::System.Data.DataColumn columnStateName;
+            
+            private global::System.Data.DataColumn columnLibelle;
+            
+            private global::System.Data.DataColumn columnUtilisateur_id1;
+            
+            private global::System.Data.DataColumn columnPseudo;
+            
+            private global::System.Data.DataColumn columnMotDePasse;
+            
+            private global::System.Data.DataColumn columnDateInscription;
+            
+            private global::System.Data.DataColumn columnNom1;
+            
+            private global::System.Data.DataColumn columnPrenom;
+            
+            private global::System.Data.DataColumn columnSexe;
+            
+            private global::System.Data.DataColumn columnAdresseMail;
+            
+            private global::System.Data.DataColumn columnDateNaissance;
+            
+            private global::System.Data.DataColumn columnVille1;
+            
+            private global::System.Data.DataColumn columnCodePostal;
+            
+            private global::System.Data.DataColumn columnPhotoChemin;
+            
+            private global::System.Data.DataColumn columnSituation;
+            
+            private global::System.Data.DataColumn columnActif;
+            
+            private global::System.Data.DataColumn columnPartenaire;
+            
+            private global::System.Data.DataColumn columnPresentation;
+            
+            private global::System.Data.DataColumn columnMetier;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public UtilisateurEvenementParticipeDataTable() {
+                this.TableName = "UtilisateurEvenementParticipe";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal UtilisateurEvenementParticipeDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected UtilisateurEvenementParticipeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Evenement_idColumn {
+                get {
+                    return this.columnEvenement_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Utilisateur_idColumn {
+                get {
+                    return this.columnUtilisateur_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LieuEvenement_idColumn {
+                get {
+                    return this.columnLieuEvenement_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Categorie_idColumn {
+                get {
+                    return this.columnCategorie_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DateEvenementColumn {
+                get {
+                    return this.columnDateEvenement;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DateCreationColumn {
+                get {
+                    return this.columnDateCreation;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DateModificationColumn {
+                get {
+                    return this.columnDateModification;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DateFinInscriptionColumn {
+                get {
+                    return this.columnDateFinInscription;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TitreEvenementColumn {
+                get {
+                    return this.columnTitreEvenement;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DescriptionEvenementColumn {
+                get {
+                    return this.columnDescriptionEvenement;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MinimumParticipantColumn {
+                get {
+                    return this.columnMinimumParticipant;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MaximumParticipantColumn {
+                get {
+                    return this.columnMaximumParticipant;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StatutColumn {
+                get {
+                    return this.columnStatut;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PrixColumn {
+                get {
+                    return this.columnPrix;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PremiumColumn {
+                get {
+                    return this.columnPremium;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DateMiseEnAvantColumn {
+                get {
+                    return this.columnDateMiseEnAvant;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Etat_idColumn {
+                get {
+                    return this.columnEtat_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VilleColumn {
+                get {
+                    return this.columnVille;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CodePostaleColumn {
+                get {
+                    return this.columnCodePostale;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AdresseColumn {
+                get {
+                    return this.columnAdresse;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LongitudeColumn {
+                get {
+                    return this.columnLongitude;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PaysColumn {
+                get {
+                    return this.columnPays;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NomColumn {
+                get {
+                    return this.columnNom;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LatitudeColumn {
+                get {
+                    return this.columnLatitude;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StateNameColumn {
+                get {
+                    return this.columnStateName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LibelleColumn {
+                get {
+                    return this.columnLibelle;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Utilisateur_id1Column {
+                get {
+                    return this.columnUtilisateur_id1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PseudoColumn {
+                get {
+                    return this.columnPseudo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MotDePasseColumn {
+                get {
+                    return this.columnMotDePasse;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DateInscriptionColumn {
+                get {
+                    return this.columnDateInscription;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Nom1Column {
+                get {
+                    return this.columnNom1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PrenomColumn {
+                get {
+                    return this.columnPrenom;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SexeColumn {
+                get {
+                    return this.columnSexe;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AdresseMailColumn {
+                get {
+                    return this.columnAdresseMail;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DateNaissanceColumn {
+                get {
+                    return this.columnDateNaissance;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Ville1Column {
+                get {
+                    return this.columnVille1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CodePostalColumn {
+                get {
+                    return this.columnCodePostal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PhotoCheminColumn {
+                get {
+                    return this.columnPhotoChemin;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SituationColumn {
+                get {
+                    return this.columnSituation;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ActifColumn {
+                get {
+                    return this.columnActif;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PartenaireColumn {
+                get {
+                    return this.columnPartenaire;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PresentationColumn {
+                get {
+                    return this.columnPresentation;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MetierColumn {
+                get {
+                    return this.columnMetier;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public UtilisateurEvenementParticipeRow this[int index] {
+                get {
+                    return ((UtilisateurEvenementParticipeRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event UtilisateurEvenementParticipeRowChangeEventHandler UtilisateurEvenementParticipeRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event UtilisateurEvenementParticipeRowChangeEventHandler UtilisateurEvenementParticipeRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event UtilisateurEvenementParticipeRowChangeEventHandler UtilisateurEvenementParticipeRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event UtilisateurEvenementParticipeRowChangeEventHandler UtilisateurEvenementParticipeRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddUtilisateurEvenementParticipeRow(UtilisateurEvenementParticipeRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public UtilisateurEvenementParticipeRow AddUtilisateurEvenementParticipeRow(
+                        long Utilisateur_id, 
+                        long LieuEvenement_id, 
+                        long Categorie_id, 
+                        System.DateTime DateEvenement, 
+                        System.DateTime DateCreation, 
+                        System.DateTime DateModification, 
+                        System.DateTime DateFinInscription, 
+                        string TitreEvenement, 
+                        string DescriptionEvenement, 
+                        int MinimumParticipant, 
+                        int MaximumParticipant, 
+                        string Statut, 
+                        decimal Prix, 
+                        bool Premium, 
+                        System.DateTime DateMiseEnAvant, 
+                        long Etat_id, 
+                        string Ville, 
+                        string CodePostale, 
+                        string Adresse, 
+                        decimal Longitude, 
+                        string Pays, 
+                        string Nom, 
+                        decimal Latitude, 
+                        string StateName, 
+                        string Libelle, 
+                        string Pseudo, 
+                        string MotDePasse, 
+                        System.DateTime DateInscription, 
+                        string Nom1, 
+                        string Prenom, 
+                        bool Sexe, 
+                        string AdresseMail, 
+                        System.DateTime DateNaissance, 
+                        string Ville1, 
+                        string CodePostal, 
+                        string PhotoChemin, 
+                        string Situation, 
+                        bool Actif, 
+                        bool Partenaire, 
+                        string Presentation, 
+                        string Metier) {
+                UtilisateurEvenementParticipeRow rowUtilisateurEvenementParticipeRow = ((UtilisateurEvenementParticipeRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        Utilisateur_id,
+                        LieuEvenement_id,
+                        Categorie_id,
+                        DateEvenement,
+                        DateCreation,
+                        DateModification,
+                        DateFinInscription,
+                        TitreEvenement,
+                        DescriptionEvenement,
+                        MinimumParticipant,
+                        MaximumParticipant,
+                        Statut,
+                        Prix,
+                        Premium,
+                        DateMiseEnAvant,
+                        Etat_id,
+                        Ville,
+                        CodePostale,
+                        Adresse,
+                        Longitude,
+                        Pays,
+                        Nom,
+                        Latitude,
+                        StateName,
+                        Libelle,
+                        null,
+                        Pseudo,
+                        MotDePasse,
+                        DateInscription,
+                        Nom1,
+                        Prenom,
+                        Sexe,
+                        AdresseMail,
+                        DateNaissance,
+                        Ville1,
+                        CodePostal,
+                        PhotoChemin,
+                        Situation,
+                        Actif,
+                        Partenaire,
+                        Presentation,
+                        Metier};
+                rowUtilisateurEvenementParticipeRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowUtilisateurEvenementParticipeRow);
+                return rowUtilisateurEvenementParticipeRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                UtilisateurEvenementParticipeDataTable cln = ((UtilisateurEvenementParticipeDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new UtilisateurEvenementParticipeDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnEvenement_id = base.Columns["Evenement_id"];
+                this.columnUtilisateur_id = base.Columns["Utilisateur_id"];
+                this.columnLieuEvenement_id = base.Columns["LieuEvenement_id"];
+                this.columnCategorie_id = base.Columns["Categorie_id"];
+                this.columnDateEvenement = base.Columns["DateEvenement"];
+                this.columnDateCreation = base.Columns["DateCreation"];
+                this.columnDateModification = base.Columns["DateModification"];
+                this.columnDateFinInscription = base.Columns["DateFinInscription"];
+                this.columnTitreEvenement = base.Columns["TitreEvenement"];
+                this.columnDescriptionEvenement = base.Columns["DescriptionEvenement"];
+                this.columnMinimumParticipant = base.Columns["MinimumParticipant"];
+                this.columnMaximumParticipant = base.Columns["MaximumParticipant"];
+                this.columnStatut = base.Columns["Statut"];
+                this.columnPrix = base.Columns["Prix"];
+                this.columnPremium = base.Columns["Premium"];
+                this.columnDateMiseEnAvant = base.Columns["DateMiseEnAvant"];
+                this.columnEtat_id = base.Columns["Etat_id"];
+                this.columnVille = base.Columns["Ville"];
+                this.columnCodePostale = base.Columns["CodePostale"];
+                this.columnAdresse = base.Columns["Adresse"];
+                this.columnLongitude = base.Columns["Longitude"];
+                this.columnPays = base.Columns["Pays"];
+                this.columnNom = base.Columns["Nom"];
+                this.columnLatitude = base.Columns["Latitude"];
+                this.columnStateName = base.Columns["StateName"];
+                this.columnLibelle = base.Columns["Libelle"];
+                this.columnUtilisateur_id1 = base.Columns["Utilisateur_id1"];
+                this.columnPseudo = base.Columns["Pseudo"];
+                this.columnMotDePasse = base.Columns["MotDePasse"];
+                this.columnDateInscription = base.Columns["DateInscription"];
+                this.columnNom1 = base.Columns["Nom1"];
+                this.columnPrenom = base.Columns["Prenom"];
+                this.columnSexe = base.Columns["Sexe"];
+                this.columnAdresseMail = base.Columns["AdresseMail"];
+                this.columnDateNaissance = base.Columns["DateNaissance"];
+                this.columnVille1 = base.Columns["Ville1"];
+                this.columnCodePostal = base.Columns["CodePostal"];
+                this.columnPhotoChemin = base.Columns["PhotoChemin"];
+                this.columnSituation = base.Columns["Situation"];
+                this.columnActif = base.Columns["Actif"];
+                this.columnPartenaire = base.Columns["Partenaire"];
+                this.columnPresentation = base.Columns["Presentation"];
+                this.columnMetier = base.Columns["Metier"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnEvenement_id = new global::System.Data.DataColumn("Evenement_id", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEvenement_id);
+                this.columnUtilisateur_id = new global::System.Data.DataColumn("Utilisateur_id", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUtilisateur_id);
+                this.columnLieuEvenement_id = new global::System.Data.DataColumn("LieuEvenement_id", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLieuEvenement_id);
+                this.columnCategorie_id = new global::System.Data.DataColumn("Categorie_id", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCategorie_id);
+                this.columnDateEvenement = new global::System.Data.DataColumn("DateEvenement", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateEvenement);
+                this.columnDateCreation = new global::System.Data.DataColumn("DateCreation", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateCreation);
+                this.columnDateModification = new global::System.Data.DataColumn("DateModification", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateModification);
+                this.columnDateFinInscription = new global::System.Data.DataColumn("DateFinInscription", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateFinInscription);
+                this.columnTitreEvenement = new global::System.Data.DataColumn("TitreEvenement", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTitreEvenement);
+                this.columnDescriptionEvenement = new global::System.Data.DataColumn("DescriptionEvenement", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescriptionEvenement);
+                this.columnMinimumParticipant = new global::System.Data.DataColumn("MinimumParticipant", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMinimumParticipant);
+                this.columnMaximumParticipant = new global::System.Data.DataColumn("MaximumParticipant", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMaximumParticipant);
+                this.columnStatut = new global::System.Data.DataColumn("Statut", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStatut);
+                this.columnPrix = new global::System.Data.DataColumn("Prix", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrix);
+                this.columnPremium = new global::System.Data.DataColumn("Premium", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPremium);
+                this.columnDateMiseEnAvant = new global::System.Data.DataColumn("DateMiseEnAvant", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateMiseEnAvant);
+                this.columnEtat_id = new global::System.Data.DataColumn("Etat_id", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEtat_id);
+                this.columnVille = new global::System.Data.DataColumn("Ville", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVille);
+                this.columnCodePostale = new global::System.Data.DataColumn("CodePostale", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodePostale);
+                this.columnAdresse = new global::System.Data.DataColumn("Adresse", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAdresse);
+                this.columnLongitude = new global::System.Data.DataColumn("Longitude", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLongitude);
+                this.columnPays = new global::System.Data.DataColumn("Pays", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPays);
+                this.columnNom = new global::System.Data.DataColumn("Nom", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNom);
+                this.columnLatitude = new global::System.Data.DataColumn("Latitude", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLatitude);
+                this.columnStateName = new global::System.Data.DataColumn("StateName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStateName);
+                this.columnLibelle = new global::System.Data.DataColumn("Libelle", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLibelle);
+                this.columnUtilisateur_id1 = new global::System.Data.DataColumn("Utilisateur_id1", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUtilisateur_id1);
+                this.columnPseudo = new global::System.Data.DataColumn("Pseudo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPseudo);
+                this.columnMotDePasse = new global::System.Data.DataColumn("MotDePasse", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMotDePasse);
+                this.columnDateInscription = new global::System.Data.DataColumn("DateInscription", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateInscription);
+                this.columnNom1 = new global::System.Data.DataColumn("Nom1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNom1);
+                this.columnPrenom = new global::System.Data.DataColumn("Prenom", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrenom);
+                this.columnSexe = new global::System.Data.DataColumn("Sexe", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSexe);
+                this.columnAdresseMail = new global::System.Data.DataColumn("AdresseMail", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAdresseMail);
+                this.columnDateNaissance = new global::System.Data.DataColumn("DateNaissance", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateNaissance);
+                this.columnVille1 = new global::System.Data.DataColumn("Ville1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVille1);
+                this.columnCodePostal = new global::System.Data.DataColumn("CodePostal", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodePostal);
+                this.columnPhotoChemin = new global::System.Data.DataColumn("PhotoChemin", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPhotoChemin);
+                this.columnSituation = new global::System.Data.DataColumn("Situation", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSituation);
+                this.columnActif = new global::System.Data.DataColumn("Actif", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnActif);
+                this.columnPartenaire = new global::System.Data.DataColumn("Partenaire", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPartenaire);
+                this.columnPresentation = new global::System.Data.DataColumn("Presentation", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPresentation);
+                this.columnMetier = new global::System.Data.DataColumn("Metier", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMetier);
+                this.columnEvenement_id.AutoIncrement = true;
+                this.columnEvenement_id.AutoIncrementSeed = -1;
+                this.columnEvenement_id.AutoIncrementStep = -1;
+                this.columnEvenement_id.AllowDBNull = false;
+                this.columnEvenement_id.ReadOnly = true;
+                this.columnUtilisateur_id.AllowDBNull = false;
+                this.columnLieuEvenement_id.AllowDBNull = false;
+                this.columnCategorie_id.AllowDBNull = false;
+                this.columnDateEvenement.AllowDBNull = false;
+                this.columnDateCreation.AllowDBNull = false;
+                this.columnDateFinInscription.AllowDBNull = false;
+                this.columnTitreEvenement.AllowDBNull = false;
+                this.columnTitreEvenement.MaxLength = 50;
+                this.columnDescriptionEvenement.MaxLength = 4000;
+                this.columnStatut.MaxLength = 50;
+                this.columnPrix.AllowDBNull = false;
+                this.columnPremium.AllowDBNull = false;
+                this.columnEtat_id.AllowDBNull = false;
+                this.columnVille.AllowDBNull = false;
+                this.columnVille.MaxLength = 100;
+                this.columnCodePostale.MaxLength = 10;
+                this.columnAdresse.AllowDBNull = false;
+                this.columnAdresse.MaxLength = 200;
+                this.columnPays.AllowDBNull = false;
+                this.columnPays.MaxLength = 50;
+                this.columnNom.MaxLength = 50;
+                this.columnStateName.AllowDBNull = false;
+                this.columnStateName.MaxLength = 100;
+                this.columnLibelle.AllowDBNull = false;
+                this.columnLibelle.MaxLength = 50;
+                this.columnUtilisateur_id1.AutoIncrement = true;
+                this.columnUtilisateur_id1.AutoIncrementSeed = -1;
+                this.columnUtilisateur_id1.AutoIncrementStep = -1;
+                this.columnUtilisateur_id1.AllowDBNull = false;
+                this.columnUtilisateur_id1.ReadOnly = true;
+                this.columnPseudo.AllowDBNull = false;
+                this.columnPseudo.MaxLength = 50;
+                this.columnMotDePasse.AllowDBNull = false;
+                this.columnMotDePasse.MaxLength = 100;
+                this.columnDateInscription.AllowDBNull = false;
+                this.columnNom1.AllowDBNull = false;
+                this.columnNom1.MaxLength = 50;
+                this.columnPrenom.AllowDBNull = false;
+                this.columnPrenom.MaxLength = 50;
+                this.columnSexe.AllowDBNull = false;
+                this.columnAdresseMail.AllowDBNull = false;
+                this.columnAdresseMail.MaxLength = 100;
+                this.columnDateNaissance.AllowDBNull = false;
+                this.columnVille1.MaxLength = 100;
+                this.columnCodePostal.MaxLength = 10;
+                this.columnPhotoChemin.MaxLength = 200;
+                this.columnSituation.MaxLength = 200;
+                this.columnActif.AllowDBNull = false;
+                this.columnPartenaire.AllowDBNull = false;
+                this.columnPresentation.MaxLength = 500;
+                this.columnMetier.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public UtilisateurEvenementParticipeRow NewUtilisateurEvenementParticipeRow() {
+                return ((UtilisateurEvenementParticipeRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new UtilisateurEvenementParticipeRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(UtilisateurEvenementParticipeRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.UtilisateurEvenementParticipeRowChanged != null)) {
+                    this.UtilisateurEvenementParticipeRowChanged(this, new UtilisateurEvenementParticipeRowChangeEvent(((UtilisateurEvenementParticipeRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.UtilisateurEvenementParticipeRowChanging != null)) {
+                    this.UtilisateurEvenementParticipeRowChanging(this, new UtilisateurEvenementParticipeRowChangeEvent(((UtilisateurEvenementParticipeRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.UtilisateurEvenementParticipeRowDeleted != null)) {
+                    this.UtilisateurEvenementParticipeRowDeleted(this, new UtilisateurEvenementParticipeRowChangeEvent(((UtilisateurEvenementParticipeRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.UtilisateurEvenementParticipeRowDeleting != null)) {
+                    this.UtilisateurEvenementParticipeRowDeleting(this, new UtilisateurEvenementParticipeRowChangeEvent(((UtilisateurEvenementParticipeRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveUtilisateurEvenementParticipeRow(UtilisateurEvenementParticipeRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Historique ds = new Historique();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "UtilisateurEvenementParticipeDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class UtilisateurEvenementProposeDataTable : global::System.Data.TypedTableBase<UtilisateurEvenementProposeRow> {
+            
+            private global::System.Data.DataColumn columnEvenement_id;
+            
+            private global::System.Data.DataColumn columnUtilisateur_id;
+            
+            private global::System.Data.DataColumn columnLieuEvenement_id;
+            
+            private global::System.Data.DataColumn columnCategorie_id;
+            
+            private global::System.Data.DataColumn columnDateEvenement;
+            
+            private global::System.Data.DataColumn columnDateCreation;
+            
+            private global::System.Data.DataColumn columnDateModification;
+            
+            private global::System.Data.DataColumn columnDateFinInscription;
+            
+            private global::System.Data.DataColumn columnTitreEvenement;
+            
+            private global::System.Data.DataColumn columnDescriptionEvenement;
+            
+            private global::System.Data.DataColumn columnMinimumParticipant;
+            
+            private global::System.Data.DataColumn columnMaximumParticipant;
+            
+            private global::System.Data.DataColumn columnStatut;
+            
+            private global::System.Data.DataColumn columnPrix;
+            
+            private global::System.Data.DataColumn columnPremium;
+            
+            private global::System.Data.DataColumn columnDateMiseEnAvant;
+            
+            private global::System.Data.DataColumn columnEtat_id;
+            
+            private global::System.Data.DataColumn columnVille;
+            
+            private global::System.Data.DataColumn columnCodePostale;
+            
+            private global::System.Data.DataColumn columnAdresse;
+            
+            private global::System.Data.DataColumn columnLongitude;
+            
+            private global::System.Data.DataColumn columnPays;
+            
+            private global::System.Data.DataColumn columnNom;
+            
+            private global::System.Data.DataColumn columnLatitude;
+            
+            private global::System.Data.DataColumn columnStateName;
+            
+            private global::System.Data.DataColumn columnLibelle;
+            
+            private global::System.Data.DataColumn columnUtilisateur_id1;
+            
+            private global::System.Data.DataColumn columnPseudo;
+            
+            private global::System.Data.DataColumn columnMotDePasse;
+            
+            private global::System.Data.DataColumn columnDateInscription;
+            
+            private global::System.Data.DataColumn columnNom1;
+            
+            private global::System.Data.DataColumn columnPrenom;
+            
+            private global::System.Data.DataColumn columnSexe;
+            
+            private global::System.Data.DataColumn columnAdresseMail;
+            
+            private global::System.Data.DataColumn columnDateNaissance;
+            
+            private global::System.Data.DataColumn columnVille1;
+            
+            private global::System.Data.DataColumn columnCodePostal;
+            
+            private global::System.Data.DataColumn columnPhotoChemin;
+            
+            private global::System.Data.DataColumn columnSituation;
+            
+            private global::System.Data.DataColumn columnActif;
+            
+            private global::System.Data.DataColumn columnPartenaire;
+            
+            private global::System.Data.DataColumn columnPresentation;
+            
+            private global::System.Data.DataColumn columnMetier;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public UtilisateurEvenementProposeDataTable() {
+                this.TableName = "UtilisateurEvenementPropose";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal UtilisateurEvenementProposeDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected UtilisateurEvenementProposeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Evenement_idColumn {
+                get {
+                    return this.columnEvenement_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Utilisateur_idColumn {
+                get {
+                    return this.columnUtilisateur_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LieuEvenement_idColumn {
+                get {
+                    return this.columnLieuEvenement_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Categorie_idColumn {
+                get {
+                    return this.columnCategorie_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DateEvenementColumn {
+                get {
+                    return this.columnDateEvenement;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DateCreationColumn {
+                get {
+                    return this.columnDateCreation;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DateModificationColumn {
+                get {
+                    return this.columnDateModification;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DateFinInscriptionColumn {
+                get {
+                    return this.columnDateFinInscription;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TitreEvenementColumn {
+                get {
+                    return this.columnTitreEvenement;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DescriptionEvenementColumn {
+                get {
+                    return this.columnDescriptionEvenement;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MinimumParticipantColumn {
+                get {
+                    return this.columnMinimumParticipant;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MaximumParticipantColumn {
+                get {
+                    return this.columnMaximumParticipant;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StatutColumn {
+                get {
+                    return this.columnStatut;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PrixColumn {
+                get {
+                    return this.columnPrix;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PremiumColumn {
+                get {
+                    return this.columnPremium;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DateMiseEnAvantColumn {
+                get {
+                    return this.columnDateMiseEnAvant;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Etat_idColumn {
+                get {
+                    return this.columnEtat_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VilleColumn {
+                get {
+                    return this.columnVille;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CodePostaleColumn {
+                get {
+                    return this.columnCodePostale;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AdresseColumn {
+                get {
+                    return this.columnAdresse;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LongitudeColumn {
+                get {
+                    return this.columnLongitude;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PaysColumn {
+                get {
+                    return this.columnPays;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NomColumn {
+                get {
+                    return this.columnNom;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LatitudeColumn {
+                get {
+                    return this.columnLatitude;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StateNameColumn {
+                get {
+                    return this.columnStateName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LibelleColumn {
+                get {
+                    return this.columnLibelle;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Utilisateur_id1Column {
+                get {
+                    return this.columnUtilisateur_id1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PseudoColumn {
+                get {
+                    return this.columnPseudo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MotDePasseColumn {
+                get {
+                    return this.columnMotDePasse;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DateInscriptionColumn {
+                get {
+                    return this.columnDateInscription;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Nom1Column {
+                get {
+                    return this.columnNom1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PrenomColumn {
+                get {
+                    return this.columnPrenom;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SexeColumn {
+                get {
+                    return this.columnSexe;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AdresseMailColumn {
+                get {
+                    return this.columnAdresseMail;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DateNaissanceColumn {
+                get {
+                    return this.columnDateNaissance;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Ville1Column {
+                get {
+                    return this.columnVille1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CodePostalColumn {
+                get {
+                    return this.columnCodePostal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PhotoCheminColumn {
+                get {
+                    return this.columnPhotoChemin;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SituationColumn {
+                get {
+                    return this.columnSituation;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ActifColumn {
+                get {
+                    return this.columnActif;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PartenaireColumn {
+                get {
+                    return this.columnPartenaire;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PresentationColumn {
+                get {
+                    return this.columnPresentation;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MetierColumn {
+                get {
+                    return this.columnMetier;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public UtilisateurEvenementProposeRow this[int index] {
+                get {
+                    return ((UtilisateurEvenementProposeRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event UtilisateurEvenementProposeRowChangeEventHandler UtilisateurEvenementProposeRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event UtilisateurEvenementProposeRowChangeEventHandler UtilisateurEvenementProposeRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event UtilisateurEvenementProposeRowChangeEventHandler UtilisateurEvenementProposeRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event UtilisateurEvenementProposeRowChangeEventHandler UtilisateurEvenementProposeRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddUtilisateurEvenementProposeRow(UtilisateurEvenementProposeRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public UtilisateurEvenementProposeRow AddUtilisateurEvenementProposeRow(
+                        long Utilisateur_id, 
+                        long LieuEvenement_id, 
+                        long Categorie_id, 
+                        System.DateTime DateEvenement, 
+                        System.DateTime DateCreation, 
+                        System.DateTime DateModification, 
+                        System.DateTime DateFinInscription, 
+                        string TitreEvenement, 
+                        string DescriptionEvenement, 
+                        int MinimumParticipant, 
+                        int MaximumParticipant, 
+                        string Statut, 
+                        decimal Prix, 
+                        bool Premium, 
+                        System.DateTime DateMiseEnAvant, 
+                        long Etat_id, 
+                        string Ville, 
+                        string CodePostale, 
+                        string Adresse, 
+                        decimal Longitude, 
+                        string Pays, 
+                        string Nom, 
+                        decimal Latitude, 
+                        string StateName, 
+                        string Libelle, 
+                        string Pseudo, 
+                        string MotDePasse, 
+                        System.DateTime DateInscription, 
+                        string Nom1, 
+                        string Prenom, 
+                        bool Sexe, 
+                        string AdresseMail, 
+                        System.DateTime DateNaissance, 
+                        string Ville1, 
+                        string CodePostal, 
+                        string PhotoChemin, 
+                        string Situation, 
+                        bool Actif, 
+                        bool Partenaire, 
+                        string Presentation, 
+                        string Metier) {
+                UtilisateurEvenementProposeRow rowUtilisateurEvenementProposeRow = ((UtilisateurEvenementProposeRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        Utilisateur_id,
+                        LieuEvenement_id,
+                        Categorie_id,
+                        DateEvenement,
+                        DateCreation,
+                        DateModification,
+                        DateFinInscription,
+                        TitreEvenement,
+                        DescriptionEvenement,
+                        MinimumParticipant,
+                        MaximumParticipant,
+                        Statut,
+                        Prix,
+                        Premium,
+                        DateMiseEnAvant,
+                        Etat_id,
+                        Ville,
+                        CodePostale,
+                        Adresse,
+                        Longitude,
+                        Pays,
+                        Nom,
+                        Latitude,
+                        StateName,
+                        Libelle,
+                        null,
+                        Pseudo,
+                        MotDePasse,
+                        DateInscription,
+                        Nom1,
+                        Prenom,
+                        Sexe,
+                        AdresseMail,
+                        DateNaissance,
+                        Ville1,
+                        CodePostal,
+                        PhotoChemin,
+                        Situation,
+                        Actif,
+                        Partenaire,
+                        Presentation,
+                        Metier};
+                rowUtilisateurEvenementProposeRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowUtilisateurEvenementProposeRow);
+                return rowUtilisateurEvenementProposeRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                UtilisateurEvenementProposeDataTable cln = ((UtilisateurEvenementProposeDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new UtilisateurEvenementProposeDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnEvenement_id = base.Columns["Evenement_id"];
+                this.columnUtilisateur_id = base.Columns["Utilisateur_id"];
+                this.columnLieuEvenement_id = base.Columns["LieuEvenement_id"];
+                this.columnCategorie_id = base.Columns["Categorie_id"];
+                this.columnDateEvenement = base.Columns["DateEvenement"];
+                this.columnDateCreation = base.Columns["DateCreation"];
+                this.columnDateModification = base.Columns["DateModification"];
+                this.columnDateFinInscription = base.Columns["DateFinInscription"];
+                this.columnTitreEvenement = base.Columns["TitreEvenement"];
+                this.columnDescriptionEvenement = base.Columns["DescriptionEvenement"];
+                this.columnMinimumParticipant = base.Columns["MinimumParticipant"];
+                this.columnMaximumParticipant = base.Columns["MaximumParticipant"];
+                this.columnStatut = base.Columns["Statut"];
+                this.columnPrix = base.Columns["Prix"];
+                this.columnPremium = base.Columns["Premium"];
+                this.columnDateMiseEnAvant = base.Columns["DateMiseEnAvant"];
+                this.columnEtat_id = base.Columns["Etat_id"];
+                this.columnVille = base.Columns["Ville"];
+                this.columnCodePostale = base.Columns["CodePostale"];
+                this.columnAdresse = base.Columns["Adresse"];
+                this.columnLongitude = base.Columns["Longitude"];
+                this.columnPays = base.Columns["Pays"];
+                this.columnNom = base.Columns["Nom"];
+                this.columnLatitude = base.Columns["Latitude"];
+                this.columnStateName = base.Columns["StateName"];
+                this.columnLibelle = base.Columns["Libelle"];
+                this.columnUtilisateur_id1 = base.Columns["Utilisateur_id1"];
+                this.columnPseudo = base.Columns["Pseudo"];
+                this.columnMotDePasse = base.Columns["MotDePasse"];
+                this.columnDateInscription = base.Columns["DateInscription"];
+                this.columnNom1 = base.Columns["Nom1"];
+                this.columnPrenom = base.Columns["Prenom"];
+                this.columnSexe = base.Columns["Sexe"];
+                this.columnAdresseMail = base.Columns["AdresseMail"];
+                this.columnDateNaissance = base.Columns["DateNaissance"];
+                this.columnVille1 = base.Columns["Ville1"];
+                this.columnCodePostal = base.Columns["CodePostal"];
+                this.columnPhotoChemin = base.Columns["PhotoChemin"];
+                this.columnSituation = base.Columns["Situation"];
+                this.columnActif = base.Columns["Actif"];
+                this.columnPartenaire = base.Columns["Partenaire"];
+                this.columnPresentation = base.Columns["Presentation"];
+                this.columnMetier = base.Columns["Metier"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnEvenement_id = new global::System.Data.DataColumn("Evenement_id", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEvenement_id);
+                this.columnUtilisateur_id = new global::System.Data.DataColumn("Utilisateur_id", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUtilisateur_id);
+                this.columnLieuEvenement_id = new global::System.Data.DataColumn("LieuEvenement_id", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLieuEvenement_id);
+                this.columnCategorie_id = new global::System.Data.DataColumn("Categorie_id", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCategorie_id);
+                this.columnDateEvenement = new global::System.Data.DataColumn("DateEvenement", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateEvenement);
+                this.columnDateCreation = new global::System.Data.DataColumn("DateCreation", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateCreation);
+                this.columnDateModification = new global::System.Data.DataColumn("DateModification", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateModification);
+                this.columnDateFinInscription = new global::System.Data.DataColumn("DateFinInscription", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateFinInscription);
+                this.columnTitreEvenement = new global::System.Data.DataColumn("TitreEvenement", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTitreEvenement);
+                this.columnDescriptionEvenement = new global::System.Data.DataColumn("DescriptionEvenement", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescriptionEvenement);
+                this.columnMinimumParticipant = new global::System.Data.DataColumn("MinimumParticipant", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMinimumParticipant);
+                this.columnMaximumParticipant = new global::System.Data.DataColumn("MaximumParticipant", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMaximumParticipant);
+                this.columnStatut = new global::System.Data.DataColumn("Statut", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStatut);
+                this.columnPrix = new global::System.Data.DataColumn("Prix", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrix);
+                this.columnPremium = new global::System.Data.DataColumn("Premium", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPremium);
+                this.columnDateMiseEnAvant = new global::System.Data.DataColumn("DateMiseEnAvant", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateMiseEnAvant);
+                this.columnEtat_id = new global::System.Data.DataColumn("Etat_id", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEtat_id);
+                this.columnVille = new global::System.Data.DataColumn("Ville", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVille);
+                this.columnCodePostale = new global::System.Data.DataColumn("CodePostale", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodePostale);
+                this.columnAdresse = new global::System.Data.DataColumn("Adresse", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAdresse);
+                this.columnLongitude = new global::System.Data.DataColumn("Longitude", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLongitude);
+                this.columnPays = new global::System.Data.DataColumn("Pays", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPays);
+                this.columnNom = new global::System.Data.DataColumn("Nom", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNom);
+                this.columnLatitude = new global::System.Data.DataColumn("Latitude", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLatitude);
+                this.columnStateName = new global::System.Data.DataColumn("StateName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStateName);
+                this.columnLibelle = new global::System.Data.DataColumn("Libelle", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLibelle);
+                this.columnUtilisateur_id1 = new global::System.Data.DataColumn("Utilisateur_id1", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUtilisateur_id1);
+                this.columnPseudo = new global::System.Data.DataColumn("Pseudo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPseudo);
+                this.columnMotDePasse = new global::System.Data.DataColumn("MotDePasse", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMotDePasse);
+                this.columnDateInscription = new global::System.Data.DataColumn("DateInscription", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateInscription);
+                this.columnNom1 = new global::System.Data.DataColumn("Nom1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNom1);
+                this.columnPrenom = new global::System.Data.DataColumn("Prenom", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrenom);
+                this.columnSexe = new global::System.Data.DataColumn("Sexe", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSexe);
+                this.columnAdresseMail = new global::System.Data.DataColumn("AdresseMail", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAdresseMail);
+                this.columnDateNaissance = new global::System.Data.DataColumn("DateNaissance", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateNaissance);
+                this.columnVille1 = new global::System.Data.DataColumn("Ville1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVille1);
+                this.columnCodePostal = new global::System.Data.DataColumn("CodePostal", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodePostal);
+                this.columnPhotoChemin = new global::System.Data.DataColumn("PhotoChemin", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPhotoChemin);
+                this.columnSituation = new global::System.Data.DataColumn("Situation", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSituation);
+                this.columnActif = new global::System.Data.DataColumn("Actif", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnActif);
+                this.columnPartenaire = new global::System.Data.DataColumn("Partenaire", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPartenaire);
+                this.columnPresentation = new global::System.Data.DataColumn("Presentation", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPresentation);
+                this.columnMetier = new global::System.Data.DataColumn("Metier", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMetier);
+                this.columnEvenement_id.AutoIncrement = true;
+                this.columnEvenement_id.AutoIncrementSeed = -1;
+                this.columnEvenement_id.AutoIncrementStep = -1;
+                this.columnEvenement_id.AllowDBNull = false;
+                this.columnEvenement_id.ReadOnly = true;
+                this.columnUtilisateur_id.AllowDBNull = false;
+                this.columnLieuEvenement_id.AllowDBNull = false;
+                this.columnCategorie_id.AllowDBNull = false;
+                this.columnDateEvenement.AllowDBNull = false;
+                this.columnDateCreation.AllowDBNull = false;
+                this.columnDateFinInscription.AllowDBNull = false;
+                this.columnTitreEvenement.AllowDBNull = false;
+                this.columnTitreEvenement.MaxLength = 50;
+                this.columnDescriptionEvenement.MaxLength = 4000;
+                this.columnStatut.MaxLength = 50;
+                this.columnPrix.AllowDBNull = false;
+                this.columnPremium.AllowDBNull = false;
+                this.columnEtat_id.AllowDBNull = false;
+                this.columnVille.AllowDBNull = false;
+                this.columnVille.MaxLength = 100;
+                this.columnCodePostale.MaxLength = 10;
+                this.columnAdresse.AllowDBNull = false;
+                this.columnAdresse.MaxLength = 200;
+                this.columnPays.AllowDBNull = false;
+                this.columnPays.MaxLength = 50;
+                this.columnNom.MaxLength = 50;
+                this.columnStateName.AllowDBNull = false;
+                this.columnStateName.MaxLength = 100;
+                this.columnLibelle.AllowDBNull = false;
+                this.columnLibelle.MaxLength = 50;
+                this.columnUtilisateur_id1.AutoIncrement = true;
+                this.columnUtilisateur_id1.AutoIncrementSeed = -1;
+                this.columnUtilisateur_id1.AutoIncrementStep = -1;
+                this.columnUtilisateur_id1.AllowDBNull = false;
+                this.columnUtilisateur_id1.ReadOnly = true;
+                this.columnPseudo.AllowDBNull = false;
+                this.columnPseudo.MaxLength = 50;
+                this.columnMotDePasse.AllowDBNull = false;
+                this.columnMotDePasse.MaxLength = 100;
+                this.columnDateInscription.AllowDBNull = false;
+                this.columnNom1.AllowDBNull = false;
+                this.columnNom1.MaxLength = 50;
+                this.columnPrenom.AllowDBNull = false;
+                this.columnPrenom.MaxLength = 50;
+                this.columnSexe.AllowDBNull = false;
+                this.columnAdresseMail.AllowDBNull = false;
+                this.columnAdresseMail.MaxLength = 100;
+                this.columnDateNaissance.AllowDBNull = false;
+                this.columnVille1.MaxLength = 100;
+                this.columnCodePostal.MaxLength = 10;
+                this.columnPhotoChemin.MaxLength = 200;
+                this.columnSituation.MaxLength = 200;
+                this.columnActif.AllowDBNull = false;
+                this.columnPartenaire.AllowDBNull = false;
+                this.columnPresentation.MaxLength = 500;
+                this.columnMetier.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public UtilisateurEvenementProposeRow NewUtilisateurEvenementProposeRow() {
+                return ((UtilisateurEvenementProposeRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new UtilisateurEvenementProposeRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(UtilisateurEvenementProposeRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.UtilisateurEvenementProposeRowChanged != null)) {
+                    this.UtilisateurEvenementProposeRowChanged(this, new UtilisateurEvenementProposeRowChangeEvent(((UtilisateurEvenementProposeRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.UtilisateurEvenementProposeRowChanging != null)) {
+                    this.UtilisateurEvenementProposeRowChanging(this, new UtilisateurEvenementProposeRowChangeEvent(((UtilisateurEvenementProposeRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.UtilisateurEvenementProposeRowDeleted != null)) {
+                    this.UtilisateurEvenementProposeRowDeleted(this, new UtilisateurEvenementProposeRowChangeEvent(((UtilisateurEvenementProposeRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.UtilisateurEvenementProposeRowDeleting != null)) {
+                    this.UtilisateurEvenementProposeRowDeleting(this, new UtilisateurEvenementProposeRowChangeEvent(((UtilisateurEvenementProposeRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveUtilisateurEvenementProposeRow(UtilisateurEvenementProposeRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Historique ds = new Historique();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "UtilisateurEvenementProposeDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class EVE_EvenementRow : global::System.Data.DataRow {
@@ -5166,6 +7114,28 @@ namespace Historique.DAL.DAL {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK__EVE_Evene__Categ__0C85DE4D"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public UtilisateurEvenementParticipeRow UtilisateurEvenementParticipeRow {
+                get {
+                    return ((UtilisateurEvenementParticipeRow)(this.GetParentRow(this.Table.ParentRelations["FK__EVE_Evene__Categ__0C85DE4D1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__EVE_Evene__Categ__0C85DE4D1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public UtilisateurEvenementProposeRow UtilisateurEvenementProposeRow {
+                get {
+                    return ((UtilisateurEvenementProposeRow)(this.GetParentRow(this.Table.ParentRelations["FK__EVE_Evene__Categ__0C85DE4D2"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__EVE_Evene__Categ__0C85DE4D2"]);
                 }
             }
             
@@ -6733,6 +8703,1580 @@ namespace Historique.DAL.DAL {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class UtilisateurEvenementParticipeRow : global::System.Data.DataRow {
+            
+            private UtilisateurEvenementParticipeDataTable tableUtilisateurEvenementParticipe;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal UtilisateurEvenementParticipeRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableUtilisateurEvenementParticipe = ((UtilisateurEvenementParticipeDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long Evenement_id {
+                get {
+                    return ((long)(this[this.tableUtilisateurEvenementParticipe.Evenement_idColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.Evenement_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long Utilisateur_id {
+                get {
+                    return ((long)(this[this.tableUtilisateurEvenementParticipe.Utilisateur_idColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.Utilisateur_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long LieuEvenement_id {
+                get {
+                    return ((long)(this[this.tableUtilisateurEvenementParticipe.LieuEvenement_idColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.LieuEvenement_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long Categorie_id {
+                get {
+                    return ((long)(this[this.tableUtilisateurEvenementParticipe.Categorie_idColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.Categorie_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DateEvenement {
+                get {
+                    return ((global::System.DateTime)(this[this.tableUtilisateurEvenementParticipe.DateEvenementColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.DateEvenementColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DateCreation {
+                get {
+                    return ((global::System.DateTime)(this[this.tableUtilisateurEvenementParticipe.DateCreationColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.DateCreationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DateModification {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableUtilisateurEvenementParticipe.DateModificationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'DateModification\' dans la table \'UtilisateurEvenementP" +
+                                "articipe\' est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.DateModificationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DateFinInscription {
+                get {
+                    return ((global::System.DateTime)(this[this.tableUtilisateurEvenementParticipe.DateFinInscriptionColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.DateFinInscriptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TitreEvenement {
+                get {
+                    return ((string)(this[this.tableUtilisateurEvenementParticipe.TitreEvenementColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.TitreEvenementColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DescriptionEvenement {
+                get {
+                    try {
+                        return ((string)(this[this.tableUtilisateurEvenementParticipe.DescriptionEvenementColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'DescriptionEvenement\' dans la table \'UtilisateurEvenem" +
+                                "entParticipe\' est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.DescriptionEvenementColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int MinimumParticipant {
+                get {
+                    try {
+                        return ((int)(this[this.tableUtilisateurEvenementParticipe.MinimumParticipantColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'MinimumParticipant\' dans la table \'UtilisateurEvenemen" +
+                                "tParticipe\' est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.MinimumParticipantColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int MaximumParticipant {
+                get {
+                    try {
+                        return ((int)(this[this.tableUtilisateurEvenementParticipe.MaximumParticipantColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'MaximumParticipant\' dans la table \'UtilisateurEvenemen" +
+                                "tParticipe\' est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.MaximumParticipantColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Statut {
+                get {
+                    try {
+                        return ((string)(this[this.tableUtilisateurEvenementParticipe.StatutColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Statut\' dans la table \'UtilisateurEvenementParticipe\' " +
+                                "est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.StatutColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal Prix {
+                get {
+                    return ((decimal)(this[this.tableUtilisateurEvenementParticipe.PrixColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.PrixColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Premium {
+                get {
+                    return ((bool)(this[this.tableUtilisateurEvenementParticipe.PremiumColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.PremiumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DateMiseEnAvant {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableUtilisateurEvenementParticipe.DateMiseEnAvantColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'DateMiseEnAvant\' dans la table \'UtilisateurEvenementPa" +
+                                "rticipe\' est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.DateMiseEnAvantColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long Etat_id {
+                get {
+                    return ((long)(this[this.tableUtilisateurEvenementParticipe.Etat_idColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.Etat_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Ville {
+                get {
+                    return ((string)(this[this.tableUtilisateurEvenementParticipe.VilleColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.VilleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CodePostale {
+                get {
+                    try {
+                        return ((string)(this[this.tableUtilisateurEvenementParticipe.CodePostaleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'CodePostale\' dans la table \'UtilisateurEvenementPartic" +
+                                "ipe\' est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.CodePostaleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Adresse {
+                get {
+                    return ((string)(this[this.tableUtilisateurEvenementParticipe.AdresseColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.AdresseColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal Longitude {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableUtilisateurEvenementParticipe.LongitudeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Longitude\' dans la table \'UtilisateurEvenementParticip" +
+                                "e\' est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.LongitudeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Pays {
+                get {
+                    return ((string)(this[this.tableUtilisateurEvenementParticipe.PaysColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.PaysColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Nom {
+                get {
+                    try {
+                        return ((string)(this[this.tableUtilisateurEvenementParticipe.NomColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Nom\' dans la table \'UtilisateurEvenementParticipe\' est" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.NomColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal Latitude {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableUtilisateurEvenementParticipe.LatitudeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Latitude\' dans la table \'UtilisateurEvenementParticipe" +
+                                "\' est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.LatitudeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string StateName {
+                get {
+                    return ((string)(this[this.tableUtilisateurEvenementParticipe.StateNameColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.StateNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Libelle {
+                get {
+                    return ((string)(this[this.tableUtilisateurEvenementParticipe.LibelleColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.LibelleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long Utilisateur_id1 {
+                get {
+                    return ((long)(this[this.tableUtilisateurEvenementParticipe.Utilisateur_id1Column]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.Utilisateur_id1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Pseudo {
+                get {
+                    return ((string)(this[this.tableUtilisateurEvenementParticipe.PseudoColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.PseudoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string MotDePasse {
+                get {
+                    return ((string)(this[this.tableUtilisateurEvenementParticipe.MotDePasseColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.MotDePasseColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DateInscription {
+                get {
+                    return ((global::System.DateTime)(this[this.tableUtilisateurEvenementParticipe.DateInscriptionColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.DateInscriptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Nom1 {
+                get {
+                    return ((string)(this[this.tableUtilisateurEvenementParticipe.Nom1Column]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.Nom1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Prenom {
+                get {
+                    return ((string)(this[this.tableUtilisateurEvenementParticipe.PrenomColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.PrenomColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Sexe {
+                get {
+                    return ((bool)(this[this.tableUtilisateurEvenementParticipe.SexeColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.SexeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string AdresseMail {
+                get {
+                    return ((string)(this[this.tableUtilisateurEvenementParticipe.AdresseMailColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.AdresseMailColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DateNaissance {
+                get {
+                    return ((global::System.DateTime)(this[this.tableUtilisateurEvenementParticipe.DateNaissanceColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.DateNaissanceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Ville1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableUtilisateurEvenementParticipe.Ville1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Ville1\' dans la table \'UtilisateurEvenementParticipe\' " +
+                                "est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.Ville1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CodePostal {
+                get {
+                    try {
+                        return ((string)(this[this.tableUtilisateurEvenementParticipe.CodePostalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'CodePostal\' dans la table \'UtilisateurEvenementPartici" +
+                                "pe\' est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.CodePostalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string PhotoChemin {
+                get {
+                    try {
+                        return ((string)(this[this.tableUtilisateurEvenementParticipe.PhotoCheminColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'PhotoChemin\' dans la table \'UtilisateurEvenementPartic" +
+                                "ipe\' est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.PhotoCheminColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Situation {
+                get {
+                    try {
+                        return ((string)(this[this.tableUtilisateurEvenementParticipe.SituationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Situation\' dans la table \'UtilisateurEvenementParticip" +
+                                "e\' est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.SituationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Actif {
+                get {
+                    return ((bool)(this[this.tableUtilisateurEvenementParticipe.ActifColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.ActifColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Partenaire {
+                get {
+                    return ((bool)(this[this.tableUtilisateurEvenementParticipe.PartenaireColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.PartenaireColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Presentation {
+                get {
+                    try {
+                        return ((string)(this[this.tableUtilisateurEvenementParticipe.PresentationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Presentation\' dans la table \'UtilisateurEvenementParti" +
+                                "cipe\' est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.PresentationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Metier {
+                get {
+                    try {
+                        return ((string)(this[this.tableUtilisateurEvenementParticipe.MetierColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Metier\' dans la table \'UtilisateurEvenementParticipe\' " +
+                                "est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementParticipe.MetierColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDateModificationNull() {
+                return this.IsNull(this.tableUtilisateurEvenementParticipe.DateModificationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDateModificationNull() {
+                this[this.tableUtilisateurEvenementParticipe.DateModificationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDescriptionEvenementNull() {
+                return this.IsNull(this.tableUtilisateurEvenementParticipe.DescriptionEvenementColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDescriptionEvenementNull() {
+                this[this.tableUtilisateurEvenementParticipe.DescriptionEvenementColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMinimumParticipantNull() {
+                return this.IsNull(this.tableUtilisateurEvenementParticipe.MinimumParticipantColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMinimumParticipantNull() {
+                this[this.tableUtilisateurEvenementParticipe.MinimumParticipantColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMaximumParticipantNull() {
+                return this.IsNull(this.tableUtilisateurEvenementParticipe.MaximumParticipantColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMaximumParticipantNull() {
+                this[this.tableUtilisateurEvenementParticipe.MaximumParticipantColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStatutNull() {
+                return this.IsNull(this.tableUtilisateurEvenementParticipe.StatutColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStatutNull() {
+                this[this.tableUtilisateurEvenementParticipe.StatutColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDateMiseEnAvantNull() {
+                return this.IsNull(this.tableUtilisateurEvenementParticipe.DateMiseEnAvantColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDateMiseEnAvantNull() {
+                this[this.tableUtilisateurEvenementParticipe.DateMiseEnAvantColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCodePostaleNull() {
+                return this.IsNull(this.tableUtilisateurEvenementParticipe.CodePostaleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCodePostaleNull() {
+                this[this.tableUtilisateurEvenementParticipe.CodePostaleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLongitudeNull() {
+                return this.IsNull(this.tableUtilisateurEvenementParticipe.LongitudeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLongitudeNull() {
+                this[this.tableUtilisateurEvenementParticipe.LongitudeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNomNull() {
+                return this.IsNull(this.tableUtilisateurEvenementParticipe.NomColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNomNull() {
+                this[this.tableUtilisateurEvenementParticipe.NomColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLatitudeNull() {
+                return this.IsNull(this.tableUtilisateurEvenementParticipe.LatitudeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLatitudeNull() {
+                this[this.tableUtilisateurEvenementParticipe.LatitudeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVille1Null() {
+                return this.IsNull(this.tableUtilisateurEvenementParticipe.Ville1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVille1Null() {
+                this[this.tableUtilisateurEvenementParticipe.Ville1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCodePostalNull() {
+                return this.IsNull(this.tableUtilisateurEvenementParticipe.CodePostalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCodePostalNull() {
+                this[this.tableUtilisateurEvenementParticipe.CodePostalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPhotoCheminNull() {
+                return this.IsNull(this.tableUtilisateurEvenementParticipe.PhotoCheminColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPhotoCheminNull() {
+                this[this.tableUtilisateurEvenementParticipe.PhotoCheminColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSituationNull() {
+                return this.IsNull(this.tableUtilisateurEvenementParticipe.SituationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSituationNull() {
+                this[this.tableUtilisateurEvenementParticipe.SituationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPresentationNull() {
+                return this.IsNull(this.tableUtilisateurEvenementParticipe.PresentationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPresentationNull() {
+                this[this.tableUtilisateurEvenementParticipe.PresentationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMetierNull() {
+                return this.IsNull(this.tableUtilisateurEvenementParticipe.MetierColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMetierNull() {
+                this[this.tableUtilisateurEvenementParticipe.MetierColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public EVE_EvenementRow[] GetEVE_EvenementRows() {
+                if ((this.Table.ChildRelations["FK__EVE_Evene__Categ__0C85DE4D1"] == null)) {
+                    return new EVE_EvenementRow[0];
+                }
+                else {
+                    return ((EVE_EvenementRow[])(base.GetChildRows(this.Table.ChildRelations["FK__EVE_Evene__Categ__0C85DE4D1"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class UtilisateurEvenementProposeRow : global::System.Data.DataRow {
+            
+            private UtilisateurEvenementProposeDataTable tableUtilisateurEvenementPropose;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal UtilisateurEvenementProposeRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableUtilisateurEvenementPropose = ((UtilisateurEvenementProposeDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long Evenement_id {
+                get {
+                    return ((long)(this[this.tableUtilisateurEvenementPropose.Evenement_idColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.Evenement_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long Utilisateur_id {
+                get {
+                    return ((long)(this[this.tableUtilisateurEvenementPropose.Utilisateur_idColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.Utilisateur_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long LieuEvenement_id {
+                get {
+                    return ((long)(this[this.tableUtilisateurEvenementPropose.LieuEvenement_idColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.LieuEvenement_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long Categorie_id {
+                get {
+                    return ((long)(this[this.tableUtilisateurEvenementPropose.Categorie_idColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.Categorie_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DateEvenement {
+                get {
+                    return ((global::System.DateTime)(this[this.tableUtilisateurEvenementPropose.DateEvenementColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.DateEvenementColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DateCreation {
+                get {
+                    return ((global::System.DateTime)(this[this.tableUtilisateurEvenementPropose.DateCreationColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.DateCreationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DateModification {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableUtilisateurEvenementPropose.DateModificationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'DateModification\' dans la table \'UtilisateurEvenementP" +
+                                "ropose\' est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.DateModificationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DateFinInscription {
+                get {
+                    return ((global::System.DateTime)(this[this.tableUtilisateurEvenementPropose.DateFinInscriptionColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.DateFinInscriptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TitreEvenement {
+                get {
+                    return ((string)(this[this.tableUtilisateurEvenementPropose.TitreEvenementColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.TitreEvenementColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DescriptionEvenement {
+                get {
+                    try {
+                        return ((string)(this[this.tableUtilisateurEvenementPropose.DescriptionEvenementColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'DescriptionEvenement\' dans la table \'UtilisateurEvenem" +
+                                "entPropose\' est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.DescriptionEvenementColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int MinimumParticipant {
+                get {
+                    try {
+                        return ((int)(this[this.tableUtilisateurEvenementPropose.MinimumParticipantColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'MinimumParticipant\' dans la table \'UtilisateurEvenemen" +
+                                "tPropose\' est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.MinimumParticipantColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int MaximumParticipant {
+                get {
+                    try {
+                        return ((int)(this[this.tableUtilisateurEvenementPropose.MaximumParticipantColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'MaximumParticipant\' dans la table \'UtilisateurEvenemen" +
+                                "tPropose\' est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.MaximumParticipantColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Statut {
+                get {
+                    try {
+                        return ((string)(this[this.tableUtilisateurEvenementPropose.StatutColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Statut\' dans la table \'UtilisateurEvenementPropose\' es" +
+                                "t DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.StatutColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal Prix {
+                get {
+                    return ((decimal)(this[this.tableUtilisateurEvenementPropose.PrixColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.PrixColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Premium {
+                get {
+                    return ((bool)(this[this.tableUtilisateurEvenementPropose.PremiumColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.PremiumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DateMiseEnAvant {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableUtilisateurEvenementPropose.DateMiseEnAvantColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'DateMiseEnAvant\' dans la table \'UtilisateurEvenementPr" +
+                                "opose\' est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.DateMiseEnAvantColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long Etat_id {
+                get {
+                    return ((long)(this[this.tableUtilisateurEvenementPropose.Etat_idColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.Etat_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Ville {
+                get {
+                    return ((string)(this[this.tableUtilisateurEvenementPropose.VilleColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.VilleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CodePostale {
+                get {
+                    try {
+                        return ((string)(this[this.tableUtilisateurEvenementPropose.CodePostaleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'CodePostale\' dans la table \'UtilisateurEvenementPropos" +
+                                "e\' est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.CodePostaleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Adresse {
+                get {
+                    return ((string)(this[this.tableUtilisateurEvenementPropose.AdresseColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.AdresseColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal Longitude {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableUtilisateurEvenementPropose.LongitudeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Longitude\' dans la table \'UtilisateurEvenementPropose\'" +
+                                " est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.LongitudeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Pays {
+                get {
+                    return ((string)(this[this.tableUtilisateurEvenementPropose.PaysColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.PaysColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Nom {
+                get {
+                    try {
+                        return ((string)(this[this.tableUtilisateurEvenementPropose.NomColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Nom\' dans la table \'UtilisateurEvenementPropose\' est D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.NomColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal Latitude {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableUtilisateurEvenementPropose.LatitudeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Latitude\' dans la table \'UtilisateurEvenementPropose\' " +
+                                "est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.LatitudeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string StateName {
+                get {
+                    return ((string)(this[this.tableUtilisateurEvenementPropose.StateNameColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.StateNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Libelle {
+                get {
+                    return ((string)(this[this.tableUtilisateurEvenementPropose.LibelleColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.LibelleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long Utilisateur_id1 {
+                get {
+                    return ((long)(this[this.tableUtilisateurEvenementPropose.Utilisateur_id1Column]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.Utilisateur_id1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Pseudo {
+                get {
+                    return ((string)(this[this.tableUtilisateurEvenementPropose.PseudoColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.PseudoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string MotDePasse {
+                get {
+                    return ((string)(this[this.tableUtilisateurEvenementPropose.MotDePasseColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.MotDePasseColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DateInscription {
+                get {
+                    return ((global::System.DateTime)(this[this.tableUtilisateurEvenementPropose.DateInscriptionColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.DateInscriptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Nom1 {
+                get {
+                    return ((string)(this[this.tableUtilisateurEvenementPropose.Nom1Column]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.Nom1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Prenom {
+                get {
+                    return ((string)(this[this.tableUtilisateurEvenementPropose.PrenomColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.PrenomColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Sexe {
+                get {
+                    return ((bool)(this[this.tableUtilisateurEvenementPropose.SexeColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.SexeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string AdresseMail {
+                get {
+                    return ((string)(this[this.tableUtilisateurEvenementPropose.AdresseMailColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.AdresseMailColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DateNaissance {
+                get {
+                    return ((global::System.DateTime)(this[this.tableUtilisateurEvenementPropose.DateNaissanceColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.DateNaissanceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Ville1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableUtilisateurEvenementPropose.Ville1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Ville1\' dans la table \'UtilisateurEvenementPropose\' es" +
+                                "t DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.Ville1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CodePostal {
+                get {
+                    try {
+                        return ((string)(this[this.tableUtilisateurEvenementPropose.CodePostalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'CodePostal\' dans la table \'UtilisateurEvenementPropose" +
+                                "\' est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.CodePostalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string PhotoChemin {
+                get {
+                    try {
+                        return ((string)(this[this.tableUtilisateurEvenementPropose.PhotoCheminColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'PhotoChemin\' dans la table \'UtilisateurEvenementPropos" +
+                                "e\' est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.PhotoCheminColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Situation {
+                get {
+                    try {
+                        return ((string)(this[this.tableUtilisateurEvenementPropose.SituationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Situation\' dans la table \'UtilisateurEvenementPropose\'" +
+                                " est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.SituationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Actif {
+                get {
+                    return ((bool)(this[this.tableUtilisateurEvenementPropose.ActifColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.ActifColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Partenaire {
+                get {
+                    return ((bool)(this[this.tableUtilisateurEvenementPropose.PartenaireColumn]));
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.PartenaireColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Presentation {
+                get {
+                    try {
+                        return ((string)(this[this.tableUtilisateurEvenementPropose.PresentationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Presentation\' dans la table \'UtilisateurEvenementPropo" +
+                                "se\' est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.PresentationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Metier {
+                get {
+                    try {
+                        return ((string)(this[this.tableUtilisateurEvenementPropose.MetierColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Metier\' dans la table \'UtilisateurEvenementPropose\' es" +
+                                "t DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUtilisateurEvenementPropose.MetierColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDateModificationNull() {
+                return this.IsNull(this.tableUtilisateurEvenementPropose.DateModificationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDateModificationNull() {
+                this[this.tableUtilisateurEvenementPropose.DateModificationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDescriptionEvenementNull() {
+                return this.IsNull(this.tableUtilisateurEvenementPropose.DescriptionEvenementColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDescriptionEvenementNull() {
+                this[this.tableUtilisateurEvenementPropose.DescriptionEvenementColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMinimumParticipantNull() {
+                return this.IsNull(this.tableUtilisateurEvenementPropose.MinimumParticipantColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMinimumParticipantNull() {
+                this[this.tableUtilisateurEvenementPropose.MinimumParticipantColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMaximumParticipantNull() {
+                return this.IsNull(this.tableUtilisateurEvenementPropose.MaximumParticipantColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMaximumParticipantNull() {
+                this[this.tableUtilisateurEvenementPropose.MaximumParticipantColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStatutNull() {
+                return this.IsNull(this.tableUtilisateurEvenementPropose.StatutColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStatutNull() {
+                this[this.tableUtilisateurEvenementPropose.StatutColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDateMiseEnAvantNull() {
+                return this.IsNull(this.tableUtilisateurEvenementPropose.DateMiseEnAvantColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDateMiseEnAvantNull() {
+                this[this.tableUtilisateurEvenementPropose.DateMiseEnAvantColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCodePostaleNull() {
+                return this.IsNull(this.tableUtilisateurEvenementPropose.CodePostaleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCodePostaleNull() {
+                this[this.tableUtilisateurEvenementPropose.CodePostaleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLongitudeNull() {
+                return this.IsNull(this.tableUtilisateurEvenementPropose.LongitudeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLongitudeNull() {
+                this[this.tableUtilisateurEvenementPropose.LongitudeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNomNull() {
+                return this.IsNull(this.tableUtilisateurEvenementPropose.NomColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNomNull() {
+                this[this.tableUtilisateurEvenementPropose.NomColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLatitudeNull() {
+                return this.IsNull(this.tableUtilisateurEvenementPropose.LatitudeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLatitudeNull() {
+                this[this.tableUtilisateurEvenementPropose.LatitudeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVille1Null() {
+                return this.IsNull(this.tableUtilisateurEvenementPropose.Ville1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVille1Null() {
+                this[this.tableUtilisateurEvenementPropose.Ville1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCodePostalNull() {
+                return this.IsNull(this.tableUtilisateurEvenementPropose.CodePostalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCodePostalNull() {
+                this[this.tableUtilisateurEvenementPropose.CodePostalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPhotoCheminNull() {
+                return this.IsNull(this.tableUtilisateurEvenementPropose.PhotoCheminColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPhotoCheminNull() {
+                this[this.tableUtilisateurEvenementPropose.PhotoCheminColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSituationNull() {
+                return this.IsNull(this.tableUtilisateurEvenementPropose.SituationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSituationNull() {
+                this[this.tableUtilisateurEvenementPropose.SituationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPresentationNull() {
+                return this.IsNull(this.tableUtilisateurEvenementPropose.PresentationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPresentationNull() {
+                this[this.tableUtilisateurEvenementPropose.PresentationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMetierNull() {
+                return this.IsNull(this.tableUtilisateurEvenementPropose.MetierColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMetierNull() {
+                this[this.tableUtilisateurEvenementPropose.MetierColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public EVE_EvenementRow[] GetEVE_EvenementRows() {
+                if ((this.Table.ChildRelations["FK__EVE_Evene__Categ__0C85DE4D2"] == null)) {
+                    return new EVE_EvenementRow[0];
+                }
+                else {
+                    return ((EVE_EvenementRow[])(base.GetChildRows(this.Table.ChildRelations["FK__EVE_Evene__Categ__0C85DE4D2"])));
+                }
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -7092,6 +10636,74 @@ namespace Historique.DAL.DAL {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ps_GetAllEvenementRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class UtilisateurEvenementParticipeRowChangeEvent : global::System.EventArgs {
+            
+            private UtilisateurEvenementParticipeRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public UtilisateurEvenementParticipeRowChangeEvent(UtilisateurEvenementParticipeRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public UtilisateurEvenementParticipeRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class UtilisateurEvenementProposeRowChangeEvent : global::System.EventArgs {
+            
+            private UtilisateurEvenementProposeRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public UtilisateurEvenementProposeRowChangeEvent(UtilisateurEvenementProposeRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public UtilisateurEvenementProposeRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -12084,6 +15696,624 @@ SELECT Invite_id, Evenement_id, UtilisateurPropose_id, UtilisateurEstInvite_id, 
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             Historique.ps_GetAllEvenementDataTable dataTable = new Historique.ps_GetAllEvenementDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class UtilisateurEvenementParticipeTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public UtilisateurEvenementParticipeTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "UtilisateurEvenementParticipe";
+            tableMapping.ColumnMappings.Add("Evenement_id", "Evenement_id");
+            tableMapping.ColumnMappings.Add("Utilisateur_id", "Utilisateur_id");
+            tableMapping.ColumnMappings.Add("LieuEvenement_id", "LieuEvenement_id");
+            tableMapping.ColumnMappings.Add("Categorie_id", "Categorie_id");
+            tableMapping.ColumnMappings.Add("DateEvenement", "DateEvenement");
+            tableMapping.ColumnMappings.Add("DateCreation", "DateCreation");
+            tableMapping.ColumnMappings.Add("DateModification", "DateModification");
+            tableMapping.ColumnMappings.Add("DateFinInscription", "DateFinInscription");
+            tableMapping.ColumnMappings.Add("TitreEvenement", "TitreEvenement");
+            tableMapping.ColumnMappings.Add("DescriptionEvenement", "DescriptionEvenement");
+            tableMapping.ColumnMappings.Add("MinimumParticipant", "MinimumParticipant");
+            tableMapping.ColumnMappings.Add("MaximumParticipant", "MaximumParticipant");
+            tableMapping.ColumnMappings.Add("Statut", "Statut");
+            tableMapping.ColumnMappings.Add("Prix", "Prix");
+            tableMapping.ColumnMappings.Add("Premium", "Premium");
+            tableMapping.ColumnMappings.Add("DateMiseEnAvant", "DateMiseEnAvant");
+            tableMapping.ColumnMappings.Add("Etat_id", "Etat_id");
+            tableMapping.ColumnMappings.Add("Ville", "Ville");
+            tableMapping.ColumnMappings.Add("CodePostale", "CodePostale");
+            tableMapping.ColumnMappings.Add("Adresse", "Adresse");
+            tableMapping.ColumnMappings.Add("Longitude", "Longitude");
+            tableMapping.ColumnMappings.Add("Pays", "Pays");
+            tableMapping.ColumnMappings.Add("Nom", "Nom");
+            tableMapping.ColumnMappings.Add("Latitude", "Latitude");
+            tableMapping.ColumnMappings.Add("StateName", "StateName");
+            tableMapping.ColumnMappings.Add("Libelle", "Libelle");
+            tableMapping.ColumnMappings.Add("Utilisateur_id1", "Utilisateur_id1");
+            tableMapping.ColumnMappings.Add("Pseudo", "Pseudo");
+            tableMapping.ColumnMappings.Add("MotDePasse", "MotDePasse");
+            tableMapping.ColumnMappings.Add("DateInscription", "DateInscription");
+            tableMapping.ColumnMappings.Add("Nom1", "Nom1");
+            tableMapping.ColumnMappings.Add("Prenom", "Prenom");
+            tableMapping.ColumnMappings.Add("Sexe", "Sexe");
+            tableMapping.ColumnMappings.Add("AdresseMail", "AdresseMail");
+            tableMapping.ColumnMappings.Add("DateNaissance", "DateNaissance");
+            tableMapping.ColumnMappings.Add("Ville1", "Ville1");
+            tableMapping.ColumnMappings.Add("CodePostal", "CodePostal");
+            tableMapping.ColumnMappings.Add("PhotoChemin", "PhotoChemin");
+            tableMapping.ColumnMappings.Add("Situation", "Situation");
+            tableMapping.ColumnMappings.Add("Actif", "Actif");
+            tableMapping.ColumnMappings.Add("Partenaire", "Partenaire");
+            tableMapping.ColumnMappings.Add("Presentation", "Presentation");
+            tableMapping.ColumnMappings.Add("Metier", "Metier");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::Historique.DAL.Properties.Settings.Default.YoupDEVConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT EE.Evenement_id, EE.Utilisateur_id, EE.LieuEvenement_id, EE.Categorie_id, EE.DateEvenement, EE.DateCreation,
+	EE.DateModification, EE.DateFinInscription, EE.TitreEvenement, 	EE.DescriptionEvenement, 	EE.MinimumParticipant, EE.MaximumParticipant,
+	EE.Statut, EE.Prix, EE.Premium, EE.DateMiseEnAvant, EE.Etat_id, 
+	LE.Ville, LE.CodePostale, LE.Adresse, LE.Longitude, LE.Pays, LE.Nom, 	LE.Latitude,
+	ET.Nom AS 'StateName',
+	CT.Libelle,U.Utilisateur_id, U.Pseudo, U.MotDePasse, U.DateInscription, U.Nom, U.Prenom, 
+	U.Sexe, U.AdresseMail, U.DateNaissance, U.Ville, U.CodePostal, 	U.PhotoChemin, U.Situation, U.Actif, 	U.Partenaire, U.Presentation, U.Metier
+FROM UT_Utilisateur U
+INNER JOIN UT_Utilisateur_Participe_Evenement ON U.Utilisateur_id=UT_Utilisateur_Participe_Evenement.Utilisateur_id
+INNER JOIN EVE_Evenement EE ON 	UT_Utilisateur_Participe_Evenement.Evenement_id=EE.Evenement_id
+INNER JOIN EVE_LieuEvenement LE  ON LE.LieuEvenement_id = EE.LieuEvenement_id
+INNER JOIN EVE_Etat ET  ON ET.Etat_id = EE.Etat_id
+INNER JOIN UT_Categorie CT ON CT.Categorie_id = EE.Categorie_id";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT EE.Evenement_id, EE.Utilisateur_id, EE.LieuEvenement_id, EE.Categorie_id, EE.DateEvenement, EE.DateCreation,
+	EE.DateModification, EE.DateFinInscription, EE.TitreEvenement, 	EE.DescriptionEvenement, 	EE.MinimumParticipant, EE.MaximumParticipant,
+	EE.Statut, EE.Prix, EE.Premium, EE.DateMiseEnAvant, EE.Etat_id, 
+	LE.Ville, LE.CodePostale, LE.Adresse, LE.Longitude, LE.Pays, LE.Nom, 	LE.Latitude,
+	ET.Nom AS 'StateName',
+	CT.Libelle,U.Utilisateur_id, U.Pseudo, U.MotDePasse, U.DateInscription, U.Nom, U.Prenom, 
+	U.Sexe, U.AdresseMail, U.DateNaissance, U.Ville, U.CodePostal, 	U.PhotoChemin, U.Situation, U.Actif, 	U.Partenaire, U.Presentation, U.Metier
+FROM UT_Utilisateur U
+INNER JOIN UT_Utilisateur_Participe_Evenement ON U.Utilisateur_id=UT_Utilisateur_Participe_Evenement.Utilisateur_id
+INNER JOIN EVE_Evenement EE ON 	UT_Utilisateur_Participe_Evenement.Evenement_id=EE.Evenement_id
+INNER JOIN EVE_LieuEvenement LE  ON LE.LieuEvenement_id = EE.LieuEvenement_id
+INNER JOIN EVE_Etat ET  ON ET.Etat_id = EE.Etat_id
+INNER JOIN UT_Categorie CT ON CT.Categorie_id = EE.Categorie_id
+WHERE U.Utilisateur_id = @Utilisateur_id";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Utilisateur_id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Expr1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT EE.Evenement_id, EE.Utilisateur_id, EE.LieuEvenement_id, EE.Categorie_id, EE.DateEvenement, EE.DateCreation,
+	EE.DateModification, EE.DateFinInscription, EE.TitreEvenement, 	EE.DescriptionEvenement, 	EE.MinimumParticipant, EE.MaximumParticipant,
+	EE.Statut, EE.Prix, EE.Premium, EE.DateMiseEnAvant, EE.Etat_id, 
+	LE.Ville, LE.CodePostale, LE.Adresse, LE.Longitude, LE.Pays, LE.Nom, 	LE.Latitude,
+	ET.Nom AS 'StateName',
+	CT.Libelle,U.Utilisateur_id, U.Pseudo, U.MotDePasse, U.DateInscription, U.Nom, U.Prenom, 
+	U.Sexe, U.AdresseMail, U.DateNaissance, U.Ville, U.CodePostal, 	U.PhotoChemin, U.Situation, U.Actif, 	U.Partenaire, U.Presentation, U.Metier
+FROM UT_Utilisateur U
+INNER JOIN UT_Utilisateur_Participe_Evenement ON U.Utilisateur_id=UT_Utilisateur_Participe_Evenement.Utilisateur_id
+INNER JOIN EVE_Evenement EE ON 	UT_Utilisateur_Participe_Evenement.Evenement_id=EE.Evenement_id
+INNER JOIN EVE_LieuEvenement LE  ON LE.LieuEvenement_id = EE.LieuEvenement_id
+INNER JOIN EVE_Etat ET  ON ET.Etat_id = EE.Etat_id
+INNER JOIN UT_Categorie CT ON CT.Categorie_id = EE.Categorie_id
+WHERE EE.Evenement_id = @Evenement_id";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Evenement_id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Evenement_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(Historique.UtilisateurEvenementParticipeDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual Historique.UtilisateurEvenementParticipeDataTable GetUtilisateurEvenementParticipe() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            Historique.UtilisateurEvenementParticipeDataTable dataTable = new Historique.UtilisateurEvenementParticipeDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(Historique.UtilisateurEvenementParticipeDataTable dataTable, long Utilisateur_id) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((long)(Utilisateur_id));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Historique.UtilisateurEvenementParticipeDataTable GetEvenementParticipeByUserId(long Utilisateur_id) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((long)(Utilisateur_id));
+            Historique.UtilisateurEvenementParticipeDataTable dataTable = new Historique.UtilisateurEvenementParticipeDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy1(Historique.UtilisateurEvenementParticipeDataTable dataTable, long Evenement_id) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((long)(Evenement_id));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Historique.UtilisateurEvenementParticipeDataTable GetUtilisateurByEvenementId(long Evenement_id) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((long)(Evenement_id));
+            Historique.UtilisateurEvenementParticipeDataTable dataTable = new Historique.UtilisateurEvenementParticipeDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class UtilisateurEvenementProposeTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public UtilisateurEvenementProposeTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "UtilisateurEvenementPropose";
+            tableMapping.ColumnMappings.Add("Evenement_id", "Evenement_id");
+            tableMapping.ColumnMappings.Add("Utilisateur_id", "Utilisateur_id");
+            tableMapping.ColumnMappings.Add("LieuEvenement_id", "LieuEvenement_id");
+            tableMapping.ColumnMappings.Add("Categorie_id", "Categorie_id");
+            tableMapping.ColumnMappings.Add("DateEvenement", "DateEvenement");
+            tableMapping.ColumnMappings.Add("DateCreation", "DateCreation");
+            tableMapping.ColumnMappings.Add("DateModification", "DateModification");
+            tableMapping.ColumnMappings.Add("DateFinInscription", "DateFinInscription");
+            tableMapping.ColumnMappings.Add("TitreEvenement", "TitreEvenement");
+            tableMapping.ColumnMappings.Add("DescriptionEvenement", "DescriptionEvenement");
+            tableMapping.ColumnMappings.Add("MinimumParticipant", "MinimumParticipant");
+            tableMapping.ColumnMappings.Add("MaximumParticipant", "MaximumParticipant");
+            tableMapping.ColumnMappings.Add("Statut", "Statut");
+            tableMapping.ColumnMappings.Add("Prix", "Prix");
+            tableMapping.ColumnMappings.Add("Premium", "Premium");
+            tableMapping.ColumnMappings.Add("DateMiseEnAvant", "DateMiseEnAvant");
+            tableMapping.ColumnMappings.Add("Etat_id", "Etat_id");
+            tableMapping.ColumnMappings.Add("Ville", "Ville");
+            tableMapping.ColumnMappings.Add("CodePostale", "CodePostale");
+            tableMapping.ColumnMappings.Add("Adresse", "Adresse");
+            tableMapping.ColumnMappings.Add("Longitude", "Longitude");
+            tableMapping.ColumnMappings.Add("Pays", "Pays");
+            tableMapping.ColumnMappings.Add("Nom", "Nom");
+            tableMapping.ColumnMappings.Add("Latitude", "Latitude");
+            tableMapping.ColumnMappings.Add("StateName", "StateName");
+            tableMapping.ColumnMappings.Add("Libelle", "Libelle");
+            tableMapping.ColumnMappings.Add("Utilisateur_id1", "Utilisateur_id1");
+            tableMapping.ColumnMappings.Add("Pseudo", "Pseudo");
+            tableMapping.ColumnMappings.Add("MotDePasse", "MotDePasse");
+            tableMapping.ColumnMappings.Add("DateInscription", "DateInscription");
+            tableMapping.ColumnMappings.Add("Nom1", "Nom1");
+            tableMapping.ColumnMappings.Add("Prenom", "Prenom");
+            tableMapping.ColumnMappings.Add("Sexe", "Sexe");
+            tableMapping.ColumnMappings.Add("AdresseMail", "AdresseMail");
+            tableMapping.ColumnMappings.Add("DateNaissance", "DateNaissance");
+            tableMapping.ColumnMappings.Add("Ville1", "Ville1");
+            tableMapping.ColumnMappings.Add("CodePostal", "CodePostal");
+            tableMapping.ColumnMappings.Add("PhotoChemin", "PhotoChemin");
+            tableMapping.ColumnMappings.Add("Situation", "Situation");
+            tableMapping.ColumnMappings.Add("Actif", "Actif");
+            tableMapping.ColumnMappings.Add("Partenaire", "Partenaire");
+            tableMapping.ColumnMappings.Add("Presentation", "Presentation");
+            tableMapping.ColumnMappings.Add("Metier", "Metier");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::Historique.DAL.Properties.Settings.Default.YoupDEVConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT EE.Evenement_id, EE.Utilisateur_id, EE.LieuEvenement_id, EE.Categorie_id, EE.DateEvenement, EE.DateCreation,
+	EE.DateModification, EE.DateFinInscription, EE.TitreEvenement, 	EE.DescriptionEvenement, 	EE.MinimumParticipant, EE.MaximumParticipant,
+	EE.Statut, EE.Prix, EE.Premium, EE.DateMiseEnAvant, EE.Etat_id, 
+	LE.Ville, LE.CodePostale, LE.Adresse, LE.Longitude, LE.Pays, LE.Nom, 	LE.Latitude,
+	ET.Nom AS 'StateName',
+	CT.Libelle,U.Utilisateur_id, U.Pseudo, U.MotDePasse, U.DateInscription, U.Nom, U.Prenom, 
+	U.Sexe, U.AdresseMail, U.DateNaissance, U.Ville, U.CodePostal, 	U.PhotoChemin, U.Situation, U.Actif, 	U.Partenaire, U.Presentation, U.Metier
+FROM UT_Utilisateur U
+INNER JOIN UT_Utilisateur_Invite_Evenement ON U.Utilisateur_id=UT_Utilisateur_Invite_Evenement.UtilisateurPropose_id
+INNER JOIN EVE_Evenement EE ON 	UT_Utilisateur_Invite_Evenement.Evenement_id=EE.Evenement_id
+INNER JOIN EVE_LieuEvenement LE  ON LE.LieuEvenement_id = EE.LieuEvenement_id
+INNER JOIN EVE_Etat ET  ON ET.Etat_id = EE.Etat_id
+INNER JOIN UT_Categorie CT ON CT.Categorie_id = EE.Categorie_id";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT EE.Evenement_id, EE.Utilisateur_id, EE.LieuEvenement_id, EE.Categorie_id, EE.DateEvenement, EE.DateCreation,
+	EE.DateModification, EE.DateFinInscription, EE.TitreEvenement, 	EE.DescriptionEvenement, 	EE.MinimumParticipant, EE.MaximumParticipant,
+	EE.Statut, EE.Prix, EE.Premium, EE.DateMiseEnAvant, EE.Etat_id, 
+	LE.Ville, LE.CodePostale, LE.Adresse, LE.Longitude, LE.Pays, LE.Nom, 	LE.Latitude,
+	ET.Nom AS 'StateName',
+	CT.Libelle,U.Utilisateur_id, U.Pseudo, U.MotDePasse, U.DateInscription, U.Nom, U.Prenom, 
+	U.Sexe, U.AdresseMail, U.DateNaissance, U.Ville, U.CodePostal, 	U.PhotoChemin, U.Situation, U.Actif, 	U.Partenaire, U.Presentation, U.Metier
+FROM UT_Utilisateur U
+INNER JOIN UT_Utilisateur_Invite_Evenement ON U.Utilisateur_id=UT_Utilisateur_Invite_Evenement.UtilisateurPropose_id
+INNER JOIN EVE_Evenement EE ON 	UT_Utilisateur_Invite_Evenement.Evenement_id=EE.Evenement_id
+INNER JOIN EVE_LieuEvenement LE  ON LE.LieuEvenement_id = EE.LieuEvenement_id
+INNER JOIN EVE_Etat ET  ON ET.Etat_id = EE.Etat_id
+INNER JOIN UT_Categorie CT ON CT.Categorie_id = EE.Categorie_id
+WHERE EE.Evenement_Id = @Evenement_Id";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Evenement_Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Evenement_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT EE.Evenement_id, EE.Utilisateur_id, EE.LieuEvenement_id, EE.Categorie_id, EE.DateEvenement, EE.DateCreation,
+	EE.DateModification, EE.DateFinInscription, EE.TitreEvenement, 	EE.DescriptionEvenement, 	EE.MinimumParticipant, EE.MaximumParticipant,
+	EE.Statut, EE.Prix, EE.Premium, EE.DateMiseEnAvant, EE.Etat_id, 
+	LE.Ville, LE.CodePostale, LE.Adresse, LE.Longitude, LE.Pays, LE.Nom, 	LE.Latitude,
+	ET.Nom AS 'StateName',
+	CT.Libelle,U.Utilisateur_id, U.Pseudo, U.MotDePasse, U.DateInscription, U.Nom, U.Prenom, 
+	U.Sexe, U.AdresseMail, U.DateNaissance, U.Ville, U.CodePostal, 	U.PhotoChemin, U.Situation, U.Actif, 	U.Partenaire, U.Presentation, U.Metier
+FROM UT_Utilisateur U
+INNER JOIN UT_Utilisateur_Invite_Evenement ON U.Utilisateur_id=UT_Utilisateur_Invite_Evenement.UtilisateurPropose_id
+INNER JOIN EVE_Evenement EE ON 	UT_Utilisateur_Invite_Evenement.Evenement_id=EE.Evenement_id
+INNER JOIN EVE_LieuEvenement LE  ON LE.LieuEvenement_id = EE.LieuEvenement_id
+INNER JOIN EVE_Etat ET  ON ET.Etat_id = EE.Etat_id
+INNER JOIN UT_Categorie CT ON CT.Categorie_id = EE.Categorie_id
+WHERE U.Utilisateur_Id=@Utilisateur_Id";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Utilisateur_Id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Expr1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(Historique.UtilisateurEvenementProposeDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual Historique.UtilisateurEvenementProposeDataTable GetUtilisateurEvenementPropose() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            Historique.UtilisateurEvenementProposeDataTable dataTable = new Historique.UtilisateurEvenementProposeDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(Historique.UtilisateurEvenementProposeDataTable dataTable, long Evenement_Id) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((long)(Evenement_Id));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Historique.UtilisateurEvenementProposeDataTable GetUtilisateurProposeByEvenementId(long Evenement_Id) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((long)(Evenement_Id));
+            Historique.UtilisateurEvenementProposeDataTable dataTable = new Historique.UtilisateurEvenementProposeDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy1(Historique.UtilisateurEvenementProposeDataTable dataTable, long Utilisateur_Id) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((long)(Utilisateur_Id));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Historique.UtilisateurEvenementProposeDataTable GetEvenementProposeByUserId(long Utilisateur_Id) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((long)(Utilisateur_Id));
+            Historique.UtilisateurEvenementProposeDataTable dataTable = new Historique.UtilisateurEvenementProposeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
