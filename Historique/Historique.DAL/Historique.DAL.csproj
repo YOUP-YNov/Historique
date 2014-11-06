@@ -59,7 +59,6 @@
     </Compile>
     <Compile Include="DaoMapper.cs" />
     <Compile Include="DAO\CategorieDao.cs" />
-    <Compile Include="DAO\EvenDao.cs" />
     <Compile Include="DAO\EvenementDao.cs" />
     <Compile Include="DAO\EvenementLieuDao.cs" />
     <Compile Include="DAO\UtilisateurDao.cs" />

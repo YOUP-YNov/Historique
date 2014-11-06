@@ -153,10 +153,10 @@ namespace Historique.DAL.DAL
             return eventDaoList;
         }
 
-        public IEnumerable<EvenDao> GetEvenementByCat (string categorie, DateTime dateDebut, DateTime dateFin)
+        public IEnumerable<EvenementDao> GetEvenementByCat(string categorie, DateTime dateDebut, DateTime dateFin)
         {
             var evenement = EveCat.GetDataByCat(categorie, dateDebut, dateFin);
-            List<EvenDao> eventDaoList = (List<EvenDao>)evenement.ToDaoEven();
+            List<EvenementDao> eventDaoList = (List<EvenementDao>)evenement.ToDaoEvenements();
             return eventDaoList;
         }
        
