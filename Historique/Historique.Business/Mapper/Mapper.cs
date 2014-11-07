@@ -16,7 +16,7 @@ namespace Historique.Business.Mapper
         public static CategorieBll ToCategorieBll(CategorieDao categorieDao)
         {
              AutoMapper.Mapper.CreateMap<CategorieDao, CategorieBll>(); //définiton du mapping
-             return AutoMapper.Mapper.Map<CategorieDao, CategorieBll>(categorieDao);
+             return AutoMapper.Mapper.Map<CategorieDao, CategorieBll>(categorieDao);//Convert
         
         }
 
