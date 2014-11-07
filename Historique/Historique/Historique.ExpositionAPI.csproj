@@ -148,6 +148,7 @@
     </Compile>
     <Compile Include="Models\Categorie.cs" />
     <Compile Include="Models\Evenement.cs" />
+    <Compile Include="Models\EvenementLieu.cs" />
     <Compile Include="Models\PageVisitee.cs" />
     <Compile Include="Models\Utilisateur.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
