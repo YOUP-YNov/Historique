@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Mapper\HistoriqueBll.cs" />
     <Compile Include="Mapper\Mapper.cs" />
     <Compile Include="Models\CategorieBll.cs" />
     <Compile Include="Models\EvenementBll.cs" />
