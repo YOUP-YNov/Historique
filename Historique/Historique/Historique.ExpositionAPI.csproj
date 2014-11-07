@@ -153,6 +153,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Mapper\HistoriqueAPI.cs" />
     <Compile Include="Mapper\MapperExpoAPI.cs" />
     <Compile Include="Models\Categorie.cs" />
     <Compile Include="Models\Evenement.cs" />

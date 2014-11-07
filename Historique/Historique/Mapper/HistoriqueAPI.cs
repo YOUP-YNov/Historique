@@ -22,7 +22,8 @@ namespace Historique.Mapper
             var allcatBll = new List<Categorie>();
             try
             {
-                var allcat = _HistoriqueBll.GetAllCategorieBll();
+                var allcat = _HistoriqueBll.GetAllCategorieBll().ToList();
+                allcatBll = MapperExpoAPI.ToCategories(allcat);
             }
             catch (Exception ex) { }
             return allcatBll;
@@ -33,7 +34,8 @@ namespace Historique.Mapper
             var allusersBll = new List<Utilisateur>();
             try
             {
-                var allusers = _HistoriqueBll.GetAllUser();
+                var allusers = _HistoriqueBll.GetAllUser().ToList();
+                allusersBll = MapperExpoAPI.ToUtilisateurs(allusers);
             }
             catch (Exception ex) { }
             return allusersBll;
@@ -45,6 +47,7 @@ namespace Historique.Mapper
             try
             {
                 var userID = _HistoriqueBll.GetUserById(id);
+                userIDBll = MapperExpoAPI.ToUtilisateur(userID);
             }
             catch (Exception ex) { }
             return userIDBll;
@@ -56,6 +59,7 @@ namespace Historique.Mapper
             try
             {
                 var userPseudo = _HistoriqueBll.GetUserByPseudo(pseudo);
+                userPseudoBll = MapperExpoAPI.ToUtilisateur(userPseudo);
             }
             catch (Exception ex) { }
             return userPseudoBll;
@@ -66,7 +70,8 @@ namespace Historique.Mapper
             var evenAllBll = new List<Evenement>();
             try
             {
-                var evenAll = _HistoriqueBll.GetAllEvenement();
+                var evenAll = _HistoriqueBll.GetAllEvenement().ToList();
+                evenAllBll = MapperExpoAPI.ToEvenements(evenAll);
             }
             catch (Exception ex) { }
             return evenAllBll;
@@ -77,7 +82,8 @@ namespace Historique.Mapper
             var evenCatCpBll = new List<Evenement>();
             try
             {
-                var evenCatCp = _HistoriqueBll.GetEvenementByCateByCp(codePostale, categorie);
+                var evenCatCp = _HistoriqueBll.GetEvenementByCateByCp(codePostale, categorie).ToList();
+                evenCatCpBll = MapperExpoAPI.ToEvenements(evenCatCp);
             }
             catch (Exception ex) { }
             return evenCatCpBll;
@@ -88,7 +94,8 @@ namespace Historique.Mapper
             var evenCpBll = new List<Evenement>();
             try
             {
-                var evenCp = _HistoriqueBll.GetEvenementByCp(codePostale);
+                var evenCp = _HistoriqueBll.GetEvenementByCp(codePostale).ToList();
+                evenCpBll = MapperExpoAPI.ToEvenements(evenCp);
             }
             catch (Exception ex) { }
             return evenCpBll;
@@ -99,7 +106,8 @@ namespace Historique.Mapper
             var evenCatBll = new List<Evenement>();
             try
             {
-                var evenCat = _HistoriqueBll.GetEvenementByCat(categorie, dateDebut, dateFin);
+                var evenCat = _HistoriqueBll.GetEvenementByCat(categorie, dateDebut, dateFin).ToList();
+                evenCatBll = MapperExpoAPI.ToEvenements(evenCat);
             }
             catch (Exception ex) { }
             return evenCatBll;
@@ -110,7 +118,8 @@ namespace Historique.Mapper
             var evenDateBll = new List<Evenement>();
             try
             {
-                var evenDate = _HistoriqueBll.GetEvenementByDates(dateDebut, dateFin);
+                var evenDate = _HistoriqueBll.GetEvenementByDates(dateDebut, dateFin).ToList();
+                evenDateBll = MapperExpoAPI.ToEvenements(evenDate);
             }
             catch (Exception ex) { }
             return evenDateBll;
@@ -121,7 +130,8 @@ namespace Historique.Mapper
             var evenParticipeUserBll = new List<Evenement>();
             try
             {
-                var evenParticipeUser = _HistoriqueBll.GetEvenementParticipeByUserId(userId);
+                var evenParticipeUser = _HistoriqueBll.GetEvenementParticipeByUserId(userId).ToList();
+                evenParticipeUserBll = MapperExpoAPI.ToEvenements(evenParticipeUser);
             }
             catch (Exception ex)
             {
@@ -134,7 +144,8 @@ namespace Historique.Mapper
             var userParticipeEvenBll = new List<Utilisateur>();
             try
             {
-                var userParticipeEven = _HistoriqueBll.GetUtilisateurParticipeByEvenementId(eventId);
+                var userParticipeEven = _HistoriqueBll.GetUtilisateurParticipeByEvenementId(eventId).ToList();
+                userParticipeEvenBll = MapperExpoAPI.ToUtilisateurs(userParticipeEven);
             }
             catch (Exception ex)
             {
@@ -147,7 +158,8 @@ namespace Historique.Mapper
             var evenProposeUserBll = new List<Evenement>();
             try
             {
-                var evenProposeUser = _HistoriqueBll.GetEvenementProposeByUserId(userId);
+                var evenProposeUser = _HistoriqueBll.GetEvenementProposeByUserId(userId).ToList();
+                evenProposeUserBll = MapperExpoAPI.ToEvenements(evenProposeUser);
             }
             catch (Exception ex)
             {
@@ -161,6 +173,7 @@ namespace Historique.Mapper
             try
             {
                 var userProposeEven = _HistoriqueBll.GetUtilisateurProposeByEvenementId(eventId);
+                userProposeEvenBll = MapperExpoAPI.ToUtilisateur(userProposeEven);
             }
             catch (Exception ex)
             {

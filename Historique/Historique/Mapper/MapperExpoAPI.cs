@@ -7,11 +7,6 @@ using Historique.Business.Models;
 using Historique.Models;
 
 
-
-
-
-
-
 namespace Historique.Mapper
 {
     public class MapperExpoAPI
