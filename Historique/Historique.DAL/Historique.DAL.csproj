@@ -63,6 +63,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Historique.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DAL\IHistorique.cs" />
     <Compile Include="DaoMapper.cs" />
     <Compile Include="DAO\CategorieDao.cs" />
     <Compile Include="DAO\EvenementDao.cs" />
