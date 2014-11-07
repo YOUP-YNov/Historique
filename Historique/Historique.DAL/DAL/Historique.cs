@@ -188,6 +188,14 @@ namespace Historique.DAL.DAL
             List<EvenementDao> eventDaoList = (List<EvenementDao>)evenement.ToDaoEvenements();
             return eventDaoList;
         }
+
+        public IEnumerable<EvenementDao> GetEvenementByDates(DateTime dateDebut, DateTime dateFin)
+        {
+            var evenement = EveCat.GetDataByEvenDates(dateDebut, dateFin);
+            List<EvenementDao> eventDaoList = (List<EvenementDao>)evenement.ToDaoEvenements();
+            return eventDaoList;
+        }
+
         public IEnumerable<EvenementDao> GetEvenementParticipeByUserId(int userId)
         {
             var eventDaoList = new List<EvenementDao>();
