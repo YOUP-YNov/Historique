@@ -117,7 +117,12 @@
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Historique.Business\Historique.Business.csproj">
+      <Project>{d0b8b5d3-9d0b-49da-83d1-1f9256fa3391}</Project>
+      <Name>Historique.Business</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -146,6 +151,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Mapper\HistoriqueAPI.cs" />
     <Compile Include="Models\Categorie.cs" />
     <Compile Include="Models\Evenement.cs" />
     <Compile Include="Models\EvenementLieu.cs" />
