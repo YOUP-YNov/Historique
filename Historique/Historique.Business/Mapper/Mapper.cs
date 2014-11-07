@@ -12,30 +12,86 @@ namespace Historique.Business.Mapper
 {
     public class Mapper
     {
-        public  CategorieDao categorieDao;
-        public EvenementDao evenementDao;
-        public EvenementLieuDao evenementLieuDao;
-        public UtilisateurDao utilisateurDao;
-        
-        public void  Create()
+        //To Business
+        public static CategorieBll ToCategorieBll(CategorieDao categorieDao)
         {
-            AutoMapper.Mapper.CreateMap<CategorieDao, CategorieBll>(); //définiton du mapping
-            CategorieBll categorieBll = AutoMapper.Mapper.Map<CategorieDao, CategorieBll>(categorieDao);//Convert
+             AutoMapper.Mapper.CreateMap<CategorieDao, CategorieBll>(); //définiton du mapping
+             return AutoMapper.Mapper.Map<CategorieDao, CategorieBll>(categorieDao);
+        
+        }
 
-
+        public static EvenementBll ToEvenementBll(EvenementDao evenementDao)
+        {
             AutoMapper.Mapper.CreateMap<EvenementDao, EvenementBll>(); //définiton du mapping
-            EvenementBll evenementBll = AutoMapper.Mapper.Map<EvenementDao, EvenementBll>(evenementDao);//Convert
+            return AutoMapper.Mapper.Map<EvenementDao, EvenementBll>(evenementDao);//Convert
 
+        }
+
+
+        public static EvenementLieuBll ToEvenementLieuBll(EvenementLieuDao evenementLieuDao)
+        {
             AutoMapper.Mapper.CreateMap<EvenementLieuDao, EvenementLieuBll>(); //définiton du mapping
-            EvenementLieuBll evenementLieuBll = AutoMapper.Mapper.Map<EvenementLieuDao, EvenementLieuBll>(evenementLieuDao);//Convert
+            return AutoMapper.Mapper.Map<EvenementLieuDao, EvenementLieuBll>(evenementLieuDao);//Convert
 
+        }
+
+        public static UtilisateurBll ToUtilisateurBll(UtilisateurDao utilisateurDao)
+        {
             AutoMapper.Mapper.CreateMap<UtilisateurDao, UtilisateurBll>(); //définiton du mapping
-            UtilisateurBll utilisateurBll = AutoMapper.Mapper.Map<UtilisateurDao, UtilisateurBll>(utilisateurDao);//Convert
-
-
-
-            
+            return AutoMapper.Mapper.Map<UtilisateurDao, UtilisateurBll>(utilisateurDao);//Convert
         }
         
+        
+        // To business list
+        public static List<CategorieBll> ToCategoriesSBll(List<CategorieDao> listeCategorieDao)
+        {
+            List<CategorieBll> listeCategorieBll = new List<CategorieBll>();
+
+            foreach (var categorieBll in listeCategorieDao)
+            {
+                listeCategorieBll.Add(ToCategorieBll(categorieBll));
+            }
+            return listeCategorieBll;
+        }
+    
+        public static List<EvenementBll> ToEvenementsBll(List<EvenementDao>listeEvenementDao)
+        {
+            List<EvenementBll> listeEvenementBll = new List<EvenementBll>();
+             
+            foreach (var evenementBll in listeEvenementDao)
+            {
+                listeEvenementBll.Add(ToEvenementBll(evenementBll));
+            }
+            return listeEvenementBll;
+
+        }
+        
+        
+        public static List<EvenementLieuBll> ToEvenementsLieuBll(List<EvenementLieuDao>listeEvenementLieuDao)
+        {
+            List<EvenementLieuBll> listeEvenementLieuBll = new List<EvenementLieuBll>();
+
+            foreach (var evenementLieuBll in listeEvenementLieuDao)
+            {
+                listeEvenementLieuBll.Add(ToEvenementLieuBll(evenementLieuBll));
+            }
+            return listeEvenementLieuBll;
+
+        }
+
+        public static List<UtilisateurBll> ToUtilisateursBll(List<UtilisateurDao>listeUtilisateurDao)
+        {
+            List<UtilisateurBll> listeUtilisateurBll = new List<UtilisateurBll>();
+
+            foreach (var utilisateurBll in listeUtilisateurDao)
+            {
+                listeUtilisateurBll.Add(ToUtilisateurBll(utilisateurBll));
+            }
+            return listeUtilisateurBll;
+           
+
+        }
+
+
     }
 }
