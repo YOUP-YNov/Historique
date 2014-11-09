@@ -8,7 +8,6 @@ using Historique.DAL.DAL.HistoriqueTableAdapters;
 using Historique.DAL.DAO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using Historique = Historique.DAL.DAL.Historique;
 
 namespace Historique.DAL.Test
 {

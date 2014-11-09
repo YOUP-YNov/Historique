@@ -15,30 +15,70 @@ namespace Historique.Business.Mapper
         //To Business
         public static CategorieBll ToCategorieBll(CategorieDao categorieDao)
         {
-             AutoMapper.Mapper.CreateMap<CategorieDao, CategorieBll>(); //définiton du mapping
-             return AutoMapper.Mapper.Map<CategorieDao, CategorieBll>(categorieDao);//Convert
-        
+            CategorieBll categorie = null;
+            try
+            {
+                AutoMapper.Mapper.CreateMap<CategorieDao, CategorieBll>(); //définiton du mapping
+                categorie = AutoMapper.Mapper.Map<CategorieDao, CategorieBll>(categorieDao);//Convert
+            }
+            catch(Exception ex)
+            {
+
+            }
+            return categorie;
         }
 
         public static EvenementBll ToEvenementBll(EvenementDao evenementDao)
         {
-            AutoMapper.Mapper.CreateMap<EvenementDao, EvenementBll>(); //définiton du mapping
-            return AutoMapper.Mapper.Map<EvenementDao, EvenementBll>(evenementDao);//Convert
+            EvenementBll evenement = null;
+            try
+            {
+                AutoMapper.Mapper.CreateMap<EvenementDao, EvenementBll>(); //définiton du mapping
+                evenement= AutoMapper.Mapper.Map<EvenementDao, EvenementBll>(evenementDao);//Convert
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+            return evenement;
 
         }
 
 
         public static EvenementLieuBll ToEvenementLieuBll(EvenementLieuDao evenementLieuDao)
         {
-            AutoMapper.Mapper.CreateMap<EvenementLieuDao, EvenementLieuBll>(); //définiton du mapping
-            return AutoMapper.Mapper.Map<EvenementLieuDao, EvenementLieuBll>(evenementLieuDao);//Convert
+            EvenementLieuBll evenementLieu = null;
+            try
+            {
+                AutoMapper.Mapper.CreateMap<EvenementLieuDao, EvenementLieuBll>(); //définiton du mapping
+                evenementLieu=  AutoMapper.Mapper.Map<EvenementLieuDao, EvenementLieuBll>(evenementLieuDao);//Convert
+
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+            return evenementLieu;
 
         }
 
         public static UtilisateurBll ToUtilisateurBll(UtilisateurDao utilisateurDao)
         {
-            AutoMapper.Mapper.CreateMap<UtilisateurDao, UtilisateurBll>(); //définiton du mapping
-            return AutoMapper.Mapper.Map<UtilisateurDao, UtilisateurBll>(utilisateurDao);//Convert
+            UtilisateurBll utilisateur = null;
+            try
+            {
+                AutoMapper.Mapper.CreateMap<UtilisateurDao, UtilisateurBll>(); //définiton du mapping
+                utilisateur= AutoMapper.Mapper.Map<UtilisateurDao, UtilisateurBll>(utilisateurDao);//Convert
+
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+            return utilisateur;
         }
         
         
@@ -49,7 +89,9 @@ namespace Historique.Business.Mapper
 
             foreach (var categorieBll in listeCategorieDao)
             {
-                listeCategorieBll.Add(ToCategorieBll(categorieBll));
+                var categorie = ToCategorieBll(categorieBll);
+                if(categorie !=null)
+                    listeCategorieBll.Add(categorie);
             }
             return listeCategorieBll;
         }
@@ -60,7 +102,9 @@ namespace Historique.Business.Mapper
              
             foreach (var evenementBll in listeEvenementDao)
             {
-                listeEvenementBll.Add(ToEvenementBll(evenementBll));
+                var evenement = ToEvenementBll(evenementBll);    
+                if(evenement!=null)
+                    listeEvenementBll.Add(evenement);
             }
             return listeEvenementBll;
 
@@ -73,7 +117,9 @@ namespace Historique.Business.Mapper
 
             foreach (var evenementLieuBll in listeEvenementLieuDao)
             {
-                listeEvenementLieuBll.Add(ToEvenementLieuBll(evenementLieuBll));
+                var evenementLieu = ToEvenementLieuBll(evenementLieuBll);
+                if(evenementLieu!=null)
+                    listeEvenementLieuBll.Add(evenementLieu);
             }
             return listeEvenementLieuBll;
 
@@ -85,7 +131,9 @@ namespace Historique.Business.Mapper
 
             foreach (var utilisateurBll in listeUtilisateurDao)
             {
-                listeUtilisateurBll.Add(ToUtilisateurBll(utilisateurBll));
+                var utilisateur = ToUtilisateurBll(utilisateurBll);
+                if(utilisateur!=null)
+                    listeUtilisateurBll.Add(utilisateur);
             }
             return listeUtilisateurBll;
            

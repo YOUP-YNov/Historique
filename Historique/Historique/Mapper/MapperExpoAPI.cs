@@ -14,25 +14,66 @@ namespace Historique.Mapper
         //To ExpoApi
         public static Categorie ToCategorie(CategorieBll categorieBll)
         {
-            AutoMapper.Mapper.CreateMap<CategorieBll, Categorie>(); //définiton du mapping
-            return AutoMapper.Mapper.Map<CategorieBll, Categorie>(categorieBll);//Convert
+            Categorie categorie = null;
+            try
+            {
+                AutoMapper.Mapper.CreateMap<CategorieBll, Categorie>(); //définiton du mapping
+                categorie = AutoMapper.Mapper.Map<CategorieBll, Categorie>(categorieBll);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return categorie;
 
         }
         public static Evenement ToEvenement(EvenementBll evenementBll)
         {
-            AutoMapper.Mapper.CreateMap<EvenementBll, Evenement>(); //définiton du mapping
-            return AutoMapper.Mapper.Map<EvenementBll, Evenement>(evenementBll);//Convert
+            Evenement evenement = null;
+            try
+            {
+                AutoMapper.Mapper.CreateMap<EvenementBll, Evenement>(); //définiton du mapping
+                evenement = AutoMapper.Mapper.Map<EvenementBll, Evenement>(evenementBll);//Convert
+            }
+            catch (Exception)
+            {
 
+                throw;
+            }
+            return evenement;
         }
         public static EvenementLieu ToEvenementLieu(EvenementLieuBll evenementLieuBll)
         {
-            AutoMapper.Mapper.CreateMap<EvenementLieuBll, EvenementLieu>(); //définiton du mapping
-            return AutoMapper.Mapper.Map<EvenementLieuBll, EvenementLieu>(evenementLieuBll);//Convert
+            EvenementLieu evenementLieu = null;
+            try
+            {
+                AutoMapper.Mapper.CreateMap<EvenementLieuBll, EvenementLieu>(); //définiton du mapping
+                evenementLieu = AutoMapper.Mapper.Map<EvenementLieuBll, EvenementLieu>(evenementLieuBll);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return evenementLieu;
         }
         public static Utilisateur ToUtilisateur(UtilisateurBll utilisateurBll)
         {
-            AutoMapper.Mapper.CreateMap<UtilisateurBll, Utilisateur>(); //définiton du mapping
-            return AutoMapper.Mapper.Map<UtilisateurBll, Utilisateur>(utilisateurBll);//Convert
+            Utilisateur utilisateur = null;
+            try
+            {
+                AutoMapper.Mapper.CreateMap<UtilisateurBll, Utilisateur>(); //définiton du mapping
+                utilisateur = AutoMapper.Mapper.Map<UtilisateurBll, Utilisateur>(utilisateurBll);//Convert
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return utilisateur;
+
         }
 
         // To ExpoApi list
@@ -40,9 +81,11 @@ namespace Historique.Mapper
         {
             List<Categorie> listeCategories = new List<Categorie>();
 
-            foreach (var categorie in listeCategoriesBll)
+            foreach (var categorieBll in listeCategoriesBll)
             {
-                listeCategories.Add(ToCategorie(categorie));
+                var categorie = ToCategorie(categorieBll);
+                if(categorie!=null)
+                    listeCategories.Add(categorie);
             
             }
             return listeCategories;
@@ -52,10 +95,11 @@ namespace Historique.Mapper
         {
             List<Evenement> listeEvenements = new List<Evenement>();
 
-            foreach (var evenement in listeEventementsBll)
+            foreach (var evenementBll in listeEventementsBll)
             {
-                listeEvenements.Add(ToEvenement(evenement));
-
+                var evenement = ToEvenement(evenementBll);
+                if(evenement!=null)
+                    listeEvenements.Add(evenement);
             }
             return listeEvenements;
         }
@@ -64,10 +108,11 @@ namespace Historique.Mapper
         {
             List<EvenementLieu> listeEvenementsLieux = new List<EvenementLieu>();
 
-            foreach (var evenementLieu in listeEventementsLieuxBll)
+            foreach (var evenementLieuBll in listeEventementsLieuxBll)
             {
-                listeEvenementsLieux.Add(ToEvenementLieu(evenementLieu));
-
+                var evenement = ToEvenementLieu(evenementLieuBll);
+                if(evenement!=null)
+                    listeEvenementsLieux.Add(evenement);
             }
             return listeEvenementsLieux;
         }
@@ -76,9 +121,11 @@ namespace Historique.Mapper
         {
             List<Utilisateur> listesUtilisateurs = new List<Utilisateur>();
 
-            foreach (var utilisateur in listeUtilisateursBll)
+            foreach (var utilisateurBll in listeUtilisateursBll)
             {
-                listesUtilisateurs.Add(ToUtilisateur(utilisateur));
+                var utilisateur = ToUtilisateur(utilisateurBll);
+                if(utilisateur != null)
+                    listesUtilisateurs.Add(utilisateur);
 
             }
             return listesUtilisateurs;
