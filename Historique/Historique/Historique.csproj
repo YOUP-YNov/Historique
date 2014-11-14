@@ -49,6 +49,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\AutoMapper.3.3.0-ci1027\lib\net40\AutoMapper.Net4.dll</HintPath>
     </Reference>
+    <Reference Include="Logger">
+      <HintPath>..\..\..\..\..\Downloads\DLL Logger (1)\Logger.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -218,6 +221,8 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\User\NbEvenements.cshtml" />
+    <Content Include="Views\User\StatUsageCat.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
