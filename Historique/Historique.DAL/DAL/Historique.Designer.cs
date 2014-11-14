@@ -2025,7 +2025,7 @@ namespace Historique.DAL.DAL {
                 this.columnPseudo.AllowDBNull = false;
                 this.columnPseudo.MaxLength = 50;
                 this.columnMotDePasse.AllowDBNull = false;
-                this.columnMotDePasse.MaxLength = 50;
+                this.columnMotDePasse.MaxLength = 100;
                 this.columnDateInscription.AllowDBNull = false;
                 this.columnNom.AllowDBNull = false;
                 this.columnNom.MaxLength = 50;
