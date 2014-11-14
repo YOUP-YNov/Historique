@@ -6,6 +6,7 @@ using Historique.Business;
 using Historique.Business.Mapper;
 using Historique.Models;
 
+
 namespace Historique.Mapper
 {
     public static class HistoriqueAPI
@@ -24,7 +25,7 @@ namespace Historique.Mapper
                     allcatBll = MapperExpoAPI.ToCategories(allcat);
                 }
             }
-            catch (Exception ex) { }
+            catch (Exception ex) {}
             return allcatBll;
         }
 

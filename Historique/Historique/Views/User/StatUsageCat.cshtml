@@ -4,6 +4,10 @@
     ViewBag.Title = "StatUsageCat";
 }
 
+@*Ce graphe représente les catégories auxquelles un utilisateur participe
+    ou/et
+Ce graphe représente les catégories lesquelles un utilisateur créées*@
+
 <h2>StatUsageCat</h2>
 
 <script src="http://code.highcharts.com/highcharts.js"></script>
@@ -44,7 +48,7 @@
                     type: 'pie',
                     name: 'Browser share',
                     data: [
-                        ['Sport', 45.0],
+                        ['Sport', 45.0],//********libellé des catégories, pourcentage de répartition
                         ['Musées', 26.8],
                         ['Restaurants', 12.9],
                         ['Musique', 8.5],
