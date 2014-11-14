@@ -2,6 +2,8 @@
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Historique.App_Start;
+using Ninject;
 
 namespace Historique
 {
@@ -9,6 +11,9 @@ namespace Historique
     {
         protected void Application_Start()
         {
+            IKernel kernel = new StandardKernel();
+            GlobalConfiguration.Configuration.DependencyResolver = new NinjectResolver(kernel);
+
             AreaRegistration.RegisterAllAreas();
             //GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Serialize;
             GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.All;

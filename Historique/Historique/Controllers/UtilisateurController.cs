@@ -1,11 +1,8 @@
 ﻿using Historique.Mapper;
 using Historique.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Web.Http;
-using System.Web;
 
 namespace Historique.Controllers
 {
@@ -13,7 +10,7 @@ namespace Historique.Controllers
     public class UtilisateurController : ApiController
     {
         // GET api/utilisateur
-        /// <summary>
+        /// <summary>D:\WORK\git\VS-GIT\Historique\Historique\Controllers\UtilisateurController.cs
         /// Retourne tous les Utilisateurs
         /// </summary>
         /// <returns></returns>
@@ -23,7 +20,7 @@ namespace Historique.Controllers
             var utilisateurs = HistoriqueAPI.GetAllUser();
             if (utilisateurs == null)
                 utilisateurs = new List<Utilisateur>();
-
+            
             return utilisateurs;
         }
 

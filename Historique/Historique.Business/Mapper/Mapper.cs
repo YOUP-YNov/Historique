@@ -139,7 +139,5 @@ namespace Historique.Business.Mapper
            
 
         }
-
-
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Google.Apis.Analytics.v3.Data;
 
 namespace Historique.Business.Models
 {
@@ -31,6 +32,14 @@ namespace Historique.Business.Models
             get { return _TempsMoyen; }
             set { _TempsMoyen = value; }
         }
-        
+
+        public static PageVisiteeBll FromAnalyticsData(GaData analyticsData)
+        {
+            PageVisiteeBll pageVisiteeBll = new PageVisiteeBll();
+
+            // TODO initialize pageVisitee from analyticsData
+
+            return pageVisiteeBll;
+        }
     }
 }

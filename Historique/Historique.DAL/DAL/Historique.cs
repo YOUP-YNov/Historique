@@ -5,7 +5,7 @@ using Historique.DAL.DAO;
 
 namespace Historique.DAL.DAL
 {
-    public partial class Historique
+    public partial class Historique : IHistorique
     {
         #region Properties
         private HistoriqueTableAdapters.UtilisateurEvenementParticipeTableAdapter _UtilisateurEvenementParticipeService;

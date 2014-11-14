@@ -1,0 +1,10 @@
+D:\WORK\git\VS-GIT\Historique\Historique.DAL.Test\bin\Debug\Historique.DAL.Test.dll
+D:\WORK\git\VS-GIT\Historique\Historique.DAL.Test\bin\Debug\Historique.DAL.Test.pdb
+D:\WORK\git\VS-GIT\Historique\Historique.DAL.Test\bin\Debug\Historique.DAL.dll
+D:\WORK\git\VS-GIT\Historique\Historique.DAL.Test\bin\Debug\Moq.dll
+D:\WORK\git\VS-GIT\Historique\Historique.DAL.Test\bin\Debug\Historique.DAL.pdb
+D:\WORK\git\VS-GIT\Historique\Historique.DAL.Test\bin\Debug\Moq.xml
+D:\WORK\git\VS-GIT\Historique\Historique.DAL.Test\obj\Debug\Historique.DAL.Test.csprojResolveAssemblyReference.cache
+D:\WORK\git\VS-GIT\Historique\Historique.DAL.Test\obj\Debug\Historique.DAL.Test.dll
+D:\WORK\git\VS-GIT\Historique\Historique.DAL.Test\obj\Debug\Historique.DAL.Test.pdb
+D:\WORK\git\VS-GIT\Historique\Historique.DAL.Test\bin\Debug\AutoMapper.Net4.dll

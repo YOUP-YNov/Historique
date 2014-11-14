@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using AutoMapper;
 using Historique.Business.Models;
 using Historique.Models;
 
@@ -11,6 +8,7 @@ namespace Historique.Mapper
 {
     public class MapperExpoAPI
     {
+
         //To ExpoApi
         public static Categorie ToCategorie(CategorieBll categorieBll)
         {
@@ -129,6 +127,39 @@ namespace Historique.Mapper
 
             }
             return listesUtilisateurs;
+        }
+
+        public static PageVisitee ToPageVisitee(PageVisiteeBll pageVisiteeBll)
+        {
+            PageVisitee pageVisitee = new PageVisitee();
+
+            try
+            {
+                AutoMapper.Mapper.CreateMap<PageVisiteeBll, PageVisitee>();
+                pageVisitee = AutoMapper.Mapper.Map<PageVisiteeBll, PageVisitee>(pageVisiteeBll);
+            }
+            catch (Exception exception)
+            {
+                
+            }
+
+            return pageVisitee;
+        }
+
+        public static List<PageVisitee> ToPageVisitees(List<PageVisiteeBll> pageVisiteesBll)
+        {
+            List<PageVisitee> pageVisitees = new List<PageVisitee>();
+
+            foreach (var pageVisiteeBll in pageVisiteesBll)
+            {
+                var pageVisitee = ToPageVisitee(pageVisiteeBll);
+                if (pageVisitee != null)
+                {
+                    pageVisitees.Add(pageVisitee);
+                }
+            }
+
+            return pageVisitees;
         }
     }
 }

@@ -1,0 +1,12 @@
+D:\WORK\git\VS-GIT\Historique\Historique.DAL\bin\Debug\AutoMapper.Net4.dll
+D:\WORK\git\VS-GIT\Historique\Historique.DAL\bin\Debug\Historique.DAL.dll.config
+D:\WORK\git\VS-GIT\Historique\Historique.DAL\bin\Debug\Historique.DAL.dll
+D:\WORK\git\VS-GIT\Historique\Historique.DAL\bin\Debug\Historique.DAL.pdb
+D:\WORK\git\VS-GIT\Historique\Historique.DAL\bin\Debug\AutoMapper.dll
+D:\WORK\git\VS-GIT\Historique\Historique.DAL\bin\Debug\Microsoft.Owin.dll
+D:\WORK\git\VS-GIT\Historique\Historique.DAL\bin\Debug\Owin.dll
+D:\WORK\git\VS-GIT\Historique\Historique.DAL\bin\Debug\AutoMapper.xml
+D:\WORK\git\VS-GIT\Historique\Historique.DAL\bin\Debug\Microsoft.Owin.xml
+D:\WORK\git\VS-GIT\Historique\Historique.DAL\obj\Debug\Historique.DAL.dll
+D:\WORK\git\VS-GIT\Historique\Historique.DAL\obj\Debug\Historique.DAL.pdb
+D:\WORK\git\VS-GIT\Historique\Historique.DAL\obj\Debug\Historique.DAL.csprojResolveAssemblyReference.cache

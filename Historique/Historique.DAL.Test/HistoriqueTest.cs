@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using Historique.DAL.DAL;
-using Historique.DAL.DAL.HistoriqueTableAdapters;
 using Historique.DAL.DAO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
