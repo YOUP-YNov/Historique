@@ -1,4 +1,5 @@
-﻿using Historique.Models;
+﻿using Historique.Mapper;
+using Historique.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,11 @@ namespace Historique.Controllers
         /// <returns></returns>
         public IEnumerable<Utilisateur> Get()
         {
-            return null;
+            var utilisateurs = HistoriqueAPI.GetAllUser();
+            if (utilisateurs == null)
+                utilisateurs = new List<Utilisateur>();
+
+            return utilisateurs;
         }
 
 
@@ -92,7 +97,11 @@ namespace Historique.Controllers
         /// <returns></returns>
         public Utilisateur Get(int id)
         {
-            return null;
+            var utilisateurs = Get();
+            var utilisateur = utilisateurs.SingleOrDefault(x => x.Id.Equals(id));
+            if (utilisateur == null)
+                utilisateur = new Utilisateur();
+            return utilisateur;
         }
 
         // GET api/utilisateur/pseudo1
@@ -103,7 +112,11 @@ namespace Historique.Controllers
         /// <returns></returns>
         public Utilisateur Get(string pseudo)
         {
-            return null;
+            var utilisateurs = Get();
+            var utilisateur = utilisateurs.SingleOrDefault(x => x.Pseudo.Equals(pseudo));
+            if (utilisateur == null)
+                utilisateur = new Utilisateur();
+            return utilisateur;
         }
 
 
