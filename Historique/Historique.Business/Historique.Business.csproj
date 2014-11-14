@@ -20,6 +20,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -60,10 +62,10 @@
     <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop">
       <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
     </Reference>
-	<Reference Include="AutoMapper">
+    <Reference Include="AutoMapper">
       <HintPath>..\packages\AutoMapper.3.3.0-ci1027\lib\net40\AutoMapper.dll</HintPath>
     </Reference>
-	 <Reference Include="AutoMapper.Net4">
+    <Reference Include="AutoMapper.Net4">
       <HintPath>..\packages\AutoMapper.3.3.0-ci1027\lib\net40\AutoMapper.Net4.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -96,7 +98,7 @@
     <Compile Include="ApiGoogleAnalytics\ReportingHelper.cs" />
     <Compile Include="Mapper\Mapper.cs" />
     <Compile Include="Models\CategorieBll.cs" />
-	<Compile Include="Mapper\HistoriqueBll.cs" />
+    <Compile Include="Mapper\HistoriqueBll.cs" />
     <Compile Include="Models\EvenementBll.cs" />
     <Compile Include="Models\EvenementLieuBll.cs" />
     <Compile Include="Models\PageVisiteeBll.cs" />
