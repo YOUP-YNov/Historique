@@ -5,60 +5,55 @@
 }
 
 @*Ce graphe représente les catégories auxquelles un utilisateur participe
-    ou/et
-Ce graphe représente les catégories lesquelles un utilisateur créées*@
+        ou/et
+    Ce graphe représente les catégories lesquelles un utilisateur créées*@
 
 <h2>StatUsageCat</h2>
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script src="http://code.highcharts.com/highcharts.js"></script>
-<script src="http://code.highcharts.com/modules/exporting.js"></script>
 
-<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+<div id="categorie" style="min-width: 310px; height: 320px; max-width: 500px; margin: 0 auto"></div> @*defini la taille du graphique et l'affiche*@
 
-<script type="text/javascript">
+<script>
+    $(document).ready(function () {
+        var chart2 = new Highcharts.Chart({
 
-    $(function () {
-
-        $(document).ready(function () {
-
-            // Build the chart
-            $('#container').highcharts({
-                chart: {
-                    plotBackgroundColor: null,
-                    plotBorderWidth: null,
-                    plotShadow: false
-                },
-                title: {
-                    text: 'Catégories'
-                },
-                tooltip: {
-                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-                },
-                plotOptions: {
-                    pie: {
-                        allowPointSelect: true,
-                        cursor: 'pointer',
-                        dataLabels: {
-                            enabled: false
-                        },
-                        showInLegend: true
-                    }
-                },
-                series: [{
-                    type: 'pie',
-                    name: 'Browser share',
-                    data: [
-                        ['Sport', 45.0],//********libellé des catégories, pourcentage de répartition
-                        ['Musées', 26.8],
-                        ['Restaurants', 12.9],
-                        ['Musique', 8.5],
-                        ['Sortie', 6.2],
-                        ['Autres', 0.7]
-                    ]
-                }]
-            });
+            chart: {
+                renderTo: 'categorie', // id du graphique
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie', // type du graphique
+            },
+            title: {
+                text: 'Catégories d\'évènements'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>' // si on pointe sur un morceau, affiche : Pourcentage : xx%
+            },
+            plotOptions: { //les options pour rendre le graphique dynamique
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                name: 'Pourcentage',
+                data: [
+                    ['Sport', 45.0],//********libellé des catégories, pourcentage de répartition
+                    ['Musées', 26.8],
+                    ['Restaurants', 12.9],
+                    ['Musique', 8.5],
+                    ['Sortie', 6.2],
+                    ['Autres', 0.6]
+                ]
+            }]
         });
-
     });
 
 </script>
