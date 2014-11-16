@@ -76,3 +76,4 @@ D:\WORK\git\VS-GIT\Historique\Historique\bin\Google.Apis.Auth.PlatformServices.p
 D:\WORK\git\VS-GIT\Historique\Historique\bin\Google.Apis.Core.pdb
 D:\WORK\git\VS-GIT\Historique\Historique\bin\Google.Apis.pdb
 D:\WORK\git\VS-GIT\Historique\Historique\bin\XmlDocument.xml
+D:\WORK\git\VS-GIT\Historique\Historique\bin\Logger.dll

@@ -1,4 +1,5 @@
-﻿using Historique.Mapper;
+﻿using AutoMapper.Internal;
+using Historique.Mapper;
 using Historique.Models;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,15 @@ using System.Web.Http;
 namespace Historique.Controllers
 {
     [RoutePrefix("api/utilisateur")]
-    public class UtilisateurController : ApiController
+    public class UtilisateurController : AbstractApiController<Utilisateur>
     {
+        private IHistoriqueApiService _historiqueApiServiceService;
+
+        public UtilisateurController(IHistoriqueApiService historiqueApiServiceService)
+        {
+            _historiqueApiServiceService = historiqueApiServiceService;
+        }
+
         // GET api/utilisateur
         /// <summary>D:\WORK\git\VS-GIT\Historique\Historique\Controllers\UtilisateurController.cs
         /// Retourne tous les Utilisateurs
@@ -17,10 +25,8 @@ namespace Historique.Controllers
         [Route("")]
         public IEnumerable<Utilisateur> Get()
         {
-            var utilisateurs = HistoriqueAPI.GetAllUser();
-            if (utilisateurs == null)
-                utilisateurs = new List<Utilisateur>();
-            
+            var utilisateurs = _historiqueApiServiceService.GetAllUser() ?? new List<Utilisateur>();
+
             return utilisateurs;
         }
 
@@ -35,7 +41,7 @@ namespace Historique.Controllers
         public IEnumerable<Utilisateur> GetTopAmis(int top)
         {
             IEnumerable<Utilisateur> utilisateurs = null;
-            var utilisateursAll = Get();
+            var utilisateursAll = _historiqueApiServiceService.GetAllUser();
             if (utilisateursAll != null)
                 utilisateurs = utilisateursAll.OrderByDescending(x => x.NbAmis);
 
@@ -55,7 +61,7 @@ namespace Historique.Controllers
         public IEnumerable<Utilisateur> GetTopEvenementCree(int top)
         {
             IEnumerable<Utilisateur> utilisateurs = null;
-            var utilisateursAll = Get();
+            var utilisateursAll = _historiqueApiServiceService.GetAllUser();
             if (utilisateursAll != null)
                 utilisateurs = utilisateursAll.OrderByDescending(x => x.NbEvenmentPropose);
 
@@ -74,7 +80,7 @@ namespace Historique.Controllers
         public IEnumerable<Utilisateur> GetToEvenementParticipe(int top)
         {
             IEnumerable<Utilisateur> utilisateurs = null;
-            var utilisateursAll = Get();
+            var utilisateursAll = _historiqueApiServiceService.GetAllUser();
             if (utilisateursAll != null)
                 utilisateurs = utilisateursAll.OrderByDescending(x => x.NbEvenementParticipe);
 
@@ -94,12 +100,10 @@ namespace Historique.Controllers
         public IEnumerable<Utilisateur> GetByTrancheAge(int ageDebut, int ageFin)
         {
             var utilisateurs = new List<Utilisateur>();
-            var utilisateursAll = Get();
+
+            var utilisateursAll = _historiqueApiServiceService.GetAllUser();
             if (utilisateursAll != null)
                 utilisateurs = utilisateursAll.Where(x => x.Age >= ageDebut && x.Age <= ageFin).ToList();
-
-            if (utilisateurs == null)
-                utilisateurs = new List<Utilisateur>();
 
             return utilisateurs;
         }
@@ -114,12 +118,9 @@ namespace Historique.Controllers
         public IEnumerable<Utilisateur> GetBySexe(bool homme)
         {
             var utilisateurs = new List<Utilisateur>();
-            var utilisateursAll = Get();
+            var utilisateursAll = _historiqueApiServiceService.GetAllUser();
             if (utilisateursAll != null)
                 utilisateurs = utilisateursAll.Where(x => x.IsHomme == homme).ToList();
-
-            if (utilisateurs == null)
-                utilisateurs = new List<Utilisateur>();
 
             return utilisateurs;
         }
@@ -149,10 +150,17 @@ namespace Historique.Controllers
         [Route("{id:int}")]
         public Utilisateur Get(int id)
         {
-            var utilisateur = HistoriqueAPI.GetUserById(id);
+            var utilisateur = _historiqueApiServiceService.GetUserById(id);
            
-            //if (utilisateur == null)
-            //    utilisateur = new Utilisateur();
+            /** TODO throw HistoricEntityNotFoundException in case of entity not found for all controllers + extend from AbstractApiController (catch Exception)
+             *  TODO return null in mapper tiers
+             */
+
+            // user is never null (See HistoriqueAPIService.GetUserById(..);)
+            if (utilisateur == null)
+            {
+                HandleEntityNotFound("id", id.ToNullSafeString());
+            }
 
             return utilisateur;
         }
@@ -167,7 +175,7 @@ namespace Historique.Controllers
         public Utilisateur Get(string pseudo)
         {
 
-            var utilisateur = HistoriqueAPI.GetUserByPseudo(pseudo);
+            var utilisateur = _historiqueApiServiceService.GetUserByPseudo(pseudo);
 
             return utilisateur;
         }

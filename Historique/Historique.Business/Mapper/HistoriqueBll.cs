@@ -1,20 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Historique.DAL.DAL;
 using Historique.Business.Models;
 
 namespace Historique.Business.Mapper
 {
-    public class HistoriqueBll
+    public class HistoriqueBll : IHistoriqueBll
     {
-        private DAL.DAL.Historique _HistoriqueDAL;
+        private IHistorique _HistoriqueDAL;
 
-        public HistoriqueBll()
+        public HistoriqueBll(IHistorique historique)
         {
-            _HistoriqueDAL = new DAL.DAL.Historique(); 
+            _HistoriqueDAL = historique; 
         }
 
         public IEnumerable<CategorieBll> GetAllCategorieBll()

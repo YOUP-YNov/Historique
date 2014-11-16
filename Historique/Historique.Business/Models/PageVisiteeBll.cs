@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Google.Apis.Analytics.v3.Data;
 
 namespace Historique.Business.Models
@@ -33,13 +30,32 @@ namespace Historique.Business.Models
             set { _TempsMoyen = value; }
         }
 
-        public static PageVisiteeBll FromAnalyticsData(GaData analyticsData)
+        public static IEnumerable<PageVisiteeBll> FromAnalyticsData(GaData analyticsData)
         {
-            PageVisiteeBll pageVisiteeBll = new PageVisiteeBll();
+            List<PageVisiteeBll> pageVisiteesBll = new List<PageVisiteeBll>();
 
-            // TODO initialize pageVisitee from analyticsData
+            if (analyticsData != null)
+            {
+                if (analyticsData.Rows != null && analyticsData.Rows.Count > 0)
+                {
+                    foreach (var row in analyticsData.Rows)
+                    {
+                        pageVisiteesBll.Add(FromAnalyticsRowData(row));
+                    }
+                }
+            }
 
-            return pageVisiteeBll;
+            return pageVisiteesBll;
+        }
+
+        private static PageVisiteeBll FromAnalyticsRowData(IList<String> analyticsRowData)
+        {
+            return new PageVisiteeBll()
+            {
+                Nom = analyticsRowData[0],
+                NbVue = int.Parse(analyticsRowData[1]),
+                TempsMoyen = double.Parse(analyticsRowData[2])
+            };
         }
     }
 }

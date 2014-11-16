@@ -9,7 +9,7 @@ namespace Historique.Business.Mapper
 {
     public class HistoricAnalyticService : IHistoriqueAnalyticService
     {
-        private static string ANALYTICS_PROFILE_ID = ConfigurationManager.AppSettings["analytics_api_profile_id"];
+        private static readonly string ANALYTICS_PROFILE_ID = ConfigurationManager.AppSettings["analytics_api_profile_id"];
 
         public IEnumerable<PageVisiteeBll> GetPagesVisiteesBll(string startDate, string endDate)
         {
@@ -23,12 +23,7 @@ namespace Historique.Business.Mapper
 
             GaData gaData = ReportingHelper.Get(AnalyticsTools.GetAnalyticsService(), ANALYTICS_PROFILE_ID, startDate, endDate, metrics, optionalValues);
 
-            if (gaData != null)
-            {
-                // TODO extract gaData + PageVisiteeBll.FromAnalyticsData(gaData);
-            }
-
-            return pagesVisiteesBll;
+            return PageVisiteeBll.FromAnalyticsData(gaData);
         }
     }
 }

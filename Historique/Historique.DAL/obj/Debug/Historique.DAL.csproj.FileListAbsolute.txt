@@ -9,4 +9,3 @@ D:\WORK\git\VS-GIT\Historique\Historique.DAL\bin\Debug\AutoMapper.xml
 D:\WORK\git\VS-GIT\Historique\Historique.DAL\bin\Debug\Microsoft.Owin.xml
 D:\WORK\git\VS-GIT\Historique\Historique.DAL\obj\Debug\Historique.DAL.dll
 D:\WORK\git\VS-GIT\Historique\Historique.DAL\obj\Debug\Historique.DAL.pdb
-D:\WORK\git\VS-GIT\Historique\Historique.DAL\obj\Debug\Historique.DAL.csprojResolveAssemblyReference.cache

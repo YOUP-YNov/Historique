@@ -54,7 +54,7 @@
       <HintPath>..\packages\AutoMapper.3.3.0-ci1027\lib\net40\AutoMapper.Net4.dll</HintPath>
     </Reference>
     <Reference Include="Logger">
-      <HintPath>..\..\..\..\..\Downloads\DLL Logger (1)\Logger.dll</HintPath>
+      <HintPath>References\Logger.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -133,6 +133,10 @@
       <Project>{d0b8b5d3-9d0b-49da-83d1-1f9256fa3391}</Project>
       <Name>Historique.Business</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Historique.DAL\Historique.DAL.csproj">
+      <Project>{F42EB452-5DE2-4DAA-9B76-E9D9C8D02160}</Project>
+      <Name>Historique.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -155,16 +159,23 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AbstractApiController.cs" />
     <Compile Include="Controllers\CategorieController.cs" />
     <Compile Include="Controllers\EvenementController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PagesVisiteesController.cs" />
     <Compile Include="Controllers\UtilisateurController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Exceptions\HistoricApiException.cs" />
+    <Compile Include="Exceptions\HistoricEntityNotFoundException.cs" />
+    <Compile Include="Filters\HistoricApiError.cs" />
+    <Compile Include="Filters\HistoricApiExceptionFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Mapper\HistoriqueAPI.cs" />
+    <Compile Include="Logger\LogUtils.cs" />
+    <Compile Include="Mapper\HistoriqueAPIService.cs" />
+    <Compile Include="Mapper\IHistoriqueApiService.cs" />
     <Compile Include="Mapper\MapperExpoAPI.cs" />
     <Compile Include="Models\Categorie.cs" />
     <Compile Include="Models\Evenement.cs" />
@@ -240,6 +251,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\AbstractApi\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
