@@ -4,80 +4,82 @@
     ViewBag.Title = "NbEvenements";
 }
 
+@*Ce graphique affiche le nombre d'évènements par saisonabilité*@
+
 <h2>Nombre d'évènements</h2>
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script src="http://code.highcharts.com/highcharts.js"></script>
-<script src="http://code.highcharts.com/modules/exporting.js"></script>
 
-<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<div id="nbreven" style="width: 100%; height: 400px;"></div> @*defini la taille du graphique et l'affiche*@
+<script>
 
-<script type="text/javascript">
+    $(document).ready(function () {
+        var chart1 = new Highcharts.Chart({
 
-    $(function () {
-        $('#container').highcharts({
             chart: {
-                type: 'spline'
+                renderTo: 'nbreven', //id du graphique
+                type: 'spline' //type du graphique
             },
             title: {
-                text: 'Nombre d \'évènements par saisonalité'
+                text: 'Nombre d\'évènements par saisonalité'
             },
             subtitle: {
                 text: 'Graphique'
             },
-            xAxis: {
+            xAxis: { //les informations de l'axe x
                 type: 'datetime',
-                dateTimeLabelFormats: { // don't display the dummy year
-                    month: '%e. %b',
+                dateTimeLabelFormats: {
+                    month: '%e/%m', // JJ/MM
                     year: '%b'
                 },
                 title: {
-                    text: 'Nombre'
+                    text: 'Mois'
                 }
             },
-            yAxis: {
+            yAxis: { //les informations de l'axe y
                 title: {
                     text: 'Nombre d\'évènements'
                 },
                 min: 0
             },
-            tooltip: {
-                headerFormat: '<b>{series.name}</b><br>',
-                pointFormat: '{point.x:%e. %b}: {point.y:.2f} m'
+            tooltip: { //les informations affichées squandi on passe par un point avec la souris
+                headerFormat: '<b>{series.name}</b><br>', // le nom dans series : année 2014-2015
+                pointFormat: '{point.x:%e/%m}: {point.y}' // format → JJ/MM : nb evenements
             },
 
             series: [{
-                name: 'année 2014-2015',
+                name: 'année 2014-2015', // *********l'année en cours
                 // pour l'année 2014-2015
-                // that in JavaScript, months start at 0 for January, 1 for February etc.
+                // en JavaScript, le mois commence par 0 pour janvier, 1 pour février, etc.
                 data: [
-                    [Date.UTC(1970, 9, 27), 0],
-                    [Date.UTC(1970, 10, 10), 2],
-                    [Date.UTC(1970, 10, 18), 3],
-                    [Date.UTC(1970, 11, 2), 4],
-                    [Date.UTC(1970, 11, 9), 2],
-                    [Date.UTC(1970, 11, 16), 2],
-                    [Date.UTC(1970, 11, 28), 4],
-                    [Date.UTC(1971, 0, 1), 5],
-                    [Date.UTC(1971, 0, 8), 7],
-                    [Date.UTC(1971, 0, 12), 5],
-                    [Date.UTC(1971, 0, 27), 2],
-                    [Date.UTC(1971, 1, 10), 2],
-                    [Date.UTC(1971, 1, 18), 4],
-                    [Date.UTC(1971, 1, 24), 6],
-                    [Date.UTC(1971, 2, 4), 3],
-                    [Date.UTC(1971, 2, 11), 2],
-                    [Date.UTC(1971, 2, 15), 6],
-                    [Date.UTC(1971, 2, 25), 7],
-                    [Date.UTC(1971, 3, 2), 5],
-                    [Date.UTC(1971, 3, 6), 2],
-                    [Date.UTC(1971, 3, 13), 7],
-                    [Date.UTC(1971, 4, 3), 8],
-                    [Date.UTC(1971, 4, 26), 5],
-                    [Date.UTC(1971, 5, 9), 4],
-                    [Date.UTC(1971, 5, 12), 2]
+                    [Date.UTC(1970, 9, 27), 0],// *********la date de création d'évènements pour l'annnée en cours, nombre d'évènement créés
+                    [Date.UTC(1970, 10, 10), 1],//********* ..(AAAA, MM, JJ), nb evenements]
+                    [Date.UTC(1970, 10, 18), 1],
+                    [Date.UTC(1970, 11, 2), 3],
+                    [Date.UTC(1970, 11, 9), 1],
+                    [Date.UTC(1970, 11, 16), 1],
+                    [Date.UTC(1970, 11, 28), 1],
+                    [Date.UTC(1971, 0, 1), 1],
+                    [Date.UTC(1971, 0, 8), 1],
+                    [Date.UTC(1971, 1, 12), 1],
+                    [Date.UTC(1971, 2, 5), 1],
+                    [Date.UTC(1971, 2, 10), 40],
+                    [Date.UTC(1971, 3, 18), 1],
+                    [Date.UTC(1971, 4, 2), 1],
+                    [Date.UTC(1971, 4, 4), 20],
+                    [Date.UTC(1971, 5, 11), 2],
+                    [Date.UTC(1971, 5, 15), 6],
+                    [Date.UTC(1971, 6, 25), 7],
+                    [Date.UTC(1971, 7, 2), 5],
+                    [Date.UTC(1971, 7, 6), 2],
+                    [Date.UTC(1971, 7, 13), 100],
+                    [Date.UTC(1971, 8, 3), 50],
+                    [Date.UTC(1971, 8, 5), 5],
+                    [Date.UTC(1971, 8, 9), 4],
+                    [Date.UTC(1971, 8, 12), 2]
                 ]
             }]
         });
     });
-
 </script>
