@@ -450,9 +450,21 @@
             <param name="userId">Identifiant de l'utilisateur.</param>
             <returns></returns>
         </member>
-        <member name="M:Historique.Controllers.PagesVisiteesController.Get(System.String,System.String)">
+        <member name="M:Historique.Controllers.AnalyticsController.GetViewsPerPage(System.String,System.String)">
             <summary>
-            Retourne toutes les pages visitées
+            Retourne le nombre de vues par pages
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Historique.Controllers.AnalyticsController.GetViewsPerOs(System.String,System.String)">
+            <summary>
+            Retourne le nombre de vues par OS
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Historique.Controllers.AnalyticsController.GetViewsPerDeviceCategory(System.String,System.String)">
+            <summary>
+            Retourne le nombre de vues par catégorie d'appareil
             </summary>
             <returns></returns>
         </member>

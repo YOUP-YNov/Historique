@@ -163,7 +163,7 @@
     <Compile Include="Controllers\CategorieController.cs" />
     <Compile Include="Controllers\EvenementController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\PagesVisiteesController.cs" />
+    <Compile Include="Controllers\AnalyticsController.cs" />
     <Compile Include="Controllers\UtilisateurController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Exceptions\HistoricApiException.cs" />
@@ -177,6 +177,8 @@
     <Compile Include="Mapper\HistoriqueAPIService.cs" />
     <Compile Include="Mapper\IHistoriqueApiService.cs" />
     <Compile Include="Mapper\MapperExpoAPI.cs" />
+    <Compile Include="Models\Analytics\DeviceCategoryStatRow.cs" />
+    <Compile Include="Models\Analytics\DeviceTypeStatRow.cs" />
     <Compile Include="Models\Categorie.cs" />
     <Compile Include="Models\Evenement.cs" />
     <Compile Include="Models\EvenementLieu.cs" />

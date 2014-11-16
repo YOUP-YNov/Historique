@@ -108,6 +108,8 @@
     <Compile Include="ApiGoogleAnalytics\ReportingHelper.cs" />
     <Compile Include="Mapper\ConverterUtils.cs" />
     <Compile Include="Mapper\IHistoriqueBll.cs" />
+    <Compile Include="Models\Analytics\DeviceCategoryStatRowBll.cs" />
+    <Compile Include="Models\Analytics\DeviceTypeStatRowBll.cs" />
     <Compile Include="Service\HistoricAnalyticService.cs" />
     <Compile Include="Service\IHistoriqueAnalyticService.cs" />
     <Compile Include="Mapper\Mapper.cs" />
