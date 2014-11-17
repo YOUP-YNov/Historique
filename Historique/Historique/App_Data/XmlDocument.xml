@@ -453,18 +453,21 @@
         <member name="M:Historique.Controllers.AnalyticsController.GetViewsPerPage(System.String,System.String)">
             <summary>
             Retourne le nombre de vues par pages
+            Format de date : yyyy-mm-dd
             </summary>
             <returns></returns>
         </member>
         <member name="M:Historique.Controllers.AnalyticsController.GetViewsPerOs(System.String,System.String)">
             <summary>
             Retourne le nombre de vues par OS
+            Format de date : yyyy-mm-dd
             </summary>
             <returns></returns>
         </member>
         <member name="M:Historique.Controllers.AnalyticsController.GetViewsPerDeviceCategory(System.String,System.String)">
             <summary>
             Retourne le nombre de vues par catégorie d'appareil
+            Format de date : yyyy-mm-dd
             </summary>
             <returns></returns>
         </member>

@@ -10,3 +10,17 @@ D:\WORK\git\VS-GIT\Historique\Historique.DAL\bin\Debug\Microsoft.Owin.xml
 D:\WORK\git\VS-GIT\Historique\Historique.DAL\obj\Debug\Historique.DAL.csprojResolveAssemblyReference.cache
 D:\WORK\git\VS-GIT\Historique\Historique.DAL\obj\Debug\Historique.DAL.dll
 D:\WORK\git\VS-GIT\Historique\Historique.DAL\obj\Debug\Historique.DAL.pdb
+C:\Users\Petulka\Source\Repos\Youp-Historique\Historique\Historique.DAL\bin\Debug\AutoMapper.Net4.dll
+C:\Users\Petulka\Source\Repos\Youp-Historique\Historique\Historique.DAL\bin\Debug\Historique.DAL.dll.config
+C:\Users\Petulka\Source\Repos\Youp-Historique\Historique\Historique.DAL\bin\Debug\Historique.DAL.dll
+C:\Users\Petulka\Source\Repos\Youp-Historique\Historique\Historique.DAL\bin\Debug\Historique.DAL.pdb
+C:\Users\Petulka\Source\Repos\Youp-Historique\Historique\Historique.DAL\bin\Debug\AutoMapper.dll
+C:\Users\Petulka\Source\Repos\Youp-Historique\Historique\Historique.DAL\bin\Debug\Logger.dll
+C:\Users\Petulka\Source\Repos\Youp-Historique\Historique\Historique.DAL\bin\Debug\Microsoft.Owin.dll
+C:\Users\Petulka\Source\Repos\Youp-Historique\Historique\Historique.DAL\bin\Debug\Owin.dll
+C:\Users\Petulka\Source\Repos\Youp-Historique\Historique\Historique.DAL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Petulka\Source\Repos\Youp-Historique\Historique\Historique.DAL\bin\Debug\AutoMapper.xml
+C:\Users\Petulka\Source\Repos\Youp-Historique\Historique\Historique.DAL\bin\Debug\Microsoft.Owin.xml
+C:\Users\Petulka\Source\Repos\Youp-Historique\Historique\Historique.DAL\obj\Debug\Historique.DAL.csprojResolveAssemblyReference.cache
+C:\Users\Petulka\Source\Repos\Youp-Historique\Historique\Historique.DAL\obj\Debug\Historique.DAL.dll
+C:\Users\Petulka\Source\Repos\Youp-Historique\Historique\Historique.DAL\obj\Debug\Historique.DAL.pdb
