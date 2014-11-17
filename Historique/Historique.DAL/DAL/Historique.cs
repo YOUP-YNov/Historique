@@ -163,6 +163,7 @@ namespace Historique.DAL.DAL
 
         public IEnumerable<EvenementDao> GetAllEvenement()
         {
+            var constraints =ps_GetAllEvenement.Constraints;
             var evenement = EvenementService.GetData();
             List<EvenementDao> eventDaoList = (List<EvenementDao>)evenement.ToDaoEvenements();
             return eventDaoList;

@@ -4848,7 +4848,6 @@ namespace Historique.DAL.DAL {
                 this.columnCategorie_id.AllowDBNull = false;
                 this.columnDateEvenement.AllowDBNull = false;
                 this.columnDateCreation.AllowDBNull = false;
-                this.columnDateModification.AllowDBNull = false;
                 this.columnDateFinInscription.AllowDBNull = false;
                 this.columnTitreEvenement.AllowDBNull = false;
                 this.columnTitreEvenement.MaxLength = 50;
@@ -4856,7 +4855,6 @@ namespace Historique.DAL.DAL {
                 this.columnStatut.MaxLength = 50;
                 this.columnPrix.AllowDBNull = false;
                 this.columnPremium.AllowDBNull = false;
-                this.columnDateMiseEnAvant.AllowDBNull = false;
                 this.columnEtat_id.AllowDBNull = false;
                 this.columnVille.AllowDBNull = false;
                 this.columnVille.MaxLength = 100;
@@ -8342,7 +8340,12 @@ namespace Historique.DAL.DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.DateTime DateModification {
                 get {
-                    return ((global::System.DateTime)(this[this.tableps_GetAllEvenement.DateModificationColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tableps_GetAllEvenement.DateModificationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        return new System.DateTime();
+                    }
                 }
                 set {
                     this[this.tableps_GetAllEvenement.DateModificationColumn] = value;
@@ -8465,7 +8468,13 @@ namespace Historique.DAL.DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.DateTime DateMiseEnAvant {
                 get {
-                    return ((global::System.DateTime)(this[this.tableps_GetAllEvenement.DateMiseEnAvantColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tableps_GetAllEvenement.DateMiseEnAvantColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'DateMiseEnAvant\' dans la table \'ps_GetAllEvenement\' es" +
+                                "t DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableps_GetAllEvenement.DateMiseEnAvantColumn] = value;
@@ -8607,6 +8616,18 @@ namespace Historique.DAL.DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDateModificationNull() {
+                return this.IsNull(this.tableps_GetAllEvenement.DateModificationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDateModificationNull() {
+                this[this.tableps_GetAllEvenement.DateModificationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDescriptionEvenementNull() {
                 return this.IsNull(this.tableps_GetAllEvenement.DescriptionEvenementColumn);
             }
@@ -8651,6 +8672,18 @@ namespace Historique.DAL.DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetStatutNull() {
                 this[this.tableps_GetAllEvenement.StatutColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDateMiseEnAvantNull() {
+                return this.IsNull(this.tableps_GetAllEvenement.DateMiseEnAvantColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDateMiseEnAvantNull() {
+                this[this.tableps_GetAllEvenement.DateMiseEnAvantColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8790,8 +8823,7 @@ namespace Historique.DAL.DAL {
                         return ((global::System.DateTime)(this[this.tableUtilisateurEvenementParticipe.DateModificationColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'DateModification\' dans la table \'UtilisateurEvenementP" +
-                                "articipe\' est DBNull.", e);
+                       return new System.DateTime();
                     }
                 }
                 set {
@@ -9577,8 +9609,7 @@ namespace Historique.DAL.DAL {
                         return ((global::System.DateTime)(this[this.tableUtilisateurEvenementPropose.DateModificationColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'DateModification\' dans la table \'UtilisateurEvenementP" +
-                                "ropose\' est DBNull.", e);
+                        return new System.DateTime();
                     }
                 }
                 set {

@@ -18,7 +18,8 @@ namespace Historique.Controllers
         }
 
         // GET api/utilisateur
-        /// <summary>D:\WORK\git\VS-GIT\Historique\Historique\Controllers\UtilisateurController.cs
+        //D:\WORK\git\VS-GIT\Historique\Historique\Controllers\UtilisateurController.cs
+        /// <summary>
         /// Retourne tous les Utilisateurs
         /// </summary>
         /// <returns></returns>
@@ -174,18 +175,36 @@ namespace Historique.Controllers
         [Route("{pseudo}")]
         public Utilisateur Get(string pseudo)
         {
-
             var utilisateur = _historiqueApiServiceService.GetUserByPseudo(pseudo);
 
             return utilisateur;
         }
 
 
-        // POST api/utilisateur
-        public void Post([FromBody]string value)
+        /// <summary>
+        /// Retourne les évènements créés par l'utilisateur
+        /// </summary>
+        /// <param name="userId">identifiant.</param>
+        /// <returns></returns>
+        [Route("{userId}/EvenementsCrees")]
+        public IEnumerable<Evenement> GetEvenementsCrees(int userId)
         {
+            var evenements = _historiqueApiServiceService.GetEvenementProposeByUserId(userId);
+
+            return evenements;
         }
 
-        
+        /// <summary>
+        /// Retourne les évènements où l'utilisateur à participés
+        /// </summary>
+        /// <param name="userId">identifiant.</param>
+        /// <returns></returns>
+        [Route("{userId}/EvenementsParticipes")]
+        public IEnumerable<Evenement> GetEvenementsParticipes(int userId)
+        {
+            var evenements = _historiqueApiServiceService.GetEvenementParticipeByUserId(userId);
+
+            return evenements;
+        }
     }
 }

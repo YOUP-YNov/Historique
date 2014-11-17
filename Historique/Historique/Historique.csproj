@@ -165,7 +165,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AnalyticsController.cs" />
     <Compile Include="Controllers\UtilisateurController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Exceptions\HistoricApiException.cs" />
     <Compile Include="Exceptions\HistoricEntityNotFoundException.cs" />
     <Compile Include="Filters\HistoricApiError.cs" />

@@ -413,13 +413,13 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Historique.Controllers.EvenementController.GetEvenementParSaisonalité(System.DateTime,System.DateTime)">
+        <member name="M:Historique.Controllers.EvenementController.GetEvenementParSaisonalité(System.String,System.String)">
             <summary>
             Retourne les évènements qui se déroulent durant une saisonalité donnée
             </summary>
-            <param name="dateDebut">date debut.</param>
-            <param name="dateFin">date fin.</param>
-            <returns></returns>
+            <param name="dateDebut">date debut. Format YYYY-MM-dd</param>
+            <param name="dateFin">date fin. Format YYYY-MM-dd</param>
+            <returns></returns> 
         </member>
         <member name="M:Historique.Controllers.EvenementController.GetEvenementByCateByCp(System.Int32,System.String)">
             <summary>
@@ -453,18 +453,21 @@
         <member name="M:Historique.Controllers.AnalyticsController.GetViewsPerPage(System.String,System.String)">
             <summary>
             Retourne le nombre de vues par pages
+            Format de date : yyyy-mm-dd
             </summary>
             <returns></returns>
         </member>
         <member name="M:Historique.Controllers.AnalyticsController.GetViewsPerOs(System.String,System.String)">
             <summary>
             Retourne le nombre de vues par OS
+            Format de date : yyyy-mm-dd
             </summary>
             <returns></returns>
         </member>
         <member name="M:Historique.Controllers.AnalyticsController.GetViewsPerDeviceCategory(System.String,System.String)">
             <summary>
             Retourne le nombre de vues par catégorie d'appareil
+            Format de date : yyyy-mm-dd
             </summary>
             <returns></returns>
         </member>
@@ -522,6 +525,20 @@
             Retourne l'utilisateur correspondant au pseudo
             </summary>
             <param name="pseudo">le pseudo.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Historique.Controllers.UtilisateurController.GetEvenementsCrees(System.Int32)">
+            <summary>
+            Retourne les évènements créés par l'utilisateur
+            </summary>
+            <param name="userId">identifiant.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Historique.Controllers.UtilisateurController.GetEvenementsParticipes(System.Int32)">
+            <summary>
+            Retourne les évènements où l'utilisateur à participés
+            </summary>
+            <param name="userId">identifiant.</param>
             <returns></returns>
         </member>
     </members>

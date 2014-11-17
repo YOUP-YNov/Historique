@@ -31,7 +31,7 @@ namespace Historique.Mapper
             try
             {
                 AutoMapper.Mapper.CreateMap<EvenementBll, Evenement>(); //définiton du mapping
-                evenement = AutoMapper.Mapper.Map<EvenementBll, Evenement>(evenementBll);//Convert
+                evenement = AutoMapper.Mapper.DynamicMap<EvenementBll, Evenement>(evenementBll);//Convert
             }
             catch (Exception)
             {
@@ -62,7 +62,7 @@ namespace Historique.Mapper
             try
             {
                 AutoMapper.Mapper.CreateMap<UtilisateurBll, Utilisateur>(); //définiton du mapping
-                utilisateur = AutoMapper.Mapper.Map<UtilisateurBll, Utilisateur>(utilisateurBll);//Convert
+                utilisateur = AutoMapper.Mapper.DynamicMap<UtilisateurBll, Utilisateur>(utilisateurBll);//Convert
 
             }
             catch (Exception)

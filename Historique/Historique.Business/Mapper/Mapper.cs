@@ -34,9 +34,9 @@ namespace Historique.Business.Mapper
             try
             {
                 AutoMapper.Mapper.CreateMap<EvenementDao, EvenementBll>(); //définiton du mapping
-                evenement= AutoMapper.Mapper.Map<EvenementDao, EvenementBll>(evenementDao);//Convert
+                evenement= AutoMapper.Mapper.DynamicMap<EvenementDao, EvenementBll>(evenementDao);//Convert
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 
                 throw;
@@ -70,7 +70,7 @@ namespace Historique.Business.Mapper
             try
             {
                 AutoMapper.Mapper.CreateMap<UtilisateurDao, UtilisateurBll>(); //définiton du mapping
-                utilisateur= AutoMapper.Mapper.Map<UtilisateurDao, UtilisateurBll>(utilisateurDao);//Convert
+                utilisateur= AutoMapper.Mapper.DynamicMap<UtilisateurDao, UtilisateurBll>(utilisateurDao);//Convert
 
             }
             catch (Exception)
