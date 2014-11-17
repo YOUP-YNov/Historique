@@ -400,7 +400,7 @@
             <summary>
             Retourne toutes les catégories d'évènement
             </summary>
-            <returns></returns>
+            <returns>Toutes les catégories</returns>
         </member>
         <member name="T:Historique.Controllers.EvenementController">
             <summary>
@@ -415,7 +415,7 @@
         </member>
         <member name="M:Historique.Controllers.EvenementController.GetEvenementParSaisonalité(System.String,System.String)">
             <summary>
-            Retourne les évènements qui se déroulent durant une saisonalité donnée
+            Retourne les évènements qui se déroulent durant une saisonalité donnée Format date yyyy-mm-dd
             </summary>
             <param name="dateDebut">date debut. Format YYYY-MM-dd</param>
             <param name="dateFin">date fin. Format YYYY-MM-dd</param>
@@ -472,7 +472,7 @@
             <returns></returns>
         </member>
         <member name="M:Historique.Controllers.UtilisateurController.Get">
-            <summary>D:\WORK\git\VS-GIT\Historique\Historique\Controllers\UtilisateurController.cs
+            <summary>
             Retourne tous les Utilisateurs
             </summary>
             <returns></returns>
