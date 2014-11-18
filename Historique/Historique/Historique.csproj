@@ -46,6 +46,9 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="AppHarbor.Sdk">
+      <HintPath>..\packages\AppHarbor.NET.2.2.0\lib\net35\AppHarbor.Sdk.dll</HintPath>
+    </Reference>
     <Reference Include="AutoMapper, Version=3.3.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\AutoMapper.3.3.0-ci1027\lib\net40\AutoMapper.dll</HintPath>
@@ -64,6 +67,12 @@
     </Reference>
     <Reference Include="Ninject">
       <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Premotion.AspNet.AppHarbor.Integration">
+      <HintPath>..\packages\Premotion.AspNet.AppHarbor.Integration.0.5.0\lib\net40\Premotion.AspNet.AppHarbor.Integration.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.104.0\lib\net4\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
