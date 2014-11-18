@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using Historique.Business.Mapper;
 using Historique.Models;
+using Logger;
 
 namespace Historique.Mapper
 {
     public class HistoriqueApiService : IHistoriqueApiService
     {
         private IHistoriqueBll _historiqueBll;
+        private string urlLogger = "http://loggerasp.azurewebsites.net/";
 
         public HistoriqueApiService(IHistoriqueBll historiqueBll)
         {
@@ -16,14 +18,18 @@ namespace Historique.Mapper
         }
 
         public IEnumerable<Categorie> GetAllCategorieBll()
-        {            
+        {
             var allcatBll = new List<Categorie>();
             try
             {
                 var allcat = _historiqueBll.GetAllCategorieBll().ToList();
                 allcatBll = MapperExpoAPI.ToCategories(allcat);
             }
-            catch (Exception ex) {}
+            catch (Exception ex)
+            {
+                new LErreur(ex, "Historique", "Mapper.HistoriqueApiService.GetAllcategorieBLL").Save(urlLogger);
+
+            }
             return allcatBll;
         }
 
@@ -35,7 +41,10 @@ namespace Historique.Mapper
                 var allusers = _historiqueBll.GetAllUser().ToList();
                 allusersBll = MapperExpoAPI.ToUtilisateurs(allusers);
             }
-            catch (Exception ex) { }
+            catch (Exception ex)
+            {
+                new LErreur(ex, "Historique", "Mapper.HistoriqueApiService.GetAllUser").Save(urlLogger);
+            }
             return allusersBll;
         }
 
@@ -47,7 +56,10 @@ namespace Historique.Mapper
                 var userID = _historiqueBll.GetUserById(id);
                 userIDBll = MapperExpoAPI.ToUtilisateur(userID);
             }
-            catch (Exception ex) { }
+            catch (Exception ex)
+            {
+                new LErreur(ex, "Historique", "Mapper.HistoriqueApiService.GetUserById").Save(urlLogger);
+            }
             return userIDBll;
         }
 
@@ -59,7 +71,10 @@ namespace Historique.Mapper
                 var userPseudo = _historiqueBll.GetUserByPseudo(pseudo);
                 userPseudoBll = MapperExpoAPI.ToUtilisateur(userPseudo);
             }
-            catch (Exception ex) { }
+            catch (Exception ex)
+            {
+                new LErreur(ex, "Historique", "Mapper.HistoriqueApiService.GetUserByPseudo").Save(urlLogger);
+            }
             return userPseudoBll;
         }
 
@@ -71,7 +86,10 @@ namespace Historique.Mapper
                 var evenAll = _historiqueBll.GetAllEvenement().ToList();
                 evenAllBll = MapperExpoAPI.ToEvenements(evenAll);
             }
-            catch (Exception ex) { }
+            catch (Exception ex)
+            {
+                new LErreur(ex, "Historique", "Mapper.HistoriqueApiService.GetAllEvenement").Save(urlLogger);
+            }
             return evenAllBll;
         }
 
@@ -83,7 +101,10 @@ namespace Historique.Mapper
                 var evenCatCp = _historiqueBll.GetEvenementByCateByCp(codePostale, categorie).ToList();
                 evenCatCpBll = MapperExpoAPI.ToEvenements(evenCatCp);
             }
-            catch (Exception ex) { }
+            catch (Exception ex)
+            {
+                new LErreur(ex, "Historique", "Mapper.HistoriqueApiService.GetEvenementByCateByCp").Save(urlLogger);
+            }
             return evenCatCpBll;
         }
 
@@ -95,7 +116,10 @@ namespace Historique.Mapper
                 var evenCp = _historiqueBll.GetEvenementByCp(codePostale).ToList();
                 evenCpBll = MapperExpoAPI.ToEvenements(evenCp);
             }
-            catch (Exception ex) { }
+            catch (Exception ex)
+            {
+                new LErreur(ex, "Historique", "Mapper.HistoriqueApiService.GetEvenementByCp").Save(urlLogger);
+            }
             return evenCpBll;
         }
 
@@ -107,7 +131,10 @@ namespace Historique.Mapper
                 var evenCat = _historiqueBll.GetEvenementByCat(categorie, dateDebut, dateFin).ToList();
                 evenCatBll = MapperExpoAPI.ToEvenements(evenCat);
             }
-            catch (Exception ex) { }
+            catch (Exception ex)
+            {
+                new LErreur(ex, "Historique", "Mapper.HistoriqueApiService.GetEvenementByCat").Save(urlLogger);
+            }
             return evenCatBll;
         }
 
@@ -119,7 +146,10 @@ namespace Historique.Mapper
                 var evenDate = _historiqueBll.GetEvenementByDates(dateDebut, dateFin).ToList();
                 evenDateBll = MapperExpoAPI.ToEvenements(evenDate);
             }
-            catch (Exception ex) { }
+            catch (Exception ex)
+            {
+                new LErreur(ex, "Historique", "Mapper.HistoriqueApiService.GetEvenementByDates").Save(urlLogger);
+            }
             return evenDateBll;
         }
 
@@ -133,6 +163,7 @@ namespace Historique.Mapper
             }
             catch (Exception ex)
             {
+                new LErreur(ex, "Historique", "Mapper.HistoriqueApiService.GetEvenementParticipeByUserId").Save(urlLogger);
             }
             return evenParticipeUserBll;
         }
@@ -161,10 +192,11 @@ namespace Historique.Mapper
             }
             catch (Exception ex)
             {
+                new LErreur(ex, "Historique", "Mapper.HistoriqueApiService.GetEvenementProposeByUserId").Save(urlLogger);
             }
             return evenProposeUserBll;
         }
-    
+
         public Utilisateur GetUtilisateurProposeByEvenementId(int eventId)
         {
             var userProposeEvenBll = new Utilisateur();
@@ -175,6 +207,7 @@ namespace Historique.Mapper
             }
             catch (Exception ex)
             {
+                new LErreur(ex, "Historique", "Mapper.HistoriqueApiService.GetUtilisateurProposeByEvenementId").Save(urlLogger);
             }
             return userProposeEvenBll;
         }
