@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using Historique.DAL.DAL;
 using Historique.Business.Models;
+using Logger;
 
 namespace Historique.Business.Mapper
 {
     public class HistoriqueBll : IHistoriqueBll
     {
         private IHistorique _HistoriqueDAL;
+        private string urlLogger="http://loggerasp.azurewebsites.net/";
 
         public HistoriqueBll(IHistorique historique)
         {
@@ -23,7 +25,10 @@ namespace Historique.Business.Mapper
                 var allcat = _HistoriqueDAL.GetAllCategorie().ToList();
                 allcatBll = Mapper.ToCategoriesSBll(allcat);
             }
-            catch (Exception ex) { }
+            catch (Exception ex) 
+            {
+                new LErreur(ex, "Historique.Business", "Mapper.HistoriqueBll.GetAllCategorieBll").Save(urlLogger);
+            }
             return allcatBll;
         }
 
@@ -35,7 +40,10 @@ namespace Historique.Business.Mapper
                 var allusers = _HistoriqueDAL.GetAllUser().ToList();
                 allusersBll = Mapper.ToUtilisateursBll(allusers);
             }
-            catch (Exception ex) { }
+            catch (Exception ex) 
+            {
+                new LErreur(ex, "Historique.Business", "Mapper.HistoriqueBll.GetAllUser").Save(urlLogger);
+            }
             return allusersBll;
         }
 
@@ -47,7 +55,10 @@ namespace Historique.Business.Mapper
                 var userID = _HistoriqueDAL.GetUserById(id);
                 userIDBll = Mapper.ToUtilisateurBll(userID);
             }
-            catch (Exception ex) { }
+            catch (Exception ex) 
+            {
+                new LErreur(ex, "Historique.Business", "Mapper.HistoriqueBll.GetUserById").Save(urlLogger);
+            }
             return userIDBll;
         }
 
@@ -59,7 +70,10 @@ namespace Historique.Business.Mapper
                 var userPseudo = _HistoriqueDAL.GetUserByPseudo(pseudo);
                 userPseudoBll = Mapper.ToUtilisateurBll(userPseudo);
             }
-            catch (Exception ex) { }
+            catch (Exception ex) 
+            {
+                new LErreur(ex, "Historique.Business", "Mapper.HistoriqueBll.GetUserByPseudo").Save(urlLogger);
+            }
             return userPseudoBll;
         }
 
@@ -71,7 +85,10 @@ namespace Historique.Business.Mapper
                 var evenAll = _HistoriqueDAL.GetAllEvenement().ToList();
                 evenAllBll = Mapper.ToEvenementsBll(evenAll);
             }
-            catch (Exception ex) { }
+            catch (Exception ex) 
+            {
+                new LErreur(ex, "Historique.Business", "Mapper.HistoriqueBll.GetAllEvenement").Save(urlLogger);
+            }
             return evenAllBll;
         }
 
@@ -83,7 +100,10 @@ namespace Historique.Business.Mapper
                 var evenCatCp = _HistoriqueDAL.GetEvenementByCateByCp(codePostale, categorie).ToList();
                 evenCatCpBll = Mapper.ToEvenementsBll(evenCatCp);
             }
-            catch (Exception ex) { }
+            catch (Exception ex) 
+            {
+                new LErreur(ex, "Historique.Business", "Mapper.HistoriqueBll.GetEvenementByCateByCp").Save(urlLogger);
+            }
             return evenCatCpBll;
         }
 
@@ -95,7 +115,10 @@ namespace Historique.Business.Mapper
                 var evenCp = _HistoriqueDAL.GetEvenementByCp(codePostale).ToList();
                 evenCpBll = Mapper.ToEvenementsBll(evenCp);
             }
-            catch (Exception ex) { }
+            catch (Exception ex) 
+            {
+                new LErreur(ex, "Historique.Business", "Mapper.HistoriqueBll.GetEvenementByCp").Save(urlLogger);
+            }
             return evenCpBll;
         }
 
@@ -107,7 +130,10 @@ namespace Historique.Business.Mapper
                 var evenCat = _HistoriqueDAL.GetEvenementByCat(categorie, dateDebut, dateFin).ToList();
                 evenCatBll = Mapper.ToEvenementsBll(evenCat);
             }
-            catch (Exception ex) { }
+            catch (Exception ex) 
+            {
+                new LErreur(ex, "Historique.Business", "Mapper.HistoriqueBll.GetEvenementByCat").Save(urlLogger);
+            }
             return evenCatBll;
         }
 
@@ -119,7 +145,10 @@ namespace Historique.Business.Mapper
                 var evenDate = _HistoriqueDAL.GetEvenementByDates(dateDebut, dateFin).ToList();
                 evenDateBll = Mapper.ToEvenementsBll(evenDate);
             }
-            catch (Exception ex) { }
+            catch (Exception ex) 
+            {
+                new LErreur(ex, "Historique.Business", "Mapper.HistoriqueBll.GetEvenementByDates").Save(urlLogger);
+            }
             return evenDateBll;
         }
 
@@ -133,6 +162,7 @@ namespace Historique.Business.Mapper
             }
             catch (Exception ex)
             {
+                new LErreur(ex, "Historique.Business", "Mapper.HistoriqueBll.GetEvenementParticipeByUserId").Save(urlLogger);
             }
             return evenParticipeUserBll;
         }
@@ -147,6 +177,8 @@ namespace Historique.Business.Mapper
             }
             catch (Exception ex)
             {
+                new LErreur(ex, "Historique.Business", "Mapper.HistoriqueBll.GetUtilisateurParticipeByEvenementId").Save(urlLogger);
+
             }
             return userParticipeEvenBll;
         }
@@ -161,6 +193,7 @@ namespace Historique.Business.Mapper
             }
             catch (Exception ex)
             {
+                new LErreur(ex, "Historique.Business", "Mapper.HistoriqueBll.GetEvenementProposeByUserId").Save(urlLogger);
             }
             return evenProposeUserBll;
         }
@@ -175,6 +208,7 @@ namespace Historique.Business.Mapper
             }
             catch (Exception ex)
             {
+                new LErreur(ex, "Historique.Business", "Mapper.HistoriqueBll.GetUtilisateurProposeByEvenementId").Save(urlLogger);
             }
             return userProposeEvenBll;
         }

@@ -10,7 +10,7 @@ namespace Historique.Mapper
     public class HistoriqueApiService : IHistoriqueApiService
     {
         private IHistoriqueBll _historiqueBll;
-        private string urlLogger = "http://loggerasp.azurewebsites.net/";
+        private static string urlLogger = "http://loggerasp.azurewebsites.net/";
 
         public HistoriqueApiService(IHistoriqueBll historiqueBll)
         {

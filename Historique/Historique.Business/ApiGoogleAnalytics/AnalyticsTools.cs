@@ -2,6 +2,7 @@
 using System.Web.Hosting;
 using Google.Apis.Analytics.v3;
 using System;
+using Logger;
 
 namespace Historique.Business.ApiGoogleAnalytics
 {
@@ -11,6 +12,7 @@ namespace Historique.Business.ApiGoogleAnalytics
 
         private const string ANALYTICS_ACCOUNT_EMAIL_KEY = "analytics_api_account_email";
         private const string ANALYTICS_KEY_FILE_NAME_KEY = "analytics_api_key_file_path";
+        private static string urlLogger = "http://loggerasp.azurewebsites.net/";
 
         /// <summary>
         /// Gets the analytics analyticsService.
@@ -32,6 +34,7 @@ namespace Historique.Business.ApiGoogleAnalytics
                 catch (Exception ex)
                 {
                     // TODO log exception
+                    new LErreur(ex, "Historique.Business", "ApiGoogleAnalytics.AnalyticsTools.GetAnalyticsService").Save(urlLogger);
                 }
             }
 

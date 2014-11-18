@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Historique.Business.Models;
 using Historique.DAL.DAO;
+using Logger;
 
 
 namespace Historique.Business.Mapper
 {
     public class Mapper
     {
+        private static string urlLogger= "http://loggerasp.azurewebsites.net/";
+       
         //To Business
         public static CategorieBll ToCategorieBll(CategorieDao categorieDao)
         {
@@ -23,7 +26,7 @@ namespace Historique.Business.Mapper
             }
             catch(Exception ex)
             {
-
+                new LErreur( ex, "Historique.Business", "Mapper.Mapper.ToCategorieBll").Save(urlLogger);
             }
             return categorie;
         }
@@ -38,8 +41,9 @@ namespace Historique.Business.Mapper
             }
             catch (Exception ex)
             {
-                
+                new LErreur(ex, "Historique.Business", "Mapper.Mapper.ToEvenementBll").Save(urlLogger);
                 throw;
+
             }
             return evenement;
 
@@ -55,9 +59,9 @@ namespace Historique.Business.Mapper
                 evenementLieu=  AutoMapper.Mapper.Map<EvenementLieuDao, EvenementLieuBll>(evenementLieuDao);//Convert
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                
+                new LErreur(ex, "Historique.Business", "Mapper.Mapper.ToEvenementBll").Save(urlLogger);
                 throw;
             }
             return evenementLieu;
@@ -73,9 +77,9 @@ namespace Historique.Business.Mapper
                 utilisateur= AutoMapper.Mapper.DynamicMap<UtilisateurDao, UtilisateurBll>(utilisateurDao);//Convert
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                
+                new LErreur(ex, "Historique.Business", "Mapper.Mapper.ToUtilisateurBll").Save(urlLogger);
                 throw;
             }
             return utilisateur;

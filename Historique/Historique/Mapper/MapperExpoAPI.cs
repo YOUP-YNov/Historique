@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using Historique.Business.Models;
 using Historique.Models;
-
+using Logger;
 
 namespace Historique.Mapper
 {
     public class MapperExpoAPI
     {
 
+       private static string urlLogger = "http://loggerasp.azurewebsites.net/";
+
         //To ExpoApi
         public static Categorie ToCategorie(CategorieBll categorieBll)
         {
+            
             Categorie categorie = null;
             try
             {
@@ -20,6 +23,7 @@ namespace Historique.Mapper
             }
             catch (Exception ex)
             {
+                new LErreur(ex, "Historique", "Mapper.MapperExpoAPI.ToCategorie").Save(urlLogger);
 
             }
             return categorie;
@@ -33,9 +37,10 @@ namespace Historique.Mapper
                 AutoMapper.Mapper.CreateMap<EvenementBll, Evenement>(); //définiton du mapping
                 evenement = AutoMapper.Mapper.DynamicMap<EvenementBll, Evenement>(evenementBll);//Convert
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
+                new LErreur(ex, "Historique", "Mapper.MapperExpoAPI.ToEvenement").Save(urlLogger);
                 throw;
             }
             return evenement;
@@ -49,9 +54,9 @@ namespace Historique.Mapper
                 evenementLieu = AutoMapper.Mapper.Map<EvenementLieuBll, EvenementLieu>(evenementLieuBll);
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                new LErreur(ex, "Historique", "Mapper.MapperExpoAPI.ToEvenementLieu").Save(urlLogger);
                 throw;
             }
             return evenementLieu;
@@ -65,9 +70,9 @@ namespace Historique.Mapper
                 utilisateur = AutoMapper.Mapper.DynamicMap<UtilisateurBll, Utilisateur>(utilisateurBll);//Convert
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                new LErreur(ex, "Historique", "Mapper.MapperExpoAPI.ToUtilisateur").Save(urlLogger);
                 throw;
             }
             return utilisateur;
