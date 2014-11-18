@@ -137,3 +137,4 @@ C:\Users\yohan\Source\Repos\Youp-Historique\Historique\Historique.Business\obj\D
 C:\Users\yohan\Source\Repos\Youp-Historique\Historique\Historique.Business\obj\Debug\Historique.Business.csprojResolveAssemblyReference.cache
 C:\Users\yohan\Source\Repos\Youp-Historique\Historique\Historique.Business\obj\Debug\Historique.Business.dll
 C:\Users\yohan\Source\Repos\Youp-Historique\Historique\Historique.Business\obj\Debug\Historique.Business.pdb
+C:\Users\RuizC\Source\Repos\Youp-Historique\Historique\Historique.Business\bin\Debug\Logger.dll
