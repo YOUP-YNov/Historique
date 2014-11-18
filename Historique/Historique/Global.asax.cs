@@ -14,7 +14,7 @@ namespace Historique
         {
             IKernel kernel = new StandardKernel();
             GlobalConfiguration.Configuration.DependencyResolver = new NinjectResolver(kernel);
-
+            GlobalConfiguration.Configuration.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
             AreaRegistration.RegisterAllAreas();
             //GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Serialize;
             GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.All;
