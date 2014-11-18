@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Logger">
-      <HintPath>..\..\..\..\..\Downloads\DLL Logger (1)\Logger.dll</HintPath>
+      <HintPath>..\References\Logger.dll</HintPath>
     </Reference>
     <Reference Include="Moq">
       <HintPath>..\packages\Moq.4.2.1409.1722\lib\net40\Moq.dll</HintPath>
