@@ -31,6 +31,7 @@
     <WarningLevel>0</WarningLevel>
     <DocumentationFile>App_Data\XmlDocument.xml</DocumentationFile>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
