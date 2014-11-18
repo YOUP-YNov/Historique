@@ -209,6 +209,9 @@
     <Content Include="App_Data\System.Web.Optimization.xml" />
     <Content Include="App_Data\System.Web.WebPages.dll" />
     <Content Include="App_Data\WebGrease.dll" />
+    <Content Include="App_Data\XmlDocument.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
