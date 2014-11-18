@@ -200,7 +200,9 @@
     <Content Include="App_Data\Antlr3.Runtime.pdb" />
     <Content Include="App_Data\Historique.dll" />
     <Content Include="App_Data\Historique.pdb" />
-    <Content Include="App_Data\Historique.XML" />
+    <Content Include="App_Data\Historique.XML">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="App_Data\Microsoft.Web.Infrastructure.dll" />
     <Content Include="App_Data\System.Web.Optimization.dll" />
     <Content Include="App_Data\System.Web.Optimization.xml" />
