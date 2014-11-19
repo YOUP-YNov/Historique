@@ -13,15 +13,15 @@ namespace Historique.Controllers
     public class AnalyticsController : AbstractApiController<PageVisitee>
     {
 
-        private readonly IHistoriqueAnalyticService _historiqueAnalyticService;
+        private readonly IHistoriqueAnalyticsService _historiqueAnalyticsService;
 
         public AnalyticsController()
         {
         }
 
-        public AnalyticsController(IHistoriqueAnalyticService historiqueAnalyticService)
+        public AnalyticsController(IHistoriqueAnalyticsService historiqueAnalyticsService)
         {
-            _historiqueAnalyticService = historiqueAnalyticService;
+            _historiqueAnalyticsService = historiqueAnalyticsService;
         }
 
         // GET api/analytics/views/pages
@@ -34,7 +34,7 @@ namespace Historique.Controllers
         [Route("pages")]
         public List<PageVisitee> GetViewsPerPage(string startDate, string endDate)
         {
-            return ConverterUtils.ConvertList<PageVisiteeBll, PageVisitee>(_historiqueAnalyticService.GetPagesVisiteesBll(startDate, endDate).ToList());
+            return ConverterUtils.ConvertList<PageVisiteeBll, PageVisitee>(_historiqueAnalyticsService.GetPagesVisiteesBll(startDate, endDate).ToList());
         }
 
         // GET api/analytics/views/os
@@ -47,7 +47,7 @@ namespace Historique.Controllers
         [Route("os")]
         public List<DeviceTypeStatRow> GetViewsPerOs(string startDate, string endDate)
         {
-            return ConverterUtils.ConvertList<DeviceTypeStatRowBll, DeviceTypeStatRow>(_historiqueAnalyticService.GetDevicesStats(startDate, endDate).ToList());
+            return ConverterUtils.ConvertList<DeviceTypeStatRowBll, DeviceTypeStatRow>(_historiqueAnalyticsService.GetDevicesStats(startDate, endDate).ToList());
         }
 
         // GET api/analytics/views/deviceCategory
@@ -60,7 +60,7 @@ namespace Historique.Controllers
         [Route("deviceCategory")]
         public List<DeviceCategoryStatRow> GetViewsPerDeviceCategory(string startDate, string endDate)
         {
-            return ConverterUtils.ConvertList<DeviceCategoryStatRowBll, DeviceCategoryStatRow>(_historiqueAnalyticService.GetDevicesCategoryStats(startDate, endDate).ToList());
+            return ConverterUtils.ConvertList<DeviceCategoryStatRowBll, DeviceCategoryStatRow>(_historiqueAnalyticsService.GetDevicesCategoryStats(startDate, endDate).ToList());
         }
     }
 }

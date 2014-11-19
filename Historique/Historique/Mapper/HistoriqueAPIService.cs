@@ -50,10 +50,12 @@ namespace Historique.Mapper
 
         public Utilisateur GetUserById(int id)
         {
-            var userIDBll = new Utilisateur();
+            Utilisateur userIDBll = null;
             try
             {
                 var userID = _historiqueBll.GetUserById(id);
+
+
                 userIDBll = MapperExpoAPI.ToUtilisateur(userID);
             }
             catch (Exception ex)

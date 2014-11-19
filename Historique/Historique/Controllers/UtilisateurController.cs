@@ -42,11 +42,14 @@ namespace Historique.Controllers
         public List<Utilisateur> GetTopAmis(int top)
         {
             IEnumerable<Utilisateur> utilisateurs = null;
+            List<Utilisateur> utilisateursTop = null;
+
             var utilisateursAll = _historiqueApiServiceService.GetAllUser();
             if (utilisateursAll != null)
+            {
                 utilisateurs = utilisateursAll.OrderByDescending(x => x.NbAmis);
-
-            var utilisateursTop= utilisateurs.Take(top).ToList();
+                utilisateursTop= utilisateurs.Take(top).ToList();
+            }
 
             return utilisateursTop;
         }
@@ -62,11 +65,13 @@ namespace Historique.Controllers
         public List<Utilisateur> GetTopEvenementCree(int top)
         {
             IEnumerable<Utilisateur> utilisateurs = null;
+            List<Utilisateur> utilisateursTop = null;
             var utilisateursAll = _historiqueApiServiceService.GetAllUser();
             if (utilisateursAll != null)
+            {
                 utilisateurs = utilisateursAll.OrderByDescending(x => x.NbEvenmentPropose);
-
-            var utilisateursTop = utilisateurs.Take(top).ToList();
+                utilisateurs = utilisateurs.Take(top).ToList();
+            }
 
             return utilisateursTop;
         }
@@ -81,13 +86,20 @@ namespace Historique.Controllers
         public List<Utilisateur> GetTopEvenementParticipe(int top)
         {
             IEnumerable<Utilisateur> utilisateurs = null;
+            List<Utilisateur> utilisateursTop = null;
             var utilisateursAll = _historiqueApiServiceService.GetAllUser();
             if (utilisateursAll != null)
+            {
                 utilisateurs = utilisateursAll.OrderByDescending(x => x.NbEvenementParticipe);
+                utilisateursTop = utilisateurs.Take(top).ToList();
 
-            var utilisateursTop = utilisateurs.Take(top).ToList();
-
-            return utilisateursTop;
+                return utilisateursTop;
+            }
+            else
+            {
+                HandleEntityNotFound("top", top.ToNullSafeString());
+            }
+            return null;
         }
 
         /// <summary>
@@ -153,11 +165,6 @@ namespace Historique.Controllers
         {
             var utilisateur = _historiqueApiServiceService.GetUserById(id);
            
-            /** TODO throw HistoricEntityNotFoundException in case of entity not found for all controllers + extend from AbstractApiController (catch Exception)
-             *  TODO return null in mapper tiers
-             */
-
-            // user is never null (See HistoriqueAPIService.GetUserById(..);)
             if (utilisateur == null)
             {
                 HandleEntityNotFound("id", id.ToNullSafeString());

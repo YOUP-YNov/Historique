@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Historique.DAL.DAL;
 using Historique.Business.Models;
+using Historique.Exceptions;
 using Logger;
 
 namespace Historique.Business.Mapper
@@ -55,9 +56,9 @@ namespace Historique.Business.Mapper
                 var userID = _HistoriqueDAL.GetUserById(id);
                 userIDBll = Mapper.ToUtilisateurBll(userID);
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
-                new LErreur(ex, "Historique.Business", "Mapper.HistoriqueBll.GetUserById").Save(urlLogger);
+                throw new HistoricEntityNotFoundException("Utilisateur", "id", id.ToString());
             }
             return userIDBll;
         }
@@ -72,7 +73,7 @@ namespace Historique.Business.Mapper
             }
             catch (Exception ex) 
             {
-                new LErreur(ex, "Historique.Business", "Mapper.HistoriqueBll.GetUserByPseudo").Save(urlLogger);
+                throw new HistoricEntityNotFoundException("Utilisateur", "pseudo", pseudo.ToString());
             }
             return userPseudoBll;
         }

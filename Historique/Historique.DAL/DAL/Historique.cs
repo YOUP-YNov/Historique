@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Historique.DAL.DAO;
+using Historique.Exceptions;
 
 namespace Historique.DAL.DAL
 {
@@ -136,8 +137,14 @@ namespace Historique.DAL.DAL
             var nbEventParticipe = Convert.ToInt32(UserService.NbEvenementParticipe(id));
 
             var result = UserService.GetDataById(id);
+
             List<UtilisateurDao> userDaoList = (List<UtilisateurDao>)result.ToDaoUtilisateurs();
             var userDao = userDaoList.First();
+
+            if (userDao == null)
+            {
+                throw new HistoricEntityNotFoundException("Utilisateur", "id", id.ToString());
+            }
 
             userDao.NbAmis = nbAmis.Value;
             userDao.NbEvenementParticipe = nbEventParticipe;
@@ -154,6 +161,11 @@ namespace Historique.DAL.DAL
             var result = UserService.GetDataByPseudo(pseudo);
             List<UtilisateurDao> userDaoList = (List<UtilisateurDao>)result.ToDaoUtilisateurs();
             var userDao = userDaoList.First();
+
+            if (userDao == null)
+            {
+                throw new HistoricEntityNotFoundException("Utilisateur", "pseudo", pseudo.ToString());
+            }
 
             userDao.NbAmis = nbAmis.Value;
             userDao.NbEvenementParticipe = nbEventParticipe.Value;
@@ -293,6 +305,7 @@ namespace Historique.DAL.DAL
             }
             catch (Exception ex)
             {
+
             }
             return userDao;
         }

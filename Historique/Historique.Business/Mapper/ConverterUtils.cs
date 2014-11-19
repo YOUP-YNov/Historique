@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Historique.Business.Mapper
 {
@@ -25,30 +24,12 @@ namespace Historique.Business.Mapper
         {
             InitMapper<TSource, TDest>();
 
-            TDest convertedObject = default(TDest);
-
-            try
-            {
-                convertedObject = AutoMapper.Mapper.Map<TSource, TDest>(source);
-            }
-            catch (Exception e)
-            {
-                // TODO log exceptions + throw ConverterException...
-            }
-
-            return convertedObject;
+            return AutoMapper.Mapper.Map<TSource, TDest>(source);
         }
 
         private static void InitMapper<TSource, TDest>()
         {
-            try
-            {
-                AutoMapper.Mapper.CreateMap<TSource, TDest>();
-            }
-            catch (Exception e)
-            {
-                // TODO log exceptions + throw ConverterException "Failed to initialize configuration for classes TSource TO TDest"
-            }
+            AutoMapper.Mapper.CreateMap<TSource, TDest>();
         }
     }
 }

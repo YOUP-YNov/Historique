@@ -69,6 +69,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Historique.Common\Historique.Common.csproj">
+      <Project>{FC03DBCA-D8F6-4EC5-81F6-5F8AF26D548E}</Project>
+      <Name>Historique.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Historique.DAL\Historique.DAL.csproj">
       <Project>{F42EB452-5DE2-4DAA-9B76-E9D9C8D02160}</Project>
       <Name>Historique.DAL</Name>
