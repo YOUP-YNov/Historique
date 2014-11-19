@@ -140,8 +140,8 @@ namespace Historique.Models
             }
         }
 
-        private IEnumerable<Utilisateur> _Participants;
-        public IEnumerable<Utilisateur> Participants
+        private List<Utilisateur> _Participants;
+        public List<Utilisateur> Participants
         {
             get
             {

@@ -24,9 +24,9 @@ namespace Historique.Controllers
         /// </summary>
         /// <returns></returns>
         [Route("")]
-        public IEnumerable<Utilisateur> Get()
+        public List<Utilisateur> Get()
         {
-            var utilisateurs = _historiqueApiServiceService.GetAllUser() ?? new List<Utilisateur>();
+            var utilisateurs = _historiqueApiServiceService.GetAllUser().ToList() ?? new List<Utilisateur>();
 
             return utilisateurs;
         }
@@ -39,16 +39,16 @@ namespace Historique.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("TopAmis/{top}")]
-        public IEnumerable<Utilisateur> GetTopAmis(int top)
+        public List<Utilisateur> GetTopAmis(int top)
         {
             IEnumerable<Utilisateur> utilisateurs = null;
             var utilisateursAll = _historiqueApiServiceService.GetAllUser();
             if (utilisateursAll != null)
                 utilisateurs = utilisateursAll.OrderByDescending(x => x.NbAmis);
 
-            utilisateurs= utilisateurs.Take(top).ToList();
+            var utilisateursTop= utilisateurs.Take(top).ToList();
 
-            return utilisateurs;
+            return utilisateursTop;
         }
 
 
@@ -59,16 +59,16 @@ namespace Historique.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("TopEventCree/{top}")]
-        public IEnumerable<Utilisateur> GetTopEvenementCree(int top)
+        public List<Utilisateur> GetTopEvenementCree(int top)
         {
             IEnumerable<Utilisateur> utilisateurs = null;
             var utilisateursAll = _historiqueApiServiceService.GetAllUser();
             if (utilisateursAll != null)
                 utilisateurs = utilisateursAll.OrderByDescending(x => x.NbEvenmentPropose);
 
-            utilisateurs = utilisateurs.Take(top).ToList();
+            var utilisateursTop = utilisateurs.Take(top).ToList();
 
-            return utilisateurs;
+            return utilisateursTop;
         }
 
         /// <summary>
@@ -78,16 +78,16 @@ namespace Historique.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("TopEventParticipe/{top}")]
-        public IEnumerable<Utilisateur> GetToEvenementParticipe(int top)
+        public List<Utilisateur> GetTopEvenementParticipe(int top)
         {
             IEnumerable<Utilisateur> utilisateurs = null;
             var utilisateursAll = _historiqueApiServiceService.GetAllUser();
             if (utilisateursAll != null)
                 utilisateurs = utilisateursAll.OrderByDescending(x => x.NbEvenementParticipe);
 
-            utilisateurs = utilisateurs.Take(top).ToList();
+            var utilisateursTop = utilisateurs.Take(top).ToList();
 
-            return utilisateurs;
+            return utilisateursTop;
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Historique.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("GetByTrancheAge/{ageDebut}/{ageFin}")]
-        public IEnumerable<Utilisateur> GetByTrancheAge(int ageDebut, int ageFin)
+        public List<Utilisateur> GetByTrancheAge(int ageDebut, int ageFin)
         {
             var utilisateurs = new List<Utilisateur>();
 
@@ -116,7 +116,7 @@ namespace Historique.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("GetBySexe/{homme}")]
-        public IEnumerable<Utilisateur> GetBySexe(bool homme)
+        public List<Utilisateur> GetBySexe(bool homme)
         {
             var utilisateurs = new List<Utilisateur>();
             var utilisateursAll = _historiqueApiServiceService.GetAllUser();
@@ -131,7 +131,7 @@ namespace Historique.Controllers
         ///// </summary>
         ///// <param name="evenement_Id">l'identifiant de l'évènement.</param>
         ///// <returns></returns>
-        //public IEnumerable<Utilisateur> GetParticipants(int evenement_Id)
+        //public List<Utilisateur> GetParticipants(int evenement_Id)
         //{
         //    var utilisateursAll = Get();
         //    var utilisateurs = utilisateursAll.SingleOrDefault(x => x.Id.Equals(id));
@@ -187,9 +187,9 @@ namespace Historique.Controllers
         /// <param name="userId">identifiant.</param>
         /// <returns></returns>
         [Route("{userId}/EvenementsCrees")]
-        public IEnumerable<Evenement> GetEvenementsCrees(int userId)
+        public List<Evenement> GetEvenementsCrees(int userId)
         {
-            var evenements = _historiqueApiServiceService.GetEvenementProposeByUserId(userId);
+            var evenements = _historiqueApiServiceService.GetEvenementProposeByUserId(userId).ToList();
 
             return evenements;
         }
@@ -200,9 +200,9 @@ namespace Historique.Controllers
         /// <param name="userId">identifiant.</param>
         /// <returns></returns>
         [Route("{userId}/EvenementsParticipes")]
-        public IEnumerable<Evenement> GetEvenementsParticipes(int userId)
+        public List<Evenement> GetEvenementsParticipes(int userId)
         {
-            var evenements = _historiqueApiServiceService.GetEvenementParticipeByUserId(userId);
+            var evenements = _historiqueApiServiceService.GetEvenementParticipeByUserId(userId).ToList();
 
             return evenements;
         }

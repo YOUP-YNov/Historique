@@ -27,9 +27,9 @@ namespace Historique.Controllers
         /// <returns></returns>
 
         [Route("")]
-        public IEnumerable<Evenement> Get()
+        public List<Evenement> Get()
         {
-            var evenements = _historiqueApiServiceService.GetAllEvenement() ?? new List<Evenement>();
+            var evenements = _historiqueApiServiceService.GetAllEvenement().ToList() ?? new List<Evenement>();
 
             return evenements;
         }
@@ -43,7 +43,7 @@ namespace Historique.Controllers
         /// <returns></returns> 
         [HttpGet]
         [Route("EvenementParSaisonalite/{dateDebut}/{dateFin}")] //Etat =good
-        public IEnumerable<Evenement> GetEvenementParSaisonalité(string dateDebut, string dateFin)
+        public List<Evenement> GetEvenementParSaisonalité(string dateDebut, string dateFin)
         {
             //TODO : Vérifier si les dates saisies sont correctes
             var evenements = new List<Evenement>();
@@ -69,7 +69,7 @@ namespace Historique.Controllers
         /// <param name="categorie">categorie.</param>
         /// <returns></returns>
         [Route("EvenementByCateByCp/{codePostale}/{categorie}")]
-        public IEnumerable<Evenement> GetEvenementByCateByCp(int codePostale, string categorie)
+        public List<Evenement> GetEvenementByCateByCp(int codePostale, string categorie)
         {
             var evenementsAll = _historiqueApiServiceService.GetEvenementByCateByCp(codePostale, categorie);
 
@@ -79,7 +79,7 @@ namespace Historique.Controllers
             //   evenements = evenementsAll.Where(x = x.CodePostale = codePostale && x.c
 
 
-            return evenementsAll;
+            return evenementsAll.ToList();
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Historique.Controllers
         /// <param name="codePostale">code postale.</param>
         /// <returns></returns>
         [Route("EvenementByCp/{codePostale}")]
-        public IEnumerable<Evenement> GetEvenementByCp(int codePostale)
+        public List<Evenement> GetEvenementByCp(int codePostale)
         {
             var evenements = new List<Evenement>();
             var evenementsAll = _historiqueApiServiceService.GetEvenementByCp(codePostale);
@@ -104,7 +104,7 @@ namespace Historique.Controllers
         /// <param name="categorie">categorie.</param>
         /// <returns></returns>
         [Route("EvenementByCategorie/{categorie}")]
-        public IEnumerable<Evenement> GetEvenementByCategorie(string categorie)
+        public List<Evenement> GetEvenementByCategorie(string categorie)
         {
             var evenements = new List<Evenement>();
             var evenementsAll = _historiqueApiServiceService.GetAllEvenement();
@@ -120,7 +120,7 @@ namespace Historique.Controllers
         /// <param name="userId">Identifiant de l'utilisateur.</param>
         /// <returns></returns>
         [Route("EvenementByUser/{userId}")]
-        public IEnumerable<Evenement> GetEvenementByUtilisateurId(int userId)
+        public List<Evenement> GetEvenementByUtilisateurId(int userId)
         {
             var evenements = new List<Evenement>();
             var evenementsAll = _historiqueApiServiceService.GetEvenementParticipeByUserId(userId);
@@ -132,9 +132,9 @@ namespace Historique.Controllers
 
 
         [Route("{eventId}/Participants")]
-        public IEnumerable<Utilisateur> GetParticipantsByEvenement(int eventId)
+        public List<Utilisateur> GetParticipantsByEvenement(int eventId)
         {
-            var participants = _historiqueApiServiceService.GetUtilisateurParticipeByEvenementId(eventId);
+            var participants = _historiqueApiServiceService.GetUtilisateurParticipeByEvenementId(eventId).ToList();
            
             return participants;
         }

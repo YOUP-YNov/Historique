@@ -101,8 +101,8 @@ namespace Historique.Models
             set { _CodePostale = value; }
         }
 
-        private IEnumerable<Evenement> _EvenementsParticipes;
-        public IEnumerable<Evenement> EvenementsParticipes
+        private List<Evenement> _EvenementsParticipes;
+        public List<Evenement> EvenementsParticipes
         {
             get
             {
@@ -112,8 +112,8 @@ namespace Historique.Models
             }
             set { _EvenementsParticipes = value; }
         }
-        private IEnumerable<Evenement> _EvenementsCrees;
-        public IEnumerable<Evenement> EvenementsCrees
+        private List<Evenement> _EvenementsCrees;
+        public List<Evenement> EvenementsCrees
         {
             get
             {

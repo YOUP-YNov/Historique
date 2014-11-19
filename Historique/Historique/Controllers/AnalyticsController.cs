@@ -32,7 +32,7 @@ namespace Historique.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("pages")]
-        public IEnumerable<PageVisitee> GetViewsPerPage(string startDate, string endDate)
+        public List<PageVisitee> GetViewsPerPage(string startDate, string endDate)
         {
             return ConverterUtils.ConvertList<PageVisiteeBll, PageVisitee>(_historiqueAnalyticService.GetPagesVisiteesBll(startDate, endDate).ToList());
         }
@@ -45,7 +45,7 @@ namespace Historique.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("os")]
-        public IEnumerable<DeviceTypeStatRow> GetViewsPerOs(string startDate, string endDate)
+        public List<DeviceTypeStatRow> GetViewsPerOs(string startDate, string endDate)
         {
             return ConverterUtils.ConvertList<DeviceTypeStatRowBll, DeviceTypeStatRow>(_historiqueAnalyticService.GetDevicesStats(startDate, endDate).ToList());
         }
@@ -58,7 +58,7 @@ namespace Historique.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("deviceCategory")]
-        public IEnumerable<DeviceCategoryStatRow> GetViewsPerDeviceCategory(string startDate, string endDate)
+        public List<DeviceCategoryStatRow> GetViewsPerDeviceCategory(string startDate, string endDate)
         {
             return ConverterUtils.ConvertList<DeviceCategoryStatRowBll, DeviceCategoryStatRow>(_historiqueAnalyticService.GetDevicesCategoryStats(startDate, endDate).ToList());
         }

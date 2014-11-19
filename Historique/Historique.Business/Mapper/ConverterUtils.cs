@@ -9,7 +9,7 @@ namespace Historique.Business.Mapper
         {
         }
 
-        public static IEnumerable<TDest> ConvertList<TSource, TDest>(IEnumerable<TSource> sources)
+        public static List<TDest> ConvertList<TSource, TDest>(IEnumerable<TSource> sources)
         {
             var convertedObjects = new List<TDest>();
 

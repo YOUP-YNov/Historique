@@ -491,7 +491,7 @@
             <param name="top">le top désiré (ex : top 5, top 10...)</param>
             <returns></returns>
         </member>
-        <member name="M:Historique.Controllers.UtilisateurController.GetToEvenementParticipe(System.Int32)">
+        <member name="M:Historique.Controllers.UtilisateurController.GetTopEvenementParticipe(System.Int32)">
             <summary>
             Retourne les utilisateurs ayants participé au plus d'évènement
             </summary>
