@@ -26,7 +26,7 @@ namespace Historique.App_Start
 
         private void AddDependenciesBindings()
         {
-            this._kernel.Bind<IHistoriqueAnalyticService>().To<HistoricAnalyticService>();
+            this._kernel.Bind<IHistoriqueAnalyticsService>().To<HistoricAnalyticsService>();
             this._kernel.Bind<IHistoriqueApiService>().To<HistoriqueApiService>();
             this._kernel.Bind<IHistoriqueBll>().To<HistoriqueBll>();
             this._kernel.Bind<IHistorique>().To<DAL.DAL.Historique>();

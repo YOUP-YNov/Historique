@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Historique.DAL.DAL;
 using Historique.DAL.DAO;
+using Historique.Exceptions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
@@ -149,6 +150,18 @@ namespace Historique.DAL.Test
             Assert.AreEqual(userById.Age, _exceptedUser.Age);
             Assert.AreEqual(userById.Metier, _exceptedUser.Metier);
             Assert.AreEqual(userById.Ville, _exceptedUser.Ville);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(HistoricEntityNotFoundException))]
+        public void TestGetUserByIdNotFound()
+        {
+            const int unknownUserId = 10005;
+
+            this._historiqueMock.Setup(m => m.GetUserById(unknownUserId))
+                .Throws(new HistoricEntityNotFoundException("Utilisateur", "id", unknownUserId.ToString()));
+
+            UtilisateurDao utilisateurDaoNotFound = this._historiqueMock.Object.GetUserById(unknownUserId);
         }
 
         [TestMethod]

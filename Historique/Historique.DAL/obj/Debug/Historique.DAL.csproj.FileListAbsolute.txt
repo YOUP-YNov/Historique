@@ -1,15 +1,3 @@
-D:\WORK\git\VS-GIT\Historique\Historique.DAL\bin\Debug\AutoMapper.Net4.dll
-D:\WORK\git\VS-GIT\Historique\Historique.DAL\bin\Debug\Historique.DAL.dll.config
-D:\WORK\git\VS-GIT\Historique\Historique.DAL\bin\Debug\Historique.DAL.dll
-D:\WORK\git\VS-GIT\Historique\Historique.DAL\bin\Debug\Historique.DAL.pdb
-D:\WORK\git\VS-GIT\Historique\Historique.DAL\bin\Debug\AutoMapper.dll
-D:\WORK\git\VS-GIT\Historique\Historique.DAL\bin\Debug\Microsoft.Owin.dll
-D:\WORK\git\VS-GIT\Historique\Historique.DAL\bin\Debug\Owin.dll
-D:\WORK\git\VS-GIT\Historique\Historique.DAL\bin\Debug\AutoMapper.xml
-D:\WORK\git\VS-GIT\Historique\Historique.DAL\bin\Debug\Microsoft.Owin.xml
-D:\WORK\git\VS-GIT\Historique\Historique.DAL\obj\Debug\Historique.DAL.csprojResolveAssemblyReference.cache
-D:\WORK\git\VS-GIT\Historique\Historique.DAL\obj\Debug\Historique.DAL.dll
-D:\WORK\git\VS-GIT\Historique\Historique.DAL\obj\Debug\Historique.DAL.pdb
 C:\Users\RuizC\Source\Repos\Youp-Historique\Historique\Historique.DAL\bin\Debug\AutoMapper.Net4.dll
 C:\Users\RuizC\Source\Repos\Youp-Historique\Historique\Historique.DAL\bin\Debug\Historique.DAL.dll.config
 C:\Users\RuizC\Source\Repos\Youp-Historique\Historique\Historique.DAL\bin\Debug\Historique.DAL.dll
@@ -36,3 +24,4 @@ C:\Users\yohan\Source\Repos\Youp-Historique\Historique\Historique.DAL\obj\Debug\
 C:\Users\yohan\Source\Repos\Youp-Historique\Historique\Historique.DAL\obj\Debug\Historique.DAL.pdb
 C:\Users\RuizC\Source\Repos\Youp-Historique\Historique\Historique.DAL\bin\Debug\Logger.dll
 C:\Users\RuizC\Source\Repos\Youp-Historique\Historique\Historique.DAL\bin\Debug\Newtonsoft.Json.dll
+D:\WORK\git\VS-GIT\Historique\Historique.DAL\obj\Debug\Historique.DAL.pdb

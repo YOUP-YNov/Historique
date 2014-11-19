@@ -145,6 +145,10 @@
       <Project>{d0b8b5d3-9d0b-49da-83d1-1f9256fa3391}</Project>
       <Name>Historique.Business</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Historique.Common\Historique.Common.csproj">
+      <Project>{FC03DBCA-D8F6-4EC5-81F6-5F8AF26D548E}</Project>
+      <Name>Historique.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Historique.DAL\Historique.DAL.csproj">
       <Project>{F42EB452-5DE2-4DAA-9B76-E9D9C8D02160}</Project>
       <Name>Historique.DAL</Name>
@@ -177,8 +181,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AnalyticsController.cs" />
     <Compile Include="Controllers\UtilisateurController.cs" />
-    <Compile Include="Exceptions\HistoricApiException.cs" />
-    <Compile Include="Exceptions\HistoricEntityNotFoundException.cs" />
     <Compile Include="Filters\HistoricApiError.cs" />
     <Compile Include="Filters\HistoricApiExceptionFilter.cs" />
     <Compile Include="Global.asax.cs">

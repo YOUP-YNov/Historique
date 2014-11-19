@@ -110,8 +110,8 @@
     <Compile Include="Mapper\IHistoriqueBll.cs" />
     <Compile Include="Models\Analytics\DeviceCategoryStatRowBll.cs" />
     <Compile Include="Models\Analytics\DeviceTypeStatRowBll.cs" />
-    <Compile Include="Service\HistoricAnalyticService.cs" />
-    <Compile Include="Service\IHistoriqueAnalyticService.cs" />
+    <Compile Include="Service\HistoricAnalyticsService.cs" />
+    <Compile Include="Service\IHistoriqueAnalyticsService.cs" />
     <Compile Include="Mapper\Mapper.cs" />
     <Compile Include="Models\CategorieBll.cs" />
     <Compile Include="Mapper\HistoriqueBll.cs" />
@@ -130,6 +130,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Historique.Common\Historique.Common.csproj">
+      <Project>{FC03DBCA-D8F6-4EC5-81F6-5F8AF26D548E}</Project>
+      <Name>Historique.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Historique.DAL\Historique.DAL.csproj">
       <Project>{f42eb452-5de2-4daa-9b76-e9d9c8d02160}</Project>
       <Name>Historique.DAL</Name>
