@@ -15,7 +15,7 @@ namespace Historique.DAL
             userDao.CodePostale = userRow.CodePostal;
             userDao.Ville = userRow.Ville;
             userDao.CheminPhoto = userRow.PhotoChemin;
-            userDao.Age = (DateTime.Now - userRow.DateNaissance).Days;
+            userDao.Age =DateTime.Now.Year - userRow.DateNaissance.Year;
             userDao.Metier = userRow.Metier;
             userDao.IsHomme = userRow.Sexe;
             return userDao;
