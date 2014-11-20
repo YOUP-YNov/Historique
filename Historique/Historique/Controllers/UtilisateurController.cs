@@ -70,7 +70,7 @@ namespace Historique.Controllers
             if (utilisateursAll != null)
             {
                 utilisateurs = utilisateursAll.OrderByDescending(x => x.NbEvenmentPropose);
-                utilisateurs = utilisateurs.Take(top).ToList();
+                utilisateursTop = utilisateurs.Take(top).ToList();
             }
 
             return utilisateursTop;
