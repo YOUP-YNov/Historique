@@ -55,7 +55,7 @@ namespace Historique.Controllers
                 var dateTimeDebut = new DateTime(Convert.ToInt32(tabDateDebut[0]),Convert.ToInt32(tabDateDebut[1]),Convert.ToInt32(tabDateDebut[2]));
                 var dateTimeFin =new DateTime(Convert.ToInt32(tabDateFin[0]),Convert.ToInt32(tabDateFin[1]),Convert.ToInt32(tabDateFin[2]));
 
-                var evenementsAll = _historiqueApiServiceService.GetAllEvenement();
+                var evenementsAll = _historiqueApiServiceService.GetEvenementByDates(dateTimeDebut, dateTimeFin);
                 if (evenementsAll != null)
                     evenements = evenementsAll.Where(x => x.DateEvenement >= dateTimeDebut && x.DateEvenement <= dateTimeFin).ToList();
             }
