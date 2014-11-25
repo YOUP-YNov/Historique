@@ -26,8 +26,8 @@ namespace Historique.DAL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=avip9np4yy.database.windows.net,1433;Initial Catalog=YoupDEV;Persist " +
-            "Security Info=True;User ID=youpDEV;Password=youpD3VASP*")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=v7v25fm5ta.database.windows.net;Initial Catalog=YoupDEV;Persist Secur" +
+            "ity Info=True;User ID=youpDEV;Password=youpD3VASP*")]
         public string YoupDEVConnectionString {
             get {
                 return ((string)(this["YoupDEVConnectionString"]));
