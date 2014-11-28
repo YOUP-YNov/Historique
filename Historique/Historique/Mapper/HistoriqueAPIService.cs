@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Historique.Business.Mapper;
+using Historique.Exceptions;
 using Historique.Models;
 using Logger;
 
@@ -68,15 +69,13 @@ namespace Historique.Mapper
         public Utilisateur GetUserByPseudo(string pseudo)
         {
             var userPseudoBll = new Utilisateur();
-            try
+            var userPseudo = _historiqueBll.GetUserByPseudo(pseudo);
+            if (userPseudo == null)
             {
-                var userPseudo = _historiqueBll.GetUserByPseudo(pseudo);
-                userPseudoBll = MapperExpoAPI.ToUtilisateur(userPseudo);
+                throw new HistoricEntityNotFoundException(typeof(Utilisateur).Name, "pseudo", pseudo);
             }
-            catch (Exception ex)
-            {
-                new LErreur(ex, "Historique", "Mapper.HistoriqueApiService.GetUserByPseudo").Save(urlLogger);
-            }
+            userPseudoBll = MapperExpoAPI.ToUtilisateur(userPseudo);
+            
             return userPseudoBll;
         }
 

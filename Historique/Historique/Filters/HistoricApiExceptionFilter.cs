@@ -31,7 +31,7 @@ namespace Historique.Filters
             if (actionExecutedContext.Exception is HistoricEntityNotFoundException)
             {
                 var exception = (HistoricEntityNotFoundException) actionExecutedContext.Exception;
-                string message = String.Format("Entity {0} with criteria {1} = {2} not found",
+                string message = String.Format("Entity {0} with criteria '{1}' = '{2}' not found",
                     exception.EntityName, exception.SearchCriteria, exception.SearchCriteriaValue);
 
                 historicApiError = new HistoricApiError(HttpStatusCode.NotFound, message);

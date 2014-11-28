@@ -50,7 +50,7 @@ namespace Historique.Business.Mapper
 
         public UtilisateurBll GetUserById(int id)
         {
-            var userIDBll = new UtilisateurBll();
+            UtilisateurBll userIDBll = null;
             try
             {
                 var userID = _HistoriqueDAL.GetUserById(id);

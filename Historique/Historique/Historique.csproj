@@ -238,8 +238,8 @@
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <Content Include="App_Data\Historique.dll.config" />
     <Content Include="ClassDiagram1.cd" />
-    <Content Include="App_Data\AspProject-7e4d666ce048.p12" />
     <Content Include="App_Data\YoupHistorique-5f2a15ed8747.p12" />
+    <Content Include="App_Data\AspProject-4051b5abd4ca.p12" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

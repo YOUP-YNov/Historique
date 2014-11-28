@@ -53,7 +53,7 @@
                 // pour l'année 2014-2015
                 // en JavaScript, le mois commence par 0 pour janvier, 1 pour février, etc.
                 data: [
-                    [Date.UTC(1970, 9, 27), 0],// *********la date de création d'évènements pour l'annnée en cours, nombre d'évènement créés
+                    [Date.UTC(moment(event.date).format('YYYY, MM, DD')), 0],// *********la date de création d'évènements pour l'annnée en cours, nombre d'évènement créés
                     [Date.UTC(1970, 10, 10), 1],//********* ..(AAAA, MM, JJ), nb evenements]
                     [Date.UTC(1970, 10, 18), 1],
                     [Date.UTC(1970, 11, 2), 3],
